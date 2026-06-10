@@ -242,7 +242,6 @@ let filteredVehicles = [];
 // ══════════════════════════════════════════════
 
 document.addEventListener('DOMContentLoaded', () => {
-  initLoadingScreen();
   initNavbar();
   initParticles();
   initCounters();
@@ -253,14 +252,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
 });
 
-// ── LOADING SCREEN ──
-function initLoadingScreen() {
-  const screen = document.getElementById('loading-screen');
-  if (!screen) return;
-  setTimeout(() => {
-    screen.classList.add('hidden');
-  }, 1600);
-}
 
 // ── NAVBAR ──
 function initNavbar() {
@@ -512,6 +503,10 @@ Please confirm:
         <a href="tel:+919975356697" class="vc-btn-call-full">
           <i class="bi bi-telephone-fill"></i> CALL
         </a>
+        <a href="#" class="vc-btn-wa" onclick="sendBookingWA('car','${v.name}','Automatic',${minPrice},${v.deposit}); return false;">
+          💬 Book on WhatsApp
+        </a>
+        <div class="vc-cta-note">⚡ Usually replies within 5 minutes</div>
       </div>
     </div>`;
   }).join('');
@@ -722,6 +717,59 @@ document.addEventListener("DOMContentLoaded", () => {
       sendTrackingEvent("/api/whatsapp");
     });
   });
+
+  // Instant Quote form handler (if present)
+  const instantForm = document.getElementById('instant-quote-form');
+  if (instantForm) {
+    instantForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const fd = new FormData(this);
+      const text = `Hi, I want an instant quote:\nName: ${fd.get('name')}\nPhone: ${fd.get('phone')}\nPickup: ${fd.get('pickup_date')}\nReturn: ${fd.get('return_date')}\nVehicle: ${fd.get('vehicle_type')}`;
+      if (window.dataLayer) dataLayer.push({ event: 'instant_quote', method: 'form' });
+      window.open('https://wa.me/919975356697?text=' + encodeURIComponent(text), '_blank');
+    });
+  }
 });
+
+// ── MOBILE STICKY CTA INJECTION & TRACKING HOOKS ──
+function injectMobileStickyCTA() {
+  if (window.innerWidth >= 880) return; // mobile only
+  if (document.querySelector('.mobile-sticky-cta')) return;
+
+  const container = document.createElement('div');
+  container.className = 'mobile-sticky-cta';
+  container.innerHTML = `
+    <a href="tel:+919975356697" class="cta-btn cta-call" aria-label="Call Royal Goa Ride">📞 Call Now</a>
+    <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car" class="cta-btn cta-wa" aria-label="WhatsApp Royal Goa Ride" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+  `;
+  document.body.appendChild(container);
+
+  // Tracking hooks
+  container.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href');
+      // GTM / gtag events
+      if (typeof dataLayer !== 'undefined') {
+        if (href && href.startsWith('tel:')) dataLayer.push({ event: 'call_click', method: 'sticky_cta' });
+        if (href && href.includes('wa.me')) dataLayer.push({ event: 'whatsapp_click', method: 'sticky_cta' });
+      }
+      // Fallback tracking beacon
+      try {
+        if (navigator.sendBeacon) {
+          navigator.sendBeacon('/api/cta_click', JSON.stringify({ href: href, time: new Date().toISOString() }));
+        } else {
+          fetch('/api/cta_click', { method: 'POST', body: JSON.stringify({ href: href, time: new Date().toISOString() }), keepalive: true });
+        }
+      } catch (err) { /* silent */ }
+    }, { passive: true });
+  });
+}
+
+// Initialize sticky CTA after content loaded and during idle time
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(injectMobileStickyCTA, { timeout: 2000 });
+} else {
+  setTimeout(injectMobileStickyCTA, 1200);
+}
 
 console.log('RoyalGoaRide Cinematic v3.0 — Loaded');
