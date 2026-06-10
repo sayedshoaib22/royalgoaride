@@ -724,4 +724,45 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// ── MOBILE STICKY CTA INJECTION & TRACKING HOOKS ──
+function injectMobileStickyCTA() {
+  if (window.innerWidth >= 880) return; // mobile only
+  if (document.querySelector('.mobile-sticky-cta')) return;
+
+  const container = document.createElement('div');
+  container.className = 'mobile-sticky-cta';
+  container.innerHTML = `
+    <a href="tel:+919975356697" class="cta-btn cta-call" aria-label="Call Royal Goa Ride">📞 Call Now</a>
+    <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car" class="cta-btn cta-wa" aria-label="WhatsApp Royal Goa Ride" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+  `;
+  document.body.appendChild(container);
+
+  // Tracking hooks
+  container.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href');
+      // GTM / gtag events
+      if (typeof dataLayer !== 'undefined') {
+        if (href && href.startsWith('tel:')) dataLayer.push({ event: 'call_click', method: 'sticky_cta' });
+        if (href && href.includes('wa.me')) dataLayer.push({ event: 'whatsapp_click', method: 'sticky_cta' });
+      }
+      // Fallback tracking beacon
+      try {
+        if (navigator.sendBeacon) {
+          navigator.sendBeacon('/api/cta_click', JSON.stringify({ href: href, time: new Date().toISOString() }));
+        } else {
+          fetch('/api/cta_click', { method: 'POST', body: JSON.stringify({ href: href, time: new Date().toISOString() }), keepalive: true });
+        }
+      } catch (err) { /* silent */ }
+    }, { passive: true });
+  });
+}
+
+// Initialize sticky CTA after content loaded and during idle time
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(injectMobileStickyCTA, { timeout: 2000 });
+} else {
+  setTimeout(injectMobileStickyCTA, 1200);
+}
+
 console.log('RoyalGoaRide Cinematic v3.0 — Loaded');

@@ -1199,6 +1199,53 @@ a {
   background: #1fba5a;
 }
 
+/* ── STICKY MOBILE CTA BAR ── */
+.mobile-sticky-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1200;
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(2,12,8,0.98), rgba(2,12,8,0.92));
+  border-top: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 -8px 30px rgba(0,0,0,0.6);
+}
+.mobile-sticky-cta .cta-btn {
+  flex: 1 1 48%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: #04110b;
+}
+.mobile-sticky-cta .cta-call {
+  background: linear-gradient(135deg,#ffd166 0%,#f0c040 100%);
+}
+.mobile-sticky-cta .cta-wa {
+  background: linear-gradient(135deg,#25D366 0%,#1DA851 100%);
+  color: #fff;
+}
+/* Hide on larger screens */
+@media (min-width: 880px) {
+  .mobile-sticky-cta { display: none; }
+}
+
+/* Tweak existing floating WhatsApp button for desktop only */
+.float-wa { display: none; }
+@media (min-width: 880px) {
+  .float-wa { display: inline-flex; }
+}
+
 /* ── Call button — full width ── */
 .vc-btns {
   border-top: 1px solid rgba(255, 255, 255, 0.07);
