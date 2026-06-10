@@ -1,0 +1,373 @@
+:root {
+    --rg-bg: #071227;
+    /* dark navy */
+    --rg-gold: #D4AF37;
+    /* gold accent */
+    --rg-white: #ffffff;
+    --rg-glass: rgba(255, 255, 255, 0.06);
+    --rg-glass-2: rgba(255, 255, 255, 0.04);
+    --rg-radius: 14px;
+    --rg-shadow: 0 8px 30px rgba(3, 6, 23, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+    --rg-ease: cubic-bezier(.2, .9, .2, 1);
+}
+
+/* Base page reset and typography */
+html,
+body {
+    height: 100%;
+    background: var(--rg-bg);
+    color: var(--rg-white);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    line-height: 1.45;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased
+}
+
+/* Utility container */
+.rg-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box
+}
+
+.rg-section {
+    padding: 56px 20px
+}
+
+/* HERO */
+.rg-hero-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 48px;
+    border-radius: var(--rg-radius);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0));
+    box-shadow: var(--rg-shadow);
+    backdrop-filter: blur(6px);
+}
+
+.rg-hero-banner .rg-hero-copy {
+    flex: 1;
+    min-width: 220px
+}
+
+.rg-hero-banner h1 {
+    font-size: 2.1rem;
+    margin: 0 0 10px;
+    color: var(--rg-white);
+    letter-spacing: 0.4px
+}
+
+.rg-hero-banner p {
+    margin: 0 0 18px;
+    color: rgba(255, 255, 255, 0.85)
+}
+
+.rg-hero-cta {
+    display: inline-flex;
+    gap: 12px
+}
+
+.rg-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--rg-gold), #f0c95a);
+    color: #071227;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.16);
+    transition: transform .28s var(--rg-ease), box-shadow .28s var(--rg-ease)
+}
+
+.rg-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(212, 175, 55, 0.18)
+}
+
+.rg-btn-outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--rg-white);
+    padding: 10px 16px
+}
+
+/* VEHICLE CARD */
+.rg-vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px
+}
+
+.rg-vehicle-card {
+    background: linear-gradient(180deg, var(--rg-glass), var(--rg-glass-2));
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    transition: transform .28s var(--rg-ease), box-shadow .28s var(--rg-ease);
+    overflow: hidden
+}
+
+.rg-vehicle-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 46px rgba(0, 0, 0, 0.7)
+}
+
+.rg-vehicle-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px
+}
+
+.rg-vehicle-card .rg-title {
+    font-weight: 700;
+    margin: 10px 0 6px;
+    color: var(--rg-white)
+}
+
+.rg-vehicle-card .rg-meta {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8)
+}
+
+.rg-price {
+    font-weight: 800;
+    color: var(--rg-gold);
+    font-size: 1.05rem
+}
+
+/* BLOG CARD */
+.rg-blog-card {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0));
+    border-radius: 12px;
+    overflow: hidden
+}
+
+.rg-blog-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover
+}
+
+.rg-blog-content {
+    padding: 14px
+}
+
+.rg-blog-title {
+    font-weight: 700;
+    color: var(--rg-white);
+    margin: 0 0 6px
+}
+
+.rg-blog-excerpt {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem
+}
+
+/* FAQ Accordion */
+.rg-faq-accordion {
+    max-width: 900px;
+    margin: 0 auto
+}
+
+.rg-faq-item {
+    border-radius: 12px;
+    background: var(--rg-glass);
+    margin-bottom: 12px;
+    overflow: hidden
+}
+
+.rg-faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    cursor: pointer
+}
+
+.rg-faq-question h4 {
+    margin: 0;
+    color: var(--rg-white)
+}
+
+.rg-faq-answer {
+    padding: 0 18px 18px;
+    color: rgba(255, 255, 255, 0.85);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .36s var(--rg-ease)
+}
+
+.rg-faq-item.open .rg-faq-answer {
+    max-height: 400px
+}
+
+/* Forms */
+.rg-form-style input,
+.rg-form-style textarea,
+.rg-form-style select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: transparent;
+    color: var(--rg-white);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+    outline: none
+}
+
+.rg-form-style label {
+    display: block;
+    margin-bottom: 6px;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600
+}
+
+.rg-form-style .rg-submit {
+    margin-top: 12px
+}
+
+/* Call & WhatsApp buttons */
+.rg-call-whatsapp-buttons {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999
+}
+
+.rg-call-btn,
+.rg-whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--rg-gold), #f0c95a);
+    color: #071227;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    font-weight: 700
+}
+
+.rg-whatsapp-btn {
+    background: linear-gradient(90deg, #25D366, #1EBEA5);
+    color: #fff
+}
+
+.rg-floating-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block
+}
+
+/* Reviews */
+.rg-review-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px
+}
+
+.rg-review {
+    background: var(--rg-glass);
+    padding: 14px;
+    border-radius: 12px
+}
+
+.rg-review p {
+    margin: 8px 0;
+    color: rgba(255, 255, 255, 0.9)
+}
+
+/* Location section */
+.rg-location-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px
+}
+
+.rg-location-item {
+    flex: 1 1 260px;
+    border-radius: 12px;
+    padding: 14px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.0));
+    box-shadow: var(--rg-shadow)
+}
+
+/* Footer */
+.rg-footer-style {
+    padding: 30px 20px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.12));
+    color: rgba(255, 255, 255, 0.8);
+    border-top: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+.rg-footer-style a {
+    color: var(--rg-gold);
+    text-decoration: none
+}
+
+/* Small responsive tweaks */
+@media (max-width:720px) {
+    .rg-hero-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 28px
+    }
+
+    .rg-hero-banner h1 {
+        font-size: 1.6rem
+    }
+
+    .rg-vehicle-card img {
+        height: 140px
+    }
+}
+
+/* Accessibility focus states */
+.rg-btn:focus,
+.rg-btn-outline:focus {
+    outline: 3px solid rgba(212, 175, 55, 0.18);
+    outline-offset: 2px
+}
+
+/* Smooth hover for images */
+.rg-vehicle-card img,
+.rg-blog-card img {
+    transition: transform .45s var(--rg-ease)
+}
+
+.rg-vehicle-card:hover img {
+    transform: scale(1.03)
+}
+
+/* Small helpers */
+.rg-muted {
+    color: rgba(255, 255, 255, 0.65)
+}
+
+.rg-center {
+    text-align: center
+}
+
+/* Example BEM-like helpers for SEO spacing */
+.rg-space-top {
+    margin-top: 24px
+}
+
+.rg-space-bottom {
+    margin-bottom: 24px
+}
+
+/* Ensure fast loading: minimal heavy styles, avoid external fonts by using system stack */

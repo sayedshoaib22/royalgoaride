@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://royalgoaride.com/</loc>
+    <image:image>
+      <image:loc>https://royalgoaride.com/assets/og-imag.png</image:loc>
+      <image:title>Royal Goa Ride Logo — Self Drive Car Rental Goa</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://image2url.com/r2/default/images/1771081605318-cf7ecfe1-543f-4a35-8672-53cdda6ce892.jpeg</image:loc>
+      <image:title>Maruti Baleno Self Drive Rental Goa — Royal Goa Ride</image:title>
+      <image:caption>Rent Maruti Baleno in Goa — Manual and Automatic available from ₹1,300/day</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://image2url.com/r2/default/images/1771086979849-965ca50c-72cc-4015-a047-c020fa50af0d.jpeg</image:loc>
+      <image:title>Maruti Swift Self Drive Rental Goa — Royal Goa Ride</image:title>
+      <image:caption>Rent Maruti Swift in Goa — Manual and Automatic available from ₹1,200/day</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://image2url.com/r2/default/images/1771084107396-de073f29-76b3-4b8d-9009-be3059a77fba.jpeg</image:loc>
+      <image:title>Hyundai i20 Self Drive Rental Goa — Royal Goa Ride</image:title>
+      <image:caption>Rent Hyundai i20 in Goa — Automatic with sunroof from ₹1,600/day</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://image2url.com/r2/default/images/1771084019004-13492275-dca8-4f5a-b2e5-e1527576fe03.jpg</image:loc>
+      <image:title>Mahindra Thar Roxx Self Drive Rental Goa — Royal Goa Ride</image:title>
+      <image:caption>Rent Mahindra Thar Roxx in Goa — Premium 4x4 SUV from ₹7,000/day</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://image2url.com/r2/default/images/1771085163103-0cfc8bf6-b170-4f60-9be3-068e68b08592.jpeg</image:loc>
+      <image:title>Toyota Fortuner Self Drive Rental Goa — Royal Goa Ride</image:title>
+      <image:caption>Rent Toyota Fortuner in Goa — Luxury 4x4 from ₹9,000/day</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
