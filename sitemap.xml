@@ -1,77 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- ═══ HOMEPAGE ═══ -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://royalgoaride.com/</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://royalgoaride.com/assets/og-imag.png</image:loc>
-      <image:title>Royal Goa Ride — Best Self Drive Car Rental in Goa</image:title>
-      <image:caption>Affordable self-drive car and bike rental in Goa with airport delivery</image:caption>
-    </image:image>
+    <lastmod>2026-06-12</lastmod>
   </url>
-
-  <!-- ═══ LEGAL PAGES ═══ -->
   <url>
-    <loc>https://royalgoaride.com/terms.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://royalgoaride.com/terms-of-service.html</loc>
+    <lastmod>2026-06-12</lastmod>
   </url>
-
   <url>
-    <loc>https://royalgoaride.com/privacy.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://royalgoaride.com/privacy-policy.html</loc>
+    <lastmod>2026-06-12</lastmod>
   </url>
-
   <url>
     <loc>https://royalgoaride.com/refund-policy.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-06-12</lastmod>
   </url>
-
-  <!-- ═══ LOCATION LANDING PAGES ═══ -->
-  <url>
-    <loc>https://royalgoaride.com/car-rental-goa-airport.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-
-  <url>
-    <loc>https://royalgoaride.com/car-rental-calangute.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-
-  <url>
-    <loc>https://royalgoaride.com/baga.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-
-  <url>
-    <loc>https://royalgoaride.com/best-beaches-goa.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://royalgoaride.com/cheap-car-rental-tips.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
 </urlset>

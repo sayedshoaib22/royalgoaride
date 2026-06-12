@@ -1,78 +1,79 @@
-<!DOCTYPE html>
-
-<html dir="ltr" lang="en">
-<!--
-  ROYALGOARIDE — SEO-OPTIMIZED INDEX
-  Fixes applied:
-  - Removed duplicate scroll-smooth class on <html>
-  - Added lang + dir attributes
-  - Preconnect for Google Fonts + Bootstrap Icons CDN
-  - Preload hero poster image
-  - Deferred non-critical scripts
-  - Removed duplicate gtag initialization
-  - Fixed all schema markup
-  - Added WebSite, Organization, BreadcrumbList schema
-  - Added CarRental / Service schema
-  - Removed cloaking hidden links (replaced with proper footer links)
-  - Added geo meta tags
-  - Added iOS safe-area viewport
-  - Fixed email to plain text (Cloudflare obfuscation blocks crawlers)
-  - Added proper aria-labels throughout
--->
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
 <head>
-  <!-- ═══ CHARACTER SET & VIEWPORT ═══ -->
   <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
-  <!-- ═══ PRIMARY META ═══ -->
-  <title>Self-Drive Car Rental in Goa — From ₹1,200/Day</title>
-  <meta
-    content="self drive car rental goa, car rental in goa cheap, rent car in goa without driver, automatic car rental goa, airport delivery goa"
-    name="keywords" />
-  <meta content="Royal Goa Ride" name="author" />
-  <meta content="#00f5a0" name="theme-color" />
-  <!-- ═══ GEO / LOCAL SEO ═══ -->
-  <meta content="IN-GA" name="geo.region" />
-  <meta content="Margao, Goa, India" name="geo.placename" />
-  <meta content="15.2736;73.9575" name="geo.position" />
-  <meta content="15.2736, 73.9575" name="ICBM" />
-  <!-- ═══ CANONICAL ═══ -->
-  <!-- ═══ FAVICON ═══ -->
-  <link href="/assets/logo.webp" rel="icon" type="image/webp" />
-  <link href="/assets/logo.webp" rel="apple-touch-icon" />
-  <!-- ═══ SITEMAP ═══ -->
-  <link href="/sitemap.xml" rel="sitemap" title="Sitemap" type="application/xml" />
-  <!-- ═══ OPEN GRAPH ═══ -->
-  <!-- ═══ TWITTER CARD ═══ -->
-  <!-- ═══ GOOGLE VERIFICATION ═══ -->
-  <meta content="E3MZQd2YjGiZgp4A2laMV1J0JLzS90uVPmzPs3pBAEY" name="google-site-verification" />
-  <!-- ═══ PERFORMANCE: RESOURCE HINTS ═══ -->
-  <!-- Preconnect to critical third-party origins -->
-  <link href="https://fonts.googleapis.com" rel="preconnect" />
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-  <link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect" />
-  <link href="https://www.googletagmanager.com" rel="preconnect" />
-  <link crossorigin="" href="https://image2url.com" rel="preconnect" />
-  <!-- DNS prefetch for analytics -->
-  <link href="https://www.google-analytics.com" rel="dns-prefetch" />
-  <link href="https://googleads.g.doubleclick.net" rel="dns-prefetch" />
-  <link href="https://wa.me" rel="dns-prefetch" />
-  <!-- Preload hero image poster (LCP candidate) -->
-  <link as="image" fetchpriority="high"
-    href="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=1920&amp;q=80"
-    rel="preload" />
-  <!-- ═══ FONTS — display=swap prevents render block ═══ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <!-- PRIMARY SEO META -->
+  <title>Car Rental Goa | Self Drive Car Rental Goa from ₹1,200/Day — Royal Goa Ride</title>
+  <meta name="description"
+    content="Royal Goa Ride offers the best car rental in Goa from ₹1,200/day. Self drive cars, airport pickup, hotel delivery, 24/7 support. Book hatchbacks, sedans, SUVs & luxury cars in Goa." />
+  <meta name="keywords"
+    content="car rental goa, goa car rental, self drive car rental goa, self drive cars goa, goa airport car rental, car hire goa, rent car goa, cheap car rental goa, luxury car rental goa, monthly car rental goa" />
+  <meta name="author" content="Royal Goa Ride" />
+  <meta name="theme-color" content="#00f5a0" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <!-- GEO / LOCAL SEO -->
+  <meta name="geo.region" content="IN-GA" />
+  <meta name="geo.placename" content="Margao, Goa, India" />
+  <meta name="geo.position" content="15.2736;73.9575" />
+  <meta name="ICBM" content="15.2736, 73.9575" />
+
+  <!-- CANONICAL -->
+  <link rel="canonical" href="https://royalgoaride.com/" />
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Royal Goa Ride" />
+  <meta property="og:title" content="Car Rental Goa | Self Drive Car Rental from ₹1,200/Day — Royal Goa Ride" />
+  <meta property="og:description"
+    content="Best car rental in Goa from ₹1,200/day. Self drive, airport pickup, hotel delivery. Hatchbacks, SUVs, luxury cars. 24/7 WhatsApp support." />
+  <meta property="og:image" content="https://royalgoaride.com/assets/og-imag.webp" />
+  <meta property="og:url" content="https://royalgoaride.com/" />
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Car Rental Goa | Self Drive Car Rental from ₹1,200/Day" />
+  <meta name="twitter:description"
+    content="Best car rental in Goa from ₹1,200/day. Airport pickup, hotel delivery. Book via WhatsApp." />
+  <meta name="twitter:image" content="https://royalgoaride.com/assets/og-imag.webp" />
+
+  <!-- GOOGLE VERIFICATION -->
+  <meta name="google-site-verification" content="E3MZQd2YjGiZgp4A2laMV1J0JLzS90uVPmzPs3pBAEY" />
+
+  <!-- FAVICON -->
+  <link rel="icon" href="/assets/logo.webp" type="image/webp" />
+  <link rel="apple-touch-icon" href="/assets/logo.webp" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+  <!-- PRECONNECT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="dns-prefetch" href="https://wa.me" />
+
+  <!-- PRELOAD LCP -->
+  <link rel="preload" as="image"
+    href="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80"
+    fetchpriority="high" />
+
+  <!-- FONTS -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&amp;family=Playfair+Display:ital,wght@0,700;1,700&amp;display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
     rel="stylesheet" />
-  <!-- ═══ BOOTSTRAP ICONS — defer load via print trick ═══ -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" media="print"
-    onload="this.media='all'" rel="stylesheet" />
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    media="print" onload="this.media='all'" />
   <noscript>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
   </noscript>
-  <!-- ═══ GOOGLE ADS CONVERSION TAG (single init — deduplicated) ═══ -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-7510098927"></script>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- GTAG -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-7510098927"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -80,941 +81,1511 @@
     gtag('config', 'AW-7510098927');
     gtag('config', 'G-MZLZTPZ5C8');
   </script>
-  <!-- NOTE: Removed duplicate GTM script that was loading both AW tag AND GA separately -->
-  <!-- Google tag (gtag.js) -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-17966331278"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
 
-    gtag('config', 'AW-17966331278');
-  </script>
-  <!-- ═══ STYLESHEET ═══ -->
-  <link href="styles.css" rel="stylesheet" />
-  <!-- ═══════════════════════════════════════════════════
-       SCHEMA MARKUP — JSON-LD STRUCTURED DATA
-  ════════════════════════════════════════════════════ -->
-  <!-- 1. WebSite with SearchAction -->
+  <!-- SCHEMA: WebSite -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://royalgoaride.com/#website",
-    "name": "Royal Goa Ride",
-    "url": "https://royalgoaride.com",
-    "description": "Goa's top-rated self drive car and bike rental service with airport delivery",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://royalgoaride.com/?s={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
-  }
+  {"@context":"https://schema.org","@type":"WebSite","@id":"https://royalgoaride.com/#website","name":"Royal Goa Ride","url":"https://royalgoaride.com","description":"Goa's most trusted car rental service — self drive, airport pickup, hotel delivery.","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://royalgoaride.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}}
   </script>
-  <!-- 2. Organization -->
+
+  <!-- SCHEMA: Organization -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://royalgoaride.com/#organization",
-    "name": "Royal Goa Ride",
-    "url": "https://royalgoaride.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://royalgoaride.com/assets/logo.webp",
-      "width": 200,
-      "height": 60
-    },
-    "image": "https://royalgoaride.com/assets/og-imag.webp",
-    "telephone": "+919975356697",
-    "email": "info@royalgoaride.com",
-    "foundingDate": "2020",
-    "sameAs": [
-      "https://www.instagram.com/royalgoaride",
-      "https://www.facebook.com/royalgoaride",
-      "https://wa.me/919975356697"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+919975356697",
-      "contactType": "customer service",
-      "availableLanguage": ["English", "Hindi", "Konkani"],
-      "hoursAvailable": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens": "00:00",
-        "closes": "23:59"
-      }
-    }
-  }
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://royalgoaride.com/#organization","name":"Royal Goa Ride","url":"https://royalgoaride.com","logo":{"@type":"ImageObject","url":"https://royalgoaride.com/assets/logo.webp","width":200,"height":60},"telephone":"+919975356697","email":"info@royalgoaride.com","foundingDate":"2010","founder":{"@type":"Person","name":"Sahil Shaikh"},"sameAs":["https://www.instagram.com/royalgoaride","https://www.facebook.com/royalgoaride","https://wa.me/919975356697"],"contactPoint":{"@type":"ContactPoint","telephone":"+919975356697","contactType":"customer service","availableLanguage":["English","Hindi","Konkani"]}}
   </script>
-  <!-- 3. LocalBusiness / CarRental with AggregateRating + GeoCoordinates -->
+
+  <!-- SCHEMA: LocalBusiness / CarRental -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "CarRental"],
-    "@id": "https://royalgoaride.com/#localbusiness",
-    "name": "Royal Goa Ride",
-    "alternateName": "RoyalGoaRide",
-    "url": "https://royalgoaride.com",
-    "logo": "https://royalgoaride.com/assets/logo.webp",
-    "image": [
-      "https://royalgoaride.com/assets/og-imag.webp",
-      "https://image2url.com/r2/default/images/1771081605318-cf7ecfe1-543f-4a35-8672-53cdda6ce892.jpeg",
-      "https://image2url.com/r2/default/images/1771086979849-965ca50c-72cc-4015-a047-c020fa50af0d.jpeg"
-    ],
-    "telephone": "+919975356697",
-    "email": "info@royalgoaride.com",
-    "priceRange": "₹₹",
-    "currenciesAccepted": "INR",
-    "paymentAccepted": "Cash, Credit Card, Debit Card, UPI",
-    "description": "Royal Goa Ride is Goa's top-rated self drive car and bike rental service. Choose from 15+ vehicles including hatchbacks, SUVs, luxury cars and bikes. Airport pickup, hotel delivery, 24/7 support.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Near Madgao Railway Station",
-      "addressLocality": "Margao",
-      "addressRegion": "Goa",
-      "postalCode": "403601",
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 15.2736,
-      "longitude": 73.9575
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Goa"
-      },
-      {
-        "@type": "Place",
-        "name": "Dabolim Airport, Goa"
-      },
-      {
-        "@type": "Place",
-        "name": "Calangute, Goa"
-      },
-      {
-        "@type": "Place",
-        "name": "Baga, Goa"
-      },
-      {
-        "@type": "Place",
-        "name": "Anjuna, Goa"
-      },
-      {
-        "@type": "Place",
-        "name": "Palolem, Goa"
-      }
-    ],
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens": "00:00",
-        "closes": "23:59"
-      }
-    ],
-    "sameAs": [
-      "https://www.instagram.com/royalgoaride",
-      "https://www.facebook.com/royalgoaride"
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "bestRating": "5",
-      "worstRating": "1",
-      "reviewCount": "247",
-      "ratingCount": "247"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Self Drive Vehicle Rentals",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Maruti Swift Self Drive Rental",
-            "description": "Rent Maruti Swift in Goa — Manual and Automatic available"
-          },
-          "price": "1200",
-          "priceCurrency": "INR",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "1200",
-            "priceCurrency": "INR",
-            "unitCode": "DAY"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Mahindra Thar Self Drive Rental",
-            "description": "Rent Mahindra Thar in Goa — Hardtop and Soft Top available"
-          },
-          "price": "3000",
-          "priceCurrency": "INR",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "3000",
-            "priceCurrency": "INR",
-            "unitCode": "DAY"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Toyota Fortuner Self Drive Rental",
-            "description": "Rent Toyota Fortuner in Goa — Luxury 7-seater 4x4"
-          },
-          "price": "9000",
-          "priceCurrency": "INR",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "9000",
-            "priceCurrency": "INR",
-            "unitCode": "DAY"
-          }
-        }
-      ]
-    }
-  }
+  {"@context":"https://schema.org","@type":["LocalBusiness","CarRental"],"@id":"https://royalgoaride.com/#localbusiness","name":"Royal Goa Ride","url":"https://royalgoaride.com","telephone":"+919975356697","email":"info@royalgoaride.com","priceRange":"₹₹","currenciesAccepted":"INR","paymentAccepted":"Cash, Credit Card, Debit Card, UPI","description":"Royal Goa Ride offers reliable car rental in Goa since 2010. Self drive hatchbacks, sedans, SUVs, luxury cars. Airport pickup, hotel delivery, 24/7 support.","address":{"@type":"PostalAddress","streetAddress":"Near Madgao Railway Station","addressLocality":"Margao","addressRegion":"Goa","postalCode":"403601","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":15.2736,"longitude":73.9575},"areaServed":[{"@type":"City","name":"Goa"},{"@type":"Place","name":"Calangute, Goa"},{"@type":"Place","name":"Baga, Goa"},{"@type":"Place","name":"Anjuna, Goa"},{"@type":"Place","name":"Panjim, Goa"},{"@type":"Place","name":"Madgaon, Goa"},{"@type":"Place","name":"Dabolim Airport, Goa"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","bestRating":"5","worstRating":"1","reviewCount":"247"}}
   </script>
-  <!-- 4. FAQPage -->
+
+  <!-- SCHEMA: FAQPage -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What documents are needed to rent a car in Goa?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You need a valid Driving License and ID proof (Aadhar or Passport). Foreign travelers need an international driving license. Simple WhatsApp verification — no physical copies needed upfront."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does Royal Goa Ride offer automatic cars in Goa?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes! Automatic variants are available for Ignis, Swift, Baleno, i20, Thar, Creta, Brezza, Ertiga, Innova Crysta, and more. Slightly higher price for the ease and comfort."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the security deposit for car rental in Goa?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The security deposit is ₹3,000 for cars and ₹1,500 for bikes. It is fully refundable within 48 hours after safe vehicle return."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does Royal Goa Ride deliver cars to airports and hotels?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely. We deliver to Dabolim Airport, Mopa Airport, Madgaon Railway Station, hotels, and any Goa location. Available 24/7, including midnight flights."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How quickly can I get a self-drive car in Goa?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "30–45 minutes for Margao and Madgaon area. Same-day booking is possible if requested before 10 AM. WhatsApp us for instant confirmation."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the minimum rental period for a self drive car in Goa?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The minimum rental period is 1 day (24 hours). We also offer multi-day discounts for rentals of 3 days or more."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I take the rental car outside Goa?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Our rentals are for use within Goa. If you need to travel outside Goa, please inform us at the time of booking so we can make special arrangements."
-        }
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What documents are needed to rent a car in Goa?","acceptedAnswer":{"@type":"Answer","text":"You need a valid Driving Licence and ID proof (Aadhar or Passport). Foreign travellers need an International Driving Permit. WhatsApp verification is accepted — no physical copies needed upfront."}},{"@type":"Question","name":"Does Royal Goa Ride offer automatic cars in Goa?","acceptedAnswer":{"@type":"Answer","text":"Yes. Automatic variants are available for Swift, Baleno, i20, Ignis, Brezza, Creta, Ertiga, Thar, and more."}},{"@type":"Question","name":"What is the security deposit for car rental in Goa?","acceptedAnswer":{"@type":"Answer","text":"The security deposit is ₹3,000 for cars and ₹1,500 for bikes, fully refundable within 48 hours after safe vehicle return."}},{"@type":"Question","name":"Do you deliver cars to Goa airport and hotels?","acceptedAnswer":{"@type":"Answer","text":"Yes. We deliver to Dabolim Airport, Mopa Airport, Madgaon Railway Station, hotels, and any location across Goa, 24/7."}},{"@type":"Question","name":"What is the minimum rental period?","acceptedAnswer":{"@type":"Answer","text":"The minimum rental period is 1 day (24 hours). Multi-day and monthly rental discounts are also available."}},{"@type":"Question","name":"Can I take the car outside Goa?","acceptedAnswer":{"@type":"Answer","text":"Our standard rentals are for use within Goa. Please inform us at booking if you plan to travel outside Goa for special arrangements."}},{"@type":"Question","name":"Is fuel included in the rental price?","acceptedAnswer":{"@type":"Answer","text":"No, fuel is not included. The vehicle is provided at a set fuel level and must be returned at the same level."}}]}
   </script>
-  <!-- 5. BreadcrumbList for Homepage -->
+
+  <!-- SCHEMA: BreadcrumbList -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://royalgoaride.com/"
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://royalgoaride.com/"}]}
   </script>
-  <!-- 6. Review Schema (corrected date) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "itemReviewed": {
-      "@type": "LocalBusiness",
-      "name": "Royal Goa Ride",
-      "url": "https://royalgoaride.com"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Rahul Sharma"
-    },
-    "datePublished": "2025-01-15",
-    "reviewBody": "Outstanding car rental service! The booking process was quick and hassle-free. Car was spotlessly clean and in excellent condition. The team provided great local driving tips for Goa. Highly recommended for all travelers!",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5"
-    }
-  }
-  </script>
-  <meta
-    content="Self-drive car rental in Goa from ₹1,200/day with airport delivery, hotel delivery and 24/7 WhatsApp support. Automatic and manual cars ready to explore Goa."
-    name="description" />
-  <meta content="index, follow, max-image-preview:large" name="robots" />
-  <link href="https://royalgoaride.com/" rel="canonical" />
-  <meta content="website" property="og:type" />
-  <meta content="Royal Goa Ride" property="og:site_name" />
-  <meta content="Self-Drive Car Rental in Goa — From ₹1,200/Day" property="og:title" />
-  <meta
-    content="Self-drive car rental in Goa from ₹1,200/day with airport delivery, hotel delivery and 24/7 WhatsApp support. Automatic and manual cars ready to explore Goa."
-    property="og:description" />
-  <meta content="https://royalgoaride.com/assets/og-imag.webp" property="og:image" />
-  <meta content="https://royalgoaride.com/" property="og:url" />
-  <meta content="summary_large_image" name="twitter:card" />
-  <meta content="Self-Drive Car Rental in Goa — From ₹1,200/Day" name="twitter:title" />
-  <meta
-    content="Self-drive car rental in Goa from ₹1,200/day with airport delivery, hotel delivery and 24/7 WhatsApp support. Automatic and manual cars ready to explore Goa."
-    name="twitter:description" />
-  <meta content="https://royalgoaride.com/assets/og-imag.webp" name="twitter:image" />
+
+
 </head>
 
 <body>
-  <!-- ═══ SKIP TO CONTENT — Accessibility + Crawlability ═══ -->
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <!-- ═══ NAVBAR ═══ -->
-  <nav aria-label="Main navigation" id="navbar" role="navigation">
+
+  <!-- ══ NAVBAR ══ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a aria-label="Royal Goa Ride — Homepage" class="nav-logo" href="/">
-        <img alt="Royal Goa Ride — Self Drive Car Rental in Goa" class="logo-img" fetchpriority="high" height="42"
-          loading="eager" src="/assets/og-imag.webp" width="160" />
+      <a href="/" class="nav-logo" aria-label="Royal Goa Ride — Homepage">
+        <img src="/assets/og-imag.webp" alt="Royal Goa Ride — Car Rental in Goa" class="logo-img" width="160"
+          height="42" loading="eager" fetchpriority="high" />
       </a>
-      <div class="nav-links" id="nav-links" role="menubar">
-        <a class="nav-link" href="#hero" role="menuitem">Home</a>
-        <a class="nav-link" href="#fleet" role="menuitem">Fleet</a>
-        <a class="nav-link" href="#trips" role="menuitem">Trips</a>
-        <a class="nav-link" href="#booking" role="menuitem">Book</a>
-        <a class="nav-link" href="#contact" role="menuitem">Contact</a>
+      <div class="nav-links" role="menubar">
+        <a href="#hero" class="nav-link" role="menuitem">Home</a>
+        <a href="#about" class="nav-link" role="menuitem">About</a>
+        <a href="#founder" class="nav-link" role="menuitem">Founder</a>
+        <a href="#services" class="nav-link" role="menuitem">Services</a>
+        <a href="#fleet" class="nav-link" role="menuitem">Fleet</a>
+        <a href="#locations" class="nav-link" role="menuitem">Locations</a>
+        <a href="#pricing" class="nav-link" role="menuitem">Pricing</a>
+        <a href="#travel-guide" class="nav-link" role="menuitem">Guide</a>
+        <a href="#faq" class="nav-link" role="menuitem">FAQ</a>
+        <a href="#contact" class="nav-link" role="menuitem">Contact</a>
       </div>
       <div class="nav-actions">
-        <a class="nav-phone" href="tel:+919975356697">+91 99753 56697</a>
-        <a aria-label="Book a car on WhatsApp" class="nav-cta-wa"
-          href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car"
-          onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CONTACT_EVENT'});" rel="noopener noreferrer"
-          target="_blank">
-          <i aria-hidden="true" class="bi bi-whatsapp"></i> WhatsApp
+        <a href="tel:+919975356697" class="nav-phone">+91 99753 56697</a>
+        <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car" class="nav-cta-wa"
+          target="_blank" rel="noopener noreferrer" aria-label="Book on WhatsApp">
+          <i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp
         </a>
-        <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle mobile menu" class="nav-hamburger"
-          id="hamburger">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false"
+          aria-controls="mobile-menu">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
         </button>
       </div>
     </div>
-    <!-- Mobile Menu -->
-    <div aria-hidden="true" class="mobile-menu" id="mobile-menu" role="menu">
-      <a class="mob-link" href="#hero" onclick="closeMobileMenu()" role="menuitem">Home</a>
-      <a class="mob-link" href="#fleet" onclick="closeMobileMenu()" role="menuitem">Fleet</a>
-      <a class="mob-link" href="#trips" onclick="closeMobileMenu()" role="menuitem">Trips</a>
-      <a class="mob-link" href="#booking" onclick="closeMobileMenu()" role="menuitem">Book Now</a>
-      <a class="mob-link" href="#contact" onclick="closeMobileMenu()" role="menuitem">Contact</a>
+    <div class="mobile-menu" id="mobile-menu" role="menu" aria-hidden="true">
+      <a href="#hero" class="mob-link" onclick="closeMobileMenu()" role="menuitem">Home</a>
+      <a href="#about" class="mob-link" onclick="closeMobileMenu()" role="menuitem">About</a>
+      <a href="#founder" class="mob-link" onclick="closeMobileMenu()" role="menuitem">Founder</a>
+      <a href="#services" class="mob-link" onclick="closeMobileMenu()" role="menuitem">Services</a>
+      <a href="#fleet" class="mob-link" onclick="closeMobileMenu()" role="menuitem">Fleet</a>
+      <a href="#locations" class="mob-link" onclick="closeMobileMenu()" role="menuitem">Locations</a>
+      <a href="#pricing" class="mob-link" onclick="closeMobileMenu()" role="menuitem">Pricing</a>
+      <a href="#travel-guide" class="mob-link" onclick="closeMobileMenu()" role="menuitem">Travel Guide</a>
+      <a href="#faq" class="mob-link" onclick="closeMobileMenu()" role="menuitem">FAQ</a>
+      <a href="#contact" class="mob-link" onclick="closeMobileMenu()" role="menuitem">Contact</a>
     </div>
   </nav>
-  <!-- ═══ MAIN CONTENT ═══ -->
+
   <main id="main-content">
-    <!-- ═══ SECTION 1: HERO ═══ -->
-    <section aria-label="Royal Goa Ride — Best Self Drive Car Rental in Goa from ₹1,200/day" class="hero-section"
-      id="hero">
-      <!-- Video background -->
-      <div aria-hidden="true" class="hero-video-wrap">
-        <video aria-hidden="true" autoplay="" class="hero-video" loop="" muted="" playsinline=""
-          poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=1920&amp;q=80"
-          preload="none">
+
+    <!-- ══ 1. HERO ══ -->
+    <section id="hero" class="hero" aria-label="Royal Goa Ride — Best Car Rental in Goa from ₹1,200/day">
+      <div class="hero-video-wrap" aria-hidden="true">
+        <video class="hero-video" autoplay muted loop playsinline preload="none"
+          poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80">
           <source src="https://cdn.coverr.co/videos/coverr-goa-beach-driving-7472/1080p.mp4" type="video/mp4" />
         </video>
-        <div class="hero-overlay-base"></div>
-        <div class="hero-overlay-vignette"></div>
-        <div class="hero-overlay-scanlines"></div>
-        <div class="hero-overlay-neon-leak"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-vignette"></div>
+        <div class="hero-neon-leak"></div>
       </div>
-      <div aria-hidden="true" class="hero-particles" id="hero-particles"></div>
-      <div aria-hidden="true" class="hero-location-bar">
-        <span class="hero-loc-dot"></span>
-        <span>Margao, Goa · India</span>
-        <span class="hero-loc-line"></span>
-        <span>Available 24/7</span>
-      </div>
+      <div class="hero-particles" id="hero-particles" aria-hidden="true"></div>
+
       <div class="hero-content">
-        <p aria-label="Self-Drive Car Rental in Goa" class="hero-kicker">
-          <span aria-hidden="true" class="kicker-bar"></span>
-          Self-Drive Car Rental
-          <span aria-hidden="true" class="kicker-bar"></span>
+        <p class="hero-kicker" aria-label="Car Rental in Goa">
+          <span class="kicker-bar" aria-hidden="true"></span>
+          Goa's Most Trusted Car Rental
+          <span class="kicker-bar" aria-hidden="true"></span>
         </p>
-        <!-- H1 — Single, unique, keyword-rich -->
-        <h1 class="hero-title">Self-Drive Car Rental in Goa — From ₹1,200/Day</h1>
-        <p class="hero-sub">Airport Pickup • Hotel Delivery • Automatic &amp; Manual Cars • Book in Minutes</p>
-        <a class="hero-phone" href="tel:+919975356697">+91 99753 56697</a>
+        <h1 class="hero-h1">
+          Explore <span class="accent">Goa</span><br />Your Way — On Your Terms
+        </h1>
+        <p class="hero-sub">Self Drive · Airport Pickup · Hotel Delivery · Automatic &amp; Manual Cars</p>
+        <a href="tel:+919975356697" class="hero-phone">+91 99753 56697</a>
         <div class="hero-price-bar">
-          <span class="hero-price-from">From</span>
-          <span class="hero-price-num">₹1,200</span>
-          <span class="hero-price-per">/day</span>
-          <span aria-hidden="true" class="hero-price-dot">·</span>
-          <span class="hero-price-note">Airport Delivery · Zero Hidden Charges</span>
+          <span class="hpb-from">From</span>
+          <span class="hpb-num">₹1,200</span>
+          <span class="hpb-per">/day</span>
+          <span class="hpb-dot" aria-hidden="true">·</span>
+          <span class="hpb-note">Airport Delivery · Zero Hidden Charges</span>
         </div>
         <div class="hero-ctas">
-          <a aria-label="Explore our self-drive car fleet in Goa" class="btn-primary-hero" href="#fleet">
-            <i aria-hidden="true" class="bi bi-car-front-fill"></i>
-            <span>Explore Fleet</span>
+          <a href="#fleet" class="btn-primary">
+            <i class="bi bi-car-front-fill" aria-hidden="true"></i> Explore Fleet
           </a>
-          <a aria-label="Book a self-drive car on WhatsApp" class="btn-ghost-hero"
-            href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car"
-            onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CONTACT_EVENT'});" rel="noopener noreferrer"
-            target="_blank">
-            <i aria-hidden="true" class="bi bi-whatsapp"></i>
-            <span>Book on WhatsApp</span>
+          <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car" class="btn-wa"
+            target="_blank" rel="noopener noreferrer" aria-label="Book a car on WhatsApp"
+            onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CONTACT_EVENT'})">
+            <i class="bi bi-whatsapp" aria-hidden="true"></i> Book on WhatsApp
           </a>
         </div>
-        <div class="cta-note">⚡ Usually replies within 5 minutes</div>
+        <p class="cta-note">⚡ Usually replies within 5 minutes</p>
       </div>
-      <div aria-label="Key service statistics" class="hero-stats-strip">
+
+      <div class="hero-stats-strip" aria-label="Key service statistics">
         <div class="hss-item">
-          <span class="hss-num" data-suffix="+" data-target="500">
-            <span class="stat-count">500</span><span class="stat-suffix">+</span>
-          </span>
-          <span class="hss-label">Happy Drivers</span>
+          <span class="hss-num" data-target="500" data-suffix="+"><span class="stat-count">500</span>+</span>
+          <span class="hss-label">Happy Customers</span>
         </div>
-        <span aria-hidden="true" class="hss-divider"></span>
+        <span class="hss-divider" aria-hidden="true"></span>
         <div class="hss-item">
-          <span class="hss-num" data-suffix="+" data-target="15">
-            <span class="stat-count">15</span><span class="stat-suffix">+</span>
-          </span>
+          <span class="hss-num"><span>15</span>+</span>
           <span class="hss-label">Car Models</span>
         </div>
-        <span aria-hidden="true" class="hss-divider"></span>
+        <span class="hss-divider" aria-hidden="true"></span>
         <div class="hss-item">
-          <span class="hss-num" data-decimal="4.8" data-suffix="★" data-target="48">
-            <span class="stat-count">4.8</span><span class="stat-suffix">★</span>
-          </span>
+          <span class="hss-num"><span>4.8</span>★</span>
           <span class="hss-label">Rating</span>
         </div>
-        <span aria-hidden="true" class="hss-divider"></span>
-        <div class="hss-item hss-item--cta">
-          <i aria-hidden="true" class="bi bi-clock"></i>
-          <span class="hss-label">24 / 7 Support</span>
+        <span class="hss-divider" aria-hidden="true"></span>
+        <div class="hss-item hss-item--4">
+          <span class="hss-num"><span>14</span>+</span>
+          <span class="hss-label">Years Experience</span>
         </div>
       </div>
-      <div aria-hidden="true" class="scroll-hint">
+
+      <div class="scroll-hint" aria-hidden="true">
         <div class="scroll-mouse">
           <div class="scroll-wheel"></div>
         </div>
-        <span>Scroll to explore</span>
-      </div>
-    </section>
-    <!-- ═══ SECTION 2: CAR FLEET ═══ -->
-    <section aria-labelledby="fleet-heading" class="fleet-section" id="fleet">
-      <div class="section-container">
-        <div class="section-header">
-          <div class="section-tag">Our Fleet</div>
-          <h2 class="section-title" id="fleet-heading">
-            Choose Your <span class="neon-text">Ride</span>
-          </h2>
-          <p class="section-sub">
-            Explore our full collection of self-drive cars and bikes in Goa.
-            All vehicles are well-maintained, sanitized and ready to roll.
-          </p>
-        </div>
-        <div aria-label="Filter vehicles by type" class="fleet-filters" role="group">
-          <button aria-pressed="true" class="filter-btn active" data-filter="all"
-            onclick="filterFleet('all', this)">All</button>
-          <button aria-pressed="false" class="filter-btn" data-filter="car"
-            onclick="filterFleet('car', this); initFleet('car')">Cars</button>
-          <button aria-pressed="false" class="filter-btn" data-filter="bike"
-            onclick="filterFleet('bike', this); initFleet('bike')">Bikes</button>
-          <button aria-pressed="false" class="filter-btn" data-filter="luxury"
-            onclick="filterFleet('luxury', this)">Luxury</button>
-          <button aria-pressed="false" class="filter-btn" data-filter="automatic"
-            onclick="filterFleet('automatic', this)">Automatic</button>
-        </div>
-        <div aria-label="Vehicle listings" aria-live="polite" class="fleet-grid" id="fleet-carousel"></div>
-      </div>
-    </section>
-    <!-- ═══ SECTION 3: TRIP PLANNER ═══ -->
-    <section aria-labelledby="trips-heading" class="trips-section" id="trips">
-      <div aria-hidden="true" class="trips-bg-orb"></div>
-      <div class="section-container">
-        <div class="section-header">
-          <div class="section-tag">Trip Planner</div>
-          <h2 class="section-title" id="trips-heading">
-            Goa's <span class="neon-text">Best Routes</span>
-          </h2>
-          <p class="section-sub">
-            Curated self-drive itineraries for your Goa adventure.
-            From beach blitzes to jungle treks.
-          </p>
-        </div>
-        <div aria-label="Goa trip itineraries" class="trips-grid" id="trips-grid"></div>
-      </div>
-    </section>
-    <!-- ═══ SECTION: GET INSTANT QUOTE ═══ -->
-    <section aria-labelledby="instant-quote-heading" class="instant-quote-section" id="instant-quote">
-      <div class="section-container">
-        <div class="section-header">
-          <div class="section-tag">Get Instant Quote</div>
-          <h2 class="section-title" id="instant-quote-heading">Get an Instant Quote</h2>
-          <p class="section-sub">Fill this quick form and we'll send availability and rates via WhatsApp.</p>
-        </div>
-        <form id="instant-quote-form" class="instant-quote-form">
-          <div
-            style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;max-width:900px;margin:0 auto;">
-            <input name="name" type="text" placeholder="Your name" required />
-            <input name="phone" type="tel" placeholder="Phone number" required />
-            <input name="pickup_date" type="date" placeholder="Pickup date" required />
-            <input name="return_date" type="date" placeholder="Return date" required />
-            <select name="vehicle_type" required>
-              <option value="">Select vehicle type</option>
-              <option value="Swift">Maruti Swift</option>
-              <option value="Baleno">Maruti Baleno</option>
-              <option value="Creta">Hyundai Creta</option>
-              <option value="Thar">Mahindra Thar</option>
-            </select>
-          </div>
-          <div style="text-align:center;margin-top:12px;">
-            <button class="btn-primary-hero" type="submit">Get Instant Quote on WhatsApp</button>
-          </div>
-        </form>
+        <span>Scroll</span>
       </div>
     </section>
 
-    <!-- ═══ SECTION 4: HOW TO BOOK ═══ -->
-    <section aria-labelledby="booking-heading" class="timeline-section" id="booking">
-      <div class="section-container">
-        <div class="section-header">
-          <div class="section-tag">How It Works</div>
-          <h2 class="section-title" id="booking-heading">
-            Book in <span class="neon-text">4 Simple Steps</span>
-          </h2>
-          <p class="section-sub">From choosing your car to hitting the road — it's that easy</p>
-        </div>
-        <div class="timeline-track">
-          <div aria-hidden="true" class="timeline-line">
-            <div class="timeline-progress" id="timeline-progress"></div>
+    <!-- ══ 2. TRUST INDICATORS ══ -->
+    <section class="trust-section" aria-label="Trust indicators">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item"><i class="bi bi-shield-check-fill" aria-hidden="true"></i> Verified & Insured Fleet
           </div>
-          <ol aria-label="Booking steps" class="timeline-steps">
-            <li class="timeline-step" data-step="1">
-              <div aria-hidden="true" class="step-node">
-                <div class="step-ring"></div>
-                <div class="step-icon"><i class="bi bi-phone"></i></div>
-              </div>
-              <div class="step-content">
-                <h3>Contact Us</h3>
-                <p>WhatsApp or call us. Tell us your dates, pickup location, and preferred car type.</p>
-                <div class="step-badge">2 mins</div>
-              </div>
-            </li>
-            <li class="timeline-step" data-step="2">
-              <div aria-hidden="true" class="step-node">
-                <div class="step-ring"></div>
-                <div class="step-icon"><i class="bi bi-file-text"></i></div>
-              </div>
-              <div class="step-content">
-                <h3>Share Documents</h3>
-                <p>Send your Driving License and Aadhar/Passport over WhatsApp. Simple, paperless, and quick.</p>
-                <div class="step-badge">5 mins</div>
-              </div>
-            </li>
-            <li class="timeline-step" data-step="3">
-              <div aria-hidden="true" class="step-node">
-                <div class="step-ring"></div>
-                <div class="step-icon"><i class="bi bi-credit-card"></i></div>
-              </div>
-              <div class="step-content">
-                <h3>Confirm &amp; Pay</h3>
-                <p>Pay via UPI, card or cash. Deposit ₹3,000 (fully refundable on return).</p>
-                <div class="step-badge">2 mins</div>
-              </div>
-            </li>
-            <li class="timeline-step" data-step="4">
-              <div aria-hidden="true" class="step-node">
-                <div class="step-ring"></div>
-                <div class="step-icon"><i class="bi bi-car-front-fill"></i></div>
-              </div>
-              <div class="step-content">
-                <h3>Drive Away!</h3>
-                <p>We deliver to your hotel, airport, or railway station. Inspect the car and you're off!</p>
-                <div class="step-badge">Enjoy 🎉</div>
-              </div>
-            </li>
-          </ol>
+          <div class="trust-divider" aria-hidden="true"></div>
+          <div class="trust-item"><i class="bi bi-clock-fill" aria-hidden="true"></i> 24/7 Customer Support</div>
+          <div class="trust-divider" aria-hidden="true"></div>
+          <div class="trust-item"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Airport & Hotel Delivery</div>
+          <div class="trust-divider" aria-hidden="true"></div>
+          <div class="trust-item"><i class="bi bi-cash-stack" aria-hidden="true"></i> Zero Hidden Charges</div>
+          <div class="trust-divider" aria-hidden="true"></div>
+          <div class="trust-item"><i class="bi bi-phone-fill" aria-hidden="true"></i> WhatsApp Booking</div>
+          <div class="trust-divider" aria-hidden="true"></div>
+          <div class="trust-item"><i class="bi bi-star-fill" aria-hidden="true"></i> 4.8★ Rated Service</div>
         </div>
-        <div class="timeline-cta">
-          <a class="btn-primary-hero" href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car"
-            onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CONTACT_EVENT'});" rel="noopener noreferrer"
-            target="_blank">
-            <i aria-hidden="true" class="bi bi-whatsapp"></i> Start Booking Now
-          </a>
-          <a class="btn-ghost-hero" href="tel:+919975356697"
-            onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CALL_EVENT'});">
-            <i aria-hidden="true" class="bi bi-telephone"></i> Call Us
+      </div>
+    </section>
+
+    <!-- ══ 3. ABOUT ROYAL GOA RIDE ══ -->
+    <section id="about" class="about-section section-pad" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-img-wrap fade-in">
+            <img src="assets/about.png" alt="Royal Goa Ride — Trusted Car Rental in Goa since 2010" width="800"
+              height="480" loading="lazy" />
+            <div class="about-img-badge">
+              <div class="num">2010</div>
+              <div class="lbl">Est. Year</div>
+            </div>
+          </div>
+          <div class="about-text fade-in">
+            <div class="section-tag">About Us</div>
+            <h2 class="section-title" id="about-heading">Goa's <span class="neon">Most Trusted</span> Car Rental</h2>
+            <p>Royal Goa Ride has been providing reliable, affordable car rental services across Goa since 2010. What
+              started as a small operation with a handful of vehicles has grown into one of Goa's most recognised names
+              in self-drive car rental and tourist transportation.</p>
+            <p>We serve thousands of travellers every year — from weekend getaways and beach holidays to airport pickups
+              and long-term monthly rentals. Our fleet spans hatchbacks, sedans, premium SUVs, adventure vehicles, and
+              luxury cars, ensuring there is a perfect ride for every traveller and every budget.</p>
+            <p>At Royal Goa Ride, we believe that exploring Goa should be simple, stress-free, and genuinely enjoyable.
+              That's why we've built our service around transparent pricing, clean and well-maintained vehicles, and
+              round-the-clock WhatsApp support that actually responds fast.</p>
+            <div class="about-highlights">
+              <div class="highlight-card">
+                <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                <h4>Transparent Pricing</h4>
+                <p>No hidden charges. What you see is what you pay.</p>
+              </div>
+              <div class="highlight-card">
+                <i class="bi bi-car-front-fill" aria-hidden="true"></i>
+                <h4>Premium Fleet</h4>
+                <p>15+ well-maintained, sanitised vehicles always ready.</p>
+              </div>
+              <div class="highlight-card">
+                <i class="bi bi-headset" aria-hidden="true"></i>
+                <h4>24/7 Support</h4>
+                <p>WhatsApp or call us anytime, day or night.</p>
+              </div>
+              <div class="highlight-card">
+                <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                <h4>Goa-Wide Coverage</h4>
+                <p>Pickup and delivery across all major Goa locations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 4. FOUNDER ══ -->
+    <section id="founder" class="founder-section section-pad" aria-labelledby="founder-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Meet Our Founder</div>
+          <h2 class="section-title" id="founder-heading">The Vision Behind <span class="neon">Royal Goa Ride</span></h2>
+        </div>
+        <div class="founder-grid">
+          <div class="founder-img-col fade-in">
+            <div class="founder-badge">Est. 2010</div>
+            <img src="assets/founder.png" alt="Sahil Shaikh — Founder of Royal Goa Ride, Car Rental in Goa"
+              class="founder-img" width="600" height="700" loading="lazy" />
+            <div class="founder-name-card">
+              <div class="fname">Sahil Shaikh</div>
+              <div class="ftitle">Founder &amp; Director — Royal Goa Ride</div>
+            </div>
+          </div>
+          <div class="founder-content fade-in">
+            <div class="founder-story">
+              <p>Royal Goa Ride was founded in 2010 by <strong>Sahil Shaikh</strong> with a clear vision: to make
+                transportation in Goa simple, affordable, and genuinely reliable for every traveller who arrived on
+                Goa's shores.</p>
+              <p>Starting with a small fleet and an unwavering focus on customer satisfaction, Sahil built the company
+                from the ground up — learning every road in Goa, understanding what travellers truly needed, and
+                creating a rental experience that put the customer first at every step.</p>
+              <p>Over the years, Royal Goa Ride has grown steadily by sticking to its core principles: quality vehicles,
+                honest pricing, easy booking, and dependable support. Today, the company serves travellers across all of
+                Goa's major tourist destinations and transportation hubs.</p>
+
+              <div class="founder-mission-vision">
+                <div class="mv-card">
+                  <h4>Our Mission</h4>
+                  <p>To provide affordable, reliable, and hassle-free car rental services throughout Goa, making every
+                    traveller's journey memorable.</p>
+                </div>
+                <div class="mv-card">
+                  <h4>Our Vision</h4>
+                  <p>To become one of Goa's most trusted travel mobility brands — the first name every visitor thinks of
+                    when they need a car in Goa.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="founder-timeline">
+              <h3>Our Journey</h3>
+              <div class="ft-items">
+                <div class="ft-item">
+                  <div class="ft-year">2010</div>
+                  <div class="ft-dot-wrap">
+                    <div class="ft-dot"></div>
+                    <div class="ft-line"></div>
+                  </div>
+                  <div class="ft-text">Company founded by Sahil Shaikh with a small fleet and a big dream.</div>
+                </div>
+                <div class="ft-item">
+                  <div class="ft-year">2013</div>
+                  <div class="ft-dot-wrap">
+                    <div class="ft-dot"></div>
+                    <div class="ft-line"></div>
+                  </div>
+                  <div class="ft-text">Fleet expansion — added SUVs and premium hatchbacks to the lineup.</div>
+                </div>
+                <div class="ft-item">
+                  <div class="ft-year">2016</div>
+                  <div class="ft-dot-wrap">
+                    <div class="ft-dot"></div>
+                    <div class="ft-line"></div>
+                  </div>
+                  <div class="ft-text">Airport rental services added at Dabolim Airport — 24/7 pickup available.</div>
+                </div>
+                <div class="ft-item">
+                  <div class="ft-year">2019</div>
+                  <div class="ft-dot-wrap">
+                    <div class="ft-dot"></div>
+                    <div class="ft-line"></div>
+                  </div>
+                  <div class="ft-text">Service expanded across all major Goa tourist destinations.</div>
+                </div>
+                <div class="ft-item">
+                  <div class="ft-year">2022</div>
+                  <div class="ft-dot-wrap">
+                    <div class="ft-dot"></div>
+                    <div class="ft-line"></div>
+                  </div>
+                  <div class="ft-text">Online and WhatsApp booking improvements — confirmed in minutes.</div>
+                </div>
+                <div class="ft-item">
+                  <div class="ft-year">Today</div>
+                  <div class="ft-dot-wrap">
+                    <div class="ft-dot"></div>
+                  </div>
+                  <div class="ft-text">Serving thousands of happy travellers across Goa every year.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="founder-counters">
+              <div class="f-counter">
+                <div class="n">14+</div>
+                <div class="l">Years in Business</div>
+              </div>
+              <div class="f-counter">
+                <div class="n">5000+</div>
+                <div class="l">Trips Completed</div>
+              </div>
+              <div class="f-counter">
+                <div class="n">4.8★</div>
+                <div class="l">Average Rating</div>
+              </div>
+              <div class="f-counter">
+                <div class="n">24/7</div>
+                <div class="l">Support Available</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 5. WHY CHOOSE US ══ -->
+    <section class="why-section section-pad" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Why Royal Goa Ride</div>
+          <h2 class="section-title" id="why-heading">Why Travellers <span class="neon">Choose Us</span></h2>
+          <p class="section-sub">Thousands of tourists trust Royal Goa Ride every year — here's why.</p>
+        </div>
+        <div class="why-grid">
+          <div class="why-card fade-in">
+            <div class="why-icon"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i></div>
+            <h3>Instant WhatsApp Booking</h3>
+            <p>Send a message and get confirmed availability and rates within minutes — no lengthy forms or complicated
+              sign-ups required.</p>
+          </div>
+          <div class="why-card fade-in">
+            <div class="why-icon"><i class="bi bi-car-front-fill" aria-hidden="true"></i></div>
+            <h3>Well-Maintained Fleet</h3>
+            <p>Every vehicle is regularly serviced, sanitised before delivery, and inspected to ensure you start your
+              Goa adventure without worry.</p>
+          </div>
+          <div class="why-card fade-in">
+            <div class="why-icon"><i class="bi bi-cash" aria-hidden="true"></i></div>
+            <h3>Honest Transparent Pricing</h3>
+            <p>We quote the complete price upfront. No surprise charges, no hidden fees. The rate you see is the rate
+              you pay.</p>
+          </div>
+          <div class="why-card fade-in">
+            <div class="why-icon"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i></div>
+            <h3>Doorstep Delivery</h3>
+            <p>We deliver your car to Goa airport, your hotel, railway station, or any address across Goa — at the time
+              that suits you.</p>
+          </div>
+          <div class="why-card fade-in">
+            <div class="why-icon"><i class="bi bi-clock-fill" aria-hidden="true"></i></div>
+            <h3>24/7 Availability</h3>
+            <p>Whether your flight lands at midnight or you need a car at dawn, our team is available around the clock
+              for pickups and support.</p>
+          </div>
+          <div class="why-card fade-in">
+            <div class="why-icon"><i class="bi bi-shield-check-fill" aria-hidden="true"></i></div>
+            <h3>Insured & Verified</h3>
+            <p>All our vehicles are properly insured and verified. We operate transparently so you can drive with
+              complete peace of mind.</p>
+          </div>
+          <div class="why-card fade-in">
+            <div class="why-icon"><i class="bi bi-award-fill" aria-hidden="true"></i></div>
+            <h3>14+ Years Experience</h3>
+            <p>Since 2010, we've been helping travellers explore every corner of Goa. Our local knowledge is your
+              advantage on the road.</p>
+          </div>
+          <div class="why-card fade-in">
+            <div class="why-icon"><i class="bi bi-phone-fill" aria-hidden="true"></i></div>
+            <h3>Paperless Process</h3>
+            <p>Share your Driving Licence and ID via WhatsApp. No physical paperwork needed — fast, simple, and
+              completely hassle-free.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 6. SERVICES ══ -->
+    <section id="services" class="services-section section-pad" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Our Services</div>
+          <h2 class="section-title" id="services-heading">Complete Car Rental <span class="neon">Services in Goa</span>
+          </h2>
+          <p class="section-sub">From self-drive hatchbacks to chauffeur-driven luxury SUVs — we have the right car for
+            every kind of Goa trip.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card fade-in">
+            <div class="service-icon"><i class="bi bi-person-fill" aria-hidden="true"></i></div>
+            <h3>Self Drive Car Rental Goa</h3>
+            <p>Drive at your own pace across Goa's beaches, hills, and heritage sites. Our self-drive cars are available
+              with full insurance — perfect for independent travellers who want total freedom. Minimum 1-day rental with
+              discounts for longer stays.</p>
+            <span class="service-tag">Most Popular</span>
+          </div>
+          <div class="service-card fade-in">
+            <div class="service-icon"><i class="bi bi-car-front" aria-hidden="true"></i></div>
+            <h3>Hatchback Rentals</h3>
+            <p>Compact, fuel-efficient, and easy to park — our hatchbacks including Swift, Baleno, i20, and Ignis are
+              ideal for couples and solo travellers exploring Goa's narrow lanes and crowded beach roads. Available in
+              both manual and automatic variants.</p>
+            <span class="service-tag">From ₹1,200/day</span>
+          </div>
+          <div class="service-card fade-in">
+            <div class="service-icon"><i class="bi bi-car-front-fill" aria-hidden="true"></i></div>
+            <h3>Sedan Rentals</h3>
+            <p>Travel in comfort and style with our sedan fleet. Perfect for business travellers, longer drives, and
+              those who want a more refined experience while exploring Goa. Our sedans offer generous boot space and
+              smooth highway performance.</p>
+            <span class="service-tag">Comfort Pick</span>
+          </div>
+          <div class="service-card fade-in">
+            <div class="service-icon"><i class="bi bi-truck" aria-hidden="true"></i></div>
+            <h3>SUV Rentals</h3>
+            <p>Take on Goa's diverse terrain — from smooth coastal roads to rougher interior tracks — in a capable SUV.
+              Models like Creta, Brezza, Thar, and Fortuner offer the height, power, and space to handle every Goa
+              adventure confidently.</p>
+            <span class="service-tag">Adventure Ready</span>
+          </div>
+          <div class="service-card fade-in">
+            <div class="service-icon"><i class="bi bi-people-fill" aria-hidden="true"></i></div>
+            <h3>Family Car Rentals</h3>
+            <p>Travelling with the family? Our 7-seater options — Maruti Ertiga, Kia Carens, Toyota Innova Crysta, and
+              Innova Hycross — provide the space, comfort, and safety features that make longer family drives across Goa
+              genuinely enjoyable.</p>
+            <span class="service-tag">7 Seater Options</span>
+          </div>
+          <div class="service-card fade-in">
+            <div class="service-icon"><i class="bi bi-airplane-fill" aria-hidden="true"></i></div>
+            <h3>Goa Airport Car Rental</h3>
+            <p>Land at Dabolim or Mopa Airport and drive away in your pre-booked car without waiting in queue. We
+              deliver directly to the airport — your car is ready the moment you clear arrivals. Available at all hours,
+              including midnight flights.</p>
+            <span class="service-tag">24/7 Airport Pickup</span>
+          </div>
+          <div class="service-card fade-in">
+            <div class="service-icon"><i class="bi bi-binoculars-fill" aria-hidden="true"></i></div>
+            <h3>Tourist Car Rentals</h3>
+            <p>Planning to cover multiple attractions — North Goa beaches, Old Goa heritage, Dudhsagar Falls, spice
+              farms? Our tourist rental packages are designed around popular itineraries and include flexible pickup and
+              drop-off at your hotel.</p>
+            <span class="service-tag">Curated Routes</span>
+          </div>
+          <div class="service-card fade-in">
+            <div class="service-icon"><i class="bi bi-calendar3" aria-hidden="true"></i></div>
+            <h3>Long-Term &amp; Monthly Rentals</h3>
+            <p>Staying in Goa for weeks or months? Our long-term and monthly rental packages offer substantial savings
+              compared to daily rates. Ideal for digital nomads, remote workers, and extended family visits. Custom
+              packages available on request.</p>
+            <span class="service-tag">Best Value</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 7. FLEET ══ -->
+    <section id="fleet" class="fleet-section section-pad" aria-labelledby="fleet-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Our Fleet</div>
+          <h2 class="section-title" id="fleet-heading">Choose Your <span class="neon">Ride</span></h2>
+          <p class="section-sub">All vehicles well-maintained, sanitised, and available for immediate booking via
+            WhatsApp.</p>
+        </div>
+        <div class="fleet-filters" role="group" aria-label="Filter vehicles by type">
+          <button class="filter-btn active" data-filter="all" onclick="filterFleet('all',this)" aria-pressed="true">All
+            Vehicles</button>
+          <button class="filter-btn" data-filter="hatchback" onclick="filterFleet('hatchback',this)"
+            aria-pressed="false">Hatchbacks</button>
+          <button class="filter-btn" data-filter="suv" onclick="filterFleet('suv',this)"
+            aria-pressed="false">SUVs</button>
+          <button class="filter-btn" data-filter="family" onclick="filterFleet('family',this)"
+            aria-pressed="false">Family Cars</button>
+          <button class="filter-btn" data-filter="luxury" onclick="filterFleet('luxury',this)"
+            aria-pressed="false">Luxury</button>
+          <button class="filter-btn" data-filter="auto" onclick="filterFleet('auto',this)"
+            aria-pressed="false">Automatic</button>
+        </div>
+        <div class="fleet-grid" id="fleet-grid" aria-live="polite" aria-label="Vehicle listings"></div>
+      </div>
+    </section>
+
+    <!-- ══ 8–13. LOCATIONS ══ -->
+    <section id="locations" class="section-pad" style="background:var(--bg-mid)" aria-labelledby="locations-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">We Serve Across Goa</div>
+          <h2 class="section-title" id="locations-heading">Car Rental in <span class="neon">Every Corner of Goa</span>
+          </h2>
+          <p class="section-sub">From North Goa's party beaches to South Goa's serene hideaways — we deliver your car
+            wherever you are.</p>
+        </div>
+
+        <!-- Self Drive Section -->
+        <div style="margin-bottom:3rem">
+          <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:1rem">Self
+            Drive Car Rental <span class="neon">Goa</span></h2>
+          <p style="color:var(--text-muted);max-width:800px;line-height:1.85;margin-bottom:1rem;font-size:.95rem">
+            Self-drive car rental in Goa is the best way to explore this beautiful coastal state at your own pace. Royal
+            Goa Ride offers a wide range of self-drive cars — from budget-friendly hatchbacks perfect for solo explorers
+            and couples, to roomy SUVs ideal for families and friend groups.</p>
+          <p style="color:var(--text-muted);max-width:800px;line-height:1.85;font-size:.95rem">With our self-drive
+            service, you pick your car, choose your dates, share your documents via WhatsApp, and we deliver the vehicle
+            directly to you. No driver means no extra cost — just pure freedom to go wherever the Goan roads take you.
+            Our self-drive cars are available from ₹1,200/day with flexible multi-day discounts.</p>
+        </div>
+
+        <!-- Airport Section -->
+        <div
+          style="background:var(--bg-card);border:1px solid var(--glass-border);border-radius:var(--radius);padding:2rem;margin-bottom:2.5rem">
+          <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.3rem,3.5vw,1.9rem);margin-bottom:1rem">Goa
+            Airport Car Rental</h2>
+          <p style="color:var(--text-muted);line-height:1.85;margin-bottom:1rem;font-size:.93rem">Arriving at Goa's
+            <strong style="color:var(--text-primary)">Dabolim International Airport</strong> or the newer <strong
+              style="color:var(--text-primary)">Mopa Airport</strong>? Royal Goa Ride makes airport car rental in Goa
+            completely seamless. Book your car in advance, and we'll have it ready the moment you land — no queues, no
+            waiting, no stress.
+          </p>
+          <p style="color:var(--text-muted);line-height:1.85;font-size:.93rem">Our airport delivery service operates 24
+            hours a day, 7 days a week. Whether your flight lands at 2am or early morning, your car will be waiting. We
+            also offer airport return pickup when you're heading home, making your entire Goa stay completely
+            car-rental-sorted.</p>
+          <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+            <span class="loc-feat">Dabolim Airport</span>
+            <span class="loc-feat">Mopa Airport</span>
+            <span class="loc-feat">24/7 Delivery</span>
+            <span class="loc-feat">Pre-Booked Cars</span>
+          </div>
+        </div>
+
+        <div class="loc-grid">
+          <!-- Calangute -->
+          <div class="loc-card fade-in">
+            <div class="loc-card-img">
+              <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=600&q=80"
+                alt="Car Rental in Calangute Goa" width="600" height="160" loading="lazy" />
+            </div>
+            <div class="loc-card-body">
+              <h3>Car Rental in Calangute</h3>
+              <p>Calangute is Goa's most famous and busiest beach town. If you're staying in Calangute, having your own
+                car means you can easily reach Baga, Anjuna, and North Goa's top spots without depending on taxis. We
+                deliver directly to your Calangute hotel or resort.</p>
+              <div class="loc-features">
+                <span class="loc-feat">Beach Access</span>
+                <span class="loc-feat">Hotel Delivery</span>
+                <span class="loc-feat">North Goa Hub</span>
+              </div>
+            </div>
+          </div>
+          <!-- Candolim -->
+          <div class="loc-card fade-in">
+            <div class="loc-card-img">
+              <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=600&q=80"
+                alt="Car Rental in Candolim Goa" width="600" height="160" loading="lazy" />
+            </div>
+            <div class="loc-card-body">
+              <h3>Car Rental in Candolim</h3>
+              <p>Candolim is a quieter, more upscale beach destination north of Calangute. Popular with families and
+                couples seeking a more relaxed pace. A rental car from Royal Goa Ride gives you the flexibility to
+                explore Fort Aguada, Sinquerim, and beyond at your leisure.</p>
+              <div class="loc-features">
+                <span class="loc-feat">Fort Aguada Nearby</span>
+                <span class="loc-feat">Peaceful Base</span>
+                <span class="loc-feat">Easy Delivery</span>
+              </div>
+            </div>
+          </div>
+          <!-- Baga -->
+          <div class="loc-card fade-in">
+            <div class="loc-card-img">
+              <img src="https://images.unsplash.com/photo-1597149700527-2c5f3a0a5e9f?auto=format&fit=crop&w=600&q=80"
+                alt="Car Rental in Baga Goa" width="600" height="160" loading="lazy" />
+            </div>
+            <div class="loc-card-body">
+              <h3>Car Rental in Baga</h3>
+              <p>Baga is the nightlife capital of North Goa, home to iconic beach shacks, water sports, and legendary
+                clubs. With a car from Royal Goa Ride, you can explore beyond Baga — reaching Anjuna flea market,
+                Vagator, or Chapora Fort without any hassle.</p>
+              <div class="loc-features">
+                <span class="loc-feat">Nightlife Access</span>
+                <span class="loc-feat">Beach Shacks</span>
+                <span class="loc-feat">Water Sports</span>
+              </div>
+            </div>
+          </div>
+          <!-- Anjuna -->
+          <div class="loc-card fade-in">
+            <div class="loc-card-img">
+              <img src="https://images.unsplash.com/photo-1559494007-9f5847c49d94?auto=format&fit=crop&w=600&q=80"
+                alt="Car Rental in Anjuna Goa" width="600" height="160" loading="lazy" />
+            </div>
+            <div class="loc-card-body">
+              <h3>Car Rental in Anjuna</h3>
+              <p>Anjuna is beloved by bohemian travellers, backpackers, and those who love Goa's psychedelic heritage.
+                Its famous Wednesday flea market and cliff-top views are best explored on your own schedule — exactly
+                what a Royal Goa Ride car rental makes possible.</p>
+              <div class="loc-features">
+                <span class="loc-feat">Flea Market</span>
+                <span class="loc-feat">Cliff Views</span>
+                <span class="loc-feat">Bohemian Vibe</span>
+              </div>
+            </div>
+          </div>
+          <!-- Panjim -->
+          <div class="loc-card fade-in">
+            <div class="loc-card-img">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80"
+                alt="Car Rental in Panjim Goa" width="600" height="160" loading="lazy" />
+            </div>
+            <div class="loc-card-body">
+              <h3>Car Rental in Panjim</h3>
+              <p>Panjim (Panaji) is Goa's charming state capital — a blend of colonial Portuguese architecture,
+                riverside cafes, and cultural depth. With a car from Royal Goa Ride, you can effortlessly cover Panjim's
+                Latin Quarter, Old Goa's churches, and the stunning Mandovi riverside.</p>
+              <div class="loc-features">
+                <span class="loc-feat">State Capital</span>
+                <span class="loc-feat">Heritage Sites</span>
+                <span class="loc-feat">Mandovi River</span>
+              </div>
+            </div>
+          </div>
+          <!-- Madgaon -->
+          <div class="loc-card fade-in">
+            <div class="loc-card-img">
+              <img src="https://images.unsplash.com/photo-1617391258031-f8d80b22fb96?auto=format&fit=crop&w=600&q=80"
+                alt="Car Rental in Madgaon Margao Goa" width="600" height="160" loading="lazy" />
+            </div>
+            <div class="loc-card-body">
+              <h3>Car Rental in Madgaon</h3>
+              <p>Madgaon (Margao) is South Goa's commercial hub and our home base. Located near the main railway
+                station, Madgaon is the ideal starting point for exploring South Goa's serene beaches — Colva, Benaulim,
+                Palolem, and Agonda — all within easy driving distance.</p>
+              <div class="loc-features">
+                <span class="loc-feat">Our Home Base</span>
+                <span class="loc-feat">Railway Station</span>
+                <span class="loc-feat">South Goa Hub</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 14. POPULAR ROUTES ══ -->
+    <section class="routes-section section-pad" aria-labelledby="routes-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Popular Routes</div>
+          <h2 class="section-title" id="routes-heading">Goa's Best <span class="neon">Self-Drive Routes</span></h2>
+          <p class="section-sub">Curated itineraries for every type of Goa traveller — beaches, heritage, adventure, and
+            more.</p>
+        </div>
+        <div class="routes-grid" id="routes-grid"></div>
+      </div>
+    </section>
+
+    <!-- ══ 15. PRICING ══ -->
+    <section id="pricing" class="pricing-section section-pad" aria-labelledby="pricing-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Pricing</div>
+          <h2 class="section-title" id="pricing-heading">Clear &amp; <span class="neon">Honest Pricing</span></h2>
+          <p class="section-sub">All prices are per day. No hidden charges. Fuel is not included.</p>
+        </div>
+        <p class="pricing-note">★ All vehicles include basic insurance. Refundable security deposit applies. Fuel
+          charges are separate.</p>
+
+        <div style="overflow-x:auto;border-radius:var(--radius);border:1px solid var(--glass-border)">
+          <table class="pricing-table" aria-label="Car rental pricing in Goa">
+            <thead>
+              <tr>
+                <th>Vehicle</th>
+                <th>Category</th>
+                <th>Transmission</th>
+                <th>Price/Day</th>
+                <th>Deposit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Maruti Swift</td>
+                <td>Hatchback</td>
+                <td>Manual</td>
+                <td class="price-val">₹1,200</td>
+                <td>₹3,000</td>
+              </tr>
+              <tr>
+                <td>Maruti Swift</td>
+                <td>Hatchback</td>
+                <td>Automatic</td>
+                <td class="price-val">₹1,500</td>
+                <td>₹3,000</td>
+              </tr>
+              <tr>
+                <td>Maruti Baleno</td>
+                <td>Premium Hatchback</td>
+                <td>Manual</td>
+                <td class="price-val">₹1,300</td>
+                <td>₹3,000</td>
+              </tr>
+              <tr>
+                <td>Maruti Baleno</td>
+                <td>Premium Hatchback</td>
+                <td>Automatic</td>
+                <td class="price-val">₹1,500</td>
+                <td>₹3,000</td>
+              </tr>
+              <tr>
+                <td>Hyundai i20</td>
+                <td>Luxury Hatchback</td>
+                <td>Manual</td>
+                <td class="price-val">₹1,200</td>
+                <td>₹3,000</td>
+              </tr>
+              <tr>
+                <td>Hyundai i20</td>
+                <td>Luxury Hatchback</td>
+                <td>Automatic</td>
+                <td class="price-val">₹1,600</td>
+                <td>₹3,000</td>
+              </tr>
+              <tr>
+                <td>Maruti Brezza</td>
+                <td>Compact SUV</td>
+                <td>Manual</td>
+                <td class="price-val">₹2,000</td>
+                <td>₹3,000</td>
+              </tr>
+              <tr>
+                <td>Hyundai Creta</td>
+                <td>Premium SUV</td>
+                <td>Automatic</td>
+                <td class="price-val">₹3,500</td>
+                <td>₹5,000</td>
+              </tr>
+              <tr>
+                <td>Maruti Ertiga</td>
+                <td>7-Seater MPV</td>
+                <td>Automatic</td>
+                <td class="price-val">₹2,800</td>
+                <td>₹3,000</td>
+              </tr>
+              <tr>
+                <td>Mahindra Thar Soft Top</td>
+                <td>Adventure SUV</td>
+                <td>Manual</td>
+                <td class="price-val">₹3,000</td>
+                <td>₹5,000</td>
+              </tr>
+              <tr>
+                <td>Toyota Innova Crysta</td>
+                <td>Luxury SUV</td>
+                <td>Manual</td>
+                <td class="price-val">₹3,000</td>
+                <td>₹5,000</td>
+              </tr>
+              <tr>
+                <td>Toyota Fortuner</td>
+                <td>Premium 4x4</td>
+                <td>Automatic</td>
+                <td class="price-val">₹9,000</td>
+                <td>₹5,000</td>
+              </tr>
+              <tr>
+                <td>Audi A3</td>
+                <td>Luxury Sedan</td>
+                <td>Automatic</td>
+                <td class="price-val">₹25,000</td>
+                <td>₹10,000</td>
+              </tr>
+              <tr>
+                <td>Mercedes C300</td>
+                <td>Luxury Convertible</td>
+                <td>Automatic</td>
+                <td class="price-val">₹20,000</td>
+                <td>₹10,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pricing-info-grid">
+          <div class="pricing-info-card">
+            <h4><i class="bi bi-shield-check" style="color:var(--neon)"></i> Security Deposit</h4>
+            <p>₹3,000 for standard cars, ₹5,000 for SUVs, ₹10,000 for luxury vehicles. Fully refundable within 48 hours
+              of safe return.</p>
+          </div>
+          <div class="pricing-info-card">
+            <h4><i class="bi bi-fuel-pump" style="color:var(--neon)"></i> Fuel Policy</h4>
+            <p>Cars are delivered with a set fuel level and must be returned at the same level. Fuel charges are not
+              included in the daily rate.</p>
+          </div>
+          <div class="pricing-info-card">
+            <h4><i class="bi bi-calendar-check" style="color:var(--neon)"></i> Multi-Day Discounts</h4>
+            <p>Rent for 3+ days and get a special discount. Weekly and monthly rental rates available on request —
+              significant savings for longer stays.</p>
+          </div>
+          <div class="pricing-info-card">
+            <h4><i class="bi bi-credit-card" style="color:var(--neon)"></i> Payment Methods</h4>
+            <p>UPI, bank transfer, cash, credit/debit cards all accepted. Payment can be made at delivery or in advance
+              for advance bookings.</p>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:2.5rem">
+          <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20a%20price%20quote%20for%20car%20rental%20in%20Goa"
+            class="btn-wa" target="_blank" rel="noopener noreferrer"
+            onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CONTACT_EVENT'})">
+            <i class="bi bi-whatsapp" aria-hidden="true"></i> Get Custom Quote on WhatsApp
           </a>
         </div>
       </div>
     </section>
-    <!-- ═══ SECTION 5: REVIEWS ═══ -->
-    <section aria-labelledby="reviews-heading" class="reviews-section" id="reviews">
-      <div class="section-container">
+
+    <!-- ══ 16. BOOKING PROCESS ══ -->
+    <section id="booking" class="booking-section section-pad" aria-labelledby="booking-heading">
+      <div class="container">
         <div class="section-header">
-          <div class="section-tag">Reviews</div>
-          <h2 class="section-title" id="reviews-heading">
-            What Travelers <span class="neon-text">Say</span>
-          </h2>
+          <div class="section-tag">How to Book</div>
+          <h2 class="section-title" id="booking-heading">Book Your Car in <span class="neon">4 Simple Steps</span></h2>
+          <p class="section-sub">From choosing your car to hitting the Goa roads — the whole process takes under 10
+            minutes.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card fade-in">
+            <div class="step-num">1</div>
+            <div class="step-icon"><i class="bi bi-phone-fill" aria-hidden="true"></i></div>
+            <h3>WhatsApp or Call Us</h3>
+            <p>Tell us your pickup dates, preferred location, and the type of car you're looking for. We'll respond with
+              availability and pricing within minutes.</p>
+            <span class="step-badge">⚡ 2 minutes</span>
+          </div>
+          <div class="step-card fade-in">
+            <div class="step-num">2</div>
+            <div class="step-icon"><i class="bi bi-file-earmark-text-fill" aria-hidden="true"></i></div>
+            <h3>Share Your Documents</h3>
+            <p>Send a photo of your valid Driving Licence and Aadhar or Passport via WhatsApp. Foreign travellers need
+              an International Driving Permit. Simple and paperless.</p>
+            <span class="step-badge">⚡ 5 minutes</span>
+          </div>
+          <div class="step-card fade-in">
+            <div class="step-num">3</div>
+            <div class="step-icon"><i class="bi bi-credit-card-fill" aria-hidden="true"></i></div>
+            <h3>Confirm &amp; Pay</h3>
+            <p>Pay via UPI, bank transfer, card or cash. A refundable security deposit of ₹3,000–₹10,000 applies
+              depending on the vehicle. Confirmation is immediate.</p>
+            <span class="step-badge">⚡ 2 minutes</span>
+          </div>
+          <div class="step-card fade-in">
+            <div class="step-num">4</div>
+            <div class="step-icon"><i class="bi bi-car-front-fill" aria-hidden="true"></i></div>
+            <h3>Drive Away &amp; Enjoy!</h3>
+            <p>We deliver the car to your hotel, airport, or any Goa location. Do a quick inspection together, get the
+              keys, and you're free to explore Goa your way.</p>
+            <span class="step-badge">🎉 Enjoy Goa!</span>
+          </div>
+        </div>
+        <div class="booking-ctas">
+          <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car%20in%20Goa" class="btn-wa"
+            target="_blank" rel="noopener noreferrer"
+            onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CONTACT_EVENT'})"><i class="bi bi-whatsapp"
+              aria-hidden="true"></i> Start Booking on WhatsApp</a>
+          <a href="tel:+919975356697" class="btn-ghost"
+            onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CALL_EVENT'})"><i class="bi bi-telephone-fill"
+              aria-hidden="true"></i> Call Us Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ INSTANT QUOTE FORM ══ -->
+    <section class="quote-section" aria-labelledby="quote-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Quick Quote</div>
+          <h2 class="section-title" id="quote-heading">Get an <span class="neon">Instant Quote</span></h2>
+          <p class="section-sub">Fill the form and we'll send availability &amp; rates to your WhatsApp within minutes.
+          </p>
+        </div>
+        <form id="quote-form" class="quote-form" novalidate>
+          <input name="name" type="text" placeholder="Your name" required aria-label="Your name" />
+          <input name="phone" type="tel" placeholder="WhatsApp number" required aria-label="Phone number" />
+          <input name="pickup_date" type="date" required aria-label="Pickup date" />
+          <input name="return_date" type="date" required aria-label="Return date" />
+          <select name="vehicle_type" required aria-label="Vehicle type">
+            <option value="">Select vehicle type</option>
+            <option value="Maruti Swift">Maruti Swift</option>
+            <option value="Maruti Baleno">Maruti Baleno</option>
+            <option value="Hyundai i20">Hyundai i20</option>
+            <option value="Hyundai Creta">Hyundai Creta</option>
+            <option value="Maruti Ertiga">Maruti Ertiga</option>
+            <option value="Mahindra Thar">Mahindra Thar</option>
+            <option value="Toyota Fortuner">Toyota Fortuner</option>
+            <option value="Luxury Car">Luxury Car</option>
+          </select>
+          <input name="location" type="text" placeholder="Pickup location (hotel/airport)"
+            aria-label="Pickup location" />
+        </form>
+        <div class="quote-submit">
+          <button class="btn-primary" onclick="submitQuote()" type="button">
+            <i class="bi bi-whatsapp" aria-hidden="true"></i> Get Quote on WhatsApp
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 17. REVIEWS ══ -->
+    <section class="reviews-section section-pad" aria-labelledby="reviews-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Customer Reviews</div>
+          <h2 class="section-title" id="reviews-heading">What Travellers <span class="neon">Say About Us</span></h2>
           <div class="reviews-rating-bar">
-            <span aria-label="5 stars" class="rating-stars">★★★★★</span>
+            <span class="rating-stars" aria-label="5 stars">★★★★★</span>
             <span class="rating-text">4.8 / 5 based on 247 verified reviews</span>
           </div>
         </div>
-        <div aria-label="Customer reviews" class="reviews-scroll">
-          <article class="review-card glass-card" itemscope="" itemtype="https://schema.org/Review">
-            <div aria-hidden="true" class="review-quote">"</div>
-            <p itemprop="reviewBody">Spotless cars at unbeatable prices! The airport pickup service was super
-              convenient. Highly recommended for anyone planning a Goa road trip.</p>
+        <div class="reviews-grid">
+          <article class="review-card fade-in" itemscope itemtype="https://schema.org/Review">
+            <div class="review-quote" aria-hidden="true">"</div>
+            <p itemprop="reviewBody">Outstanding car rental experience! The booking was quick, the Swift was spotless,
+              and the team delivered it right to my hotel in Calangute. Will definitely use again on my next Goa trip.
+            </p>
+            <div class="review-stars" aria-label="5 stars">★★★★★</div>
             <div class="review-author">
-              <div aria-hidden="true" class="author-avatar">A</div>
-              <div>
-                <strong itemprop="author">Amit Kumar</strong>
-                <br /><small>Verified Booking</small>
+              <div class="author-avatar" aria-hidden="true">A</div>
+              <div><strong itemprop="author">Amit Kumar</strong><br /><small>Delhi · Verified Booking</small></div>
+            </div>
+          </article>
+          <article class="review-card fade-in" itemscope itemtype="https://schema.org/Review">
+            <div class="review-quote" aria-hidden="true">"</div>
+            <p itemprop="reviewBody">Smooth process from start to finish. The Automatic Baleno was in perfect condition
+              — great Bluetooth system! Airport delivery at 11pm was seamless. Highly recommend Royal Goa Ride.</p>
+            <div class="review-stars" aria-label="5 stars">★★★★★</div>
+            <div class="review-author">
+              <div class="author-avatar" aria-hidden="true">P</div>
+              <div><strong itemprop="author">Priya Sharma</strong><br /><small>Mumbai · Verified Booking</small></div>
+            </div>
+          </article>
+          <article class="review-card fade-in" itemscope itemtype="https://schema.org/Review">
+            <div class="review-quote" aria-hidden="true">"</div>
+            <p itemprop="reviewBody">Rented the Thar for a beach road trip with friends — absolutely thrilling! Honest
+              pricing, car was clean, team was super helpful with local tips. Best self-drive rental in Goa, no
+              question.</p>
+            <div class="review-stars" aria-label="5 stars">★★★★★</div>
+            <div class="review-author">
+              <div class="author-avatar" aria-hidden="true">S</div>
+              <div><strong itemprop="author">Sneha Mehra</strong><br /><small>Pune · Verified Booking</small></div>
+            </div>
+          </article>
+          <article class="review-card fade-in" itemscope itemtype="https://schema.org/Review">
+            <div class="review-quote" aria-hidden="true">"</div>
+            <p itemprop="reviewBody">Travelled with family of 5 — the Innova Crysta was perfect. Delivered to our Panjim
+              hotel on time, clean and fully fuelled. Great experience, zero stress. Will recommend to all my friends
+              visiting Goa.</p>
+            <div class="review-stars" aria-label="5 stars">★★★★★</div>
+            <div class="review-author">
+              <div class="author-avatar" aria-hidden="true">R</div>
+              <div><strong itemprop="author">Rajesh Patel</strong><br /><small>Ahmedabad · Verified Booking</small>
               </div>
             </div>
           </article>
-          <article class="review-card glass-card" itemscope="" itemtype="https://schema.org/Review">
-            <div aria-hidden="true" class="review-quote">"</div>
-            <p itemprop="reviewBody">Smooth experience from booking to return. The Baleno was in perfect condition,
-              great Bluetooth system! Will definitely use Royal Goa Ride again.</p>
+          <article class="review-card fade-in" itemscope itemtype="https://schema.org/Review">
+            <div class="review-quote" aria-hidden="true">"</div>
+            <p itemprop="reviewBody">Excellent service! Rented the Creta for 5 days — perfect for covering both North
+              and South Goa. Sahil and his team were always available on WhatsApp for any questions. Transparent,
+              professional, reliable.</p>
+            <div class="review-stars" aria-label="5 stars">★★★★★</div>
             <div class="review-author">
-              <div aria-hidden="true" class="author-avatar">P</div>
-              <div>
-                <strong itemprop="author">Priya Sharma</strong>
-                <br /><small>Verified Booking</small>
-              </div>
+              <div class="author-avatar" aria-hidden="true">K</div>
+              <div><strong itemprop="author">Kiran Nair</strong><br /><small>Bangalore · Verified Booking</small></div>
             </div>
           </article>
-          <article class="review-card glass-card" itemscope="" itemtype="https://schema.org/Review">
-            <div aria-hidden="true" class="review-quote">"</div>
-            <p itemprop="reviewBody">Delivered the car to my Calangute hotel on time! Automatic transmission worked
-              smoothly. Excellent service, would recommend to all Goa travelers.</p>
+          <article class="review-card fade-in" itemscope itemtype="https://schema.org/Review">
+            <div class="review-quote" aria-hidden="true">"</div>
+            <p itemprop="reviewBody">Monthly rental for 6 weeks — got an incredible deal and a reliable car throughout
+              my stay. Royal Goa Ride handled everything professionally and the car was never a concern. Perfect for
+              long stays in Goa.</p>
+            <div class="review-stars" aria-label="5 stars">★★★★★</div>
             <div class="review-author">
-              <div aria-hidden="true" class="author-avatar">R</div>
-              <div>
-                <strong itemprop="author">Rajesh Patel</strong>
-                <br /><small>Verified Booking</small>
-              </div>
-            </div>
-          </article>
-          <article class="review-card glass-card" itemscope="" itemtype="https://schema.org/Review">
-            <div aria-hidden="true" class="review-quote">"</div>
-            <p itemprop="reviewBody">Rented the Thar for a beach road trip. Absolutely thrilling! Team was helpful,
-              honest pricing and the car was spotless. Best self-drive rental in Goa.</p>
-            <div class="review-author">
-              <div aria-hidden="true" class="author-avatar">S</div>
-              <div>
-                <strong itemprop="author">Sneha Mehra</strong>
-                <br /><small>Verified Booking</small>
-              </div>
+              <div class="author-avatar" aria-hidden="true">M</div>
+              <div><strong itemprop="author">Michael Torres</strong><br /><small>UK · Verified Booking</small></div>
             </div>
           </article>
         </div>
       </div>
     </section>
-    <!-- ═══ SECTION 6: FAQ ═══ -->
-    <section aria-labelledby="faq-heading" class="faq-section" id="faq">
-      <div class="section-container">
+
+    <!-- ══ 18. TRAVEL GUIDE ══ -->
+    <section id="travel-guide" class="guide-section section-pad" aria-labelledby="guide-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Goa Travel Guide</div>
+          <h2 class="section-title" id="guide-heading">Your Complete <span class="neon">Goa Travel Guide</span></h2>
+          <p class="section-sub">Everything you need to plan the perfect Goa trip — beaches, food, tips, and more.</p>
+        </div>
+
+        <div class="guide-grid">
+          <div class="guide-card fade-in">
+            <div class="guide-card-img">
+              <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=600&q=80"
+                alt="Best Beaches in Goa" width="600" height="160" loading="lazy" />
+              <div class="guide-overlay"></div>
+              <span class="guide-tag">Beaches</span>
+            </div>
+            <div class="guide-card-body">
+              <h3>Best Beaches in Goa</h3>
+              <p><strong>North Goa:</strong> Baga, Calangute, Anjuna, Vagator, and Arambol offer lively atmospheres with
+                beach shacks and water sports. <strong>South Goa:</strong> Palolem, Agonda, Colva, and Benaulim are
+                quieter with pristine sands. Morjim is ideal for witnessing Olive Ridley turtle nesting.</p>
+            </div>
+          </div>
+          <div class="guide-card fade-in">
+            <div class="guide-card-img">
+              <img src="https://images.unsplash.com/photo-1564417975723-8e60ddb4e0c7?auto=format&fit=crop&w=600&q=80"
+                alt="Family-Friendly Places in Goa" width="600" height="160" loading="lazy" />
+              <div class="guide-overlay"></div>
+              <span class="guide-tag">Families</span>
+            </div>
+            <div class="guide-card-body">
+              <h3>Family-Friendly Goa</h3>
+              <p>Families love Palolem's calm waters, Goa Science Centre in Panjim, Bhagwan Mahaveer Wildlife Sanctuary,
+                the spice plantations of Ponda, and Dudhsagar Falls. South Goa's beaches are generally safer and less
+                crowded — perfect for children.</p>
+            </div>
+          </div>
+          <div class="guide-card fade-in">
+            <div class="guide-card-img">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"
+                alt="Romantic Goa for Couples" width="600" height="160" loading="lazy" />
+              <div class="guide-overlay"></div>
+              <span class="guide-tag">Couples</span>
+            </div>
+            <div class="guide-card-body">
+              <h3>Goa for Couples</h3>
+              <p>Couples should not miss Agonda's serene sunsets, the Sunset Point at Chapora Fort, the atmospheric
+                lanes of Fontainhas in Panjim, candlelit dinners at Palolem beach shacks, and evening cruises on the
+                Mandovi River. Best explored with your own rental car.</p>
+            </div>
+          </div>
+          <div class="guide-card fade-in">
+            <div class="guide-card-img">
+              <img src="https://images.unsplash.com/photo-1619546813926-a78fa6372cd2?auto=format&fit=crop&w=600&q=80"
+                alt="Hidden Places in Goa" width="600" height="160" loading="lazy" />
+              <div class="guide-overlay"></div>
+              <span class="guide-tag">Hidden Gems</span>
+            </div>
+            <div class="guide-card-body">
+              <h3>Hidden Attractions</h3>
+              <p>Beyond the tourist trail: Butterfly Beach (accessible by boat or trek from Palolem), Divar Island
+                (serene countryside by ferry), Cola Beach (hidden lagoon), Cabo de Rama Fort (dramatic cliff views), and
+                the ancient Tambdi Surla Temple deep in the Western Ghats.</p>
+            </div>
+          </div>
+          <div class="guide-card fade-in">
+            <div class="guide-card-img">
+              <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80"
+                alt="Goa Local Food Recommendations" width="600" height="160" loading="lazy" />
+              <div class="guide-overlay"></div>
+              <span class="guide-tag">Food</span>
+            </div>
+            <div class="guide-card-body">
+              <h3>Local Food &amp; Drink</h3>
+              <p>Must-try Goan dishes: Fish Curry Rice, Prawn Balchão, Chicken Xacuti, Beef Vindaloo, Goan Sausage, and
+                Bebinca dessert. Wash it down with Feni (cashew or coconut spirit) — Goa's unique local drink. Best
+                experienced at beachside shacks and local Goan restaurants away from tourist strips.</p>
+            </div>
+          </div>
+          <div class="guide-card fade-in">
+            <div class="guide-card-img">
+              <img src="https://images.unsplash.com/photo-1572612927534-e0e3a1f3a9e1?auto=format&fit=crop&w=600&q=80"
+                alt="Best Time to Visit Goa" width="600" height="160" loading="lazy" />
+              <div class="guide-overlay"></div>
+              <span class="guide-tag">When to Visit</span>
+            </div>
+            <div class="guide-card-body">
+              <h3>Best Time to Visit Goa</h3>
+              <p><strong>Peak Season (Nov–Feb):</strong> Perfect weather, 28–32°C, all beaches and attractions open.
+                Busiest and most expensive. <strong>Shoulder Season (Sep–Oct & Mar–May):</strong> Less crowded, good
+                deals on accommodation and car rentals. <strong>Monsoon (Jun–Aug):</strong> Lush green landscapes and
+                very low prices, but some beaches and shacks close.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 19. DRIVING TIPS ══ -->
+    <section class="tips-section" aria-labelledby="tips-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Driving Tips</div>
+          <h2 class="section-title" id="tips-heading">Driving Tips <span class="neon">in Goa</span></h2>
+          <p class="section-sub">First time driving in Goa? Here's what you need to know before you hit the road.</p>
+        </div>
+        <div class="tips-grid">
+          <div class="tip-card fade-in"><i class="bi bi-speedometer2" aria-hidden="true"></i>
+            <h4>Speed Limits</h4>
+            <p>Speed limit is 40 km/h in cities and 60 km/h on state highways. Goa has regular speed checks — always
+              carry your licence and rental documents.</p>
+          </div>
+          <div class="tip-card fade-in"><i class="bi bi-sun" aria-hidden="true"></i>
+            <h4>Avoid Peak Hours</h4>
+            <p>Tourist season (November–February) sees heavy traffic near popular beaches between 10am–12pm and 5pm–7pm.
+              Plan your drives early morning for a smoother experience.</p>
+          </div>
+          <div class="tip-card fade-in"><i class="bi bi-cloud-rain" aria-hidden="true"></i>
+            <h4>Monsoon Driving</h4>
+            <p>Roads can get slippery during heavy rains (June–August). Drive slowly, use headlights, and avoid flooded
+              roads. Some interior roads may be inaccessible.</p>
+          </div>
+          <div class="tip-card fade-in"><i class="bi bi-map" aria-hidden="true"></i>
+            <h4>Use Google Maps</h4>
+            <p>Google Maps works very well in Goa. Download offline maps for your travel area before starting — some
+              remote beach roads have poor mobile signal.</p>
+          </div>
+          <div class="tip-card fade-in"><i class="bi bi-p-circle" aria-hidden="true"></i>
+            <h4>Parking at Beaches</h4>
+            <p>Popular beaches like Baga and Calangute have paid parking areas. Arrive early to get spots close to the
+              beach. Never park blocking traffic — local wardens are active.</p>
+          </div>
+          <div class="tip-card fade-in"><i class="bi bi-fuel-pump" aria-hidden="true"></i>
+            <h4>Fuel Stations</h4>
+            <p>Keep your tank topped up when exploring South Goa's remote areas or heading to Dudhsagar. Fuel stations
+              can be sparse on certain routes. Check before you start.</p>
+          </div>
+          <div class="tip-card fade-in"><i class="bi bi-file-earmark-text" aria-hidden="true"></i>
+            <h4>Carry Documents</h4>
+            <p>Always carry your original Driving Licence, rental agreement, and vehicle papers in the car. Police
+              checkpoints are common, especially on NH66 and during festival seasons.</p>
+          </div>
+          <div class="tip-card fade-in"><i class="bi bi-telephone" aria-hidden="true"></i>
+            <h4>Emergency Contact</h4>
+            <p>Save our WhatsApp number before you start driving. We're available 24/7 for any roadside assistance,
+              navigation help, or emergency support during your rental period.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 20. TOURIST ATTRACTIONS ══ -->
+    <section class="attractions-section section-pad" aria-labelledby="attractions-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Must-Visit Places</div>
+          <h2 class="section-title" id="attractions-heading">Tourist Attractions <span class="neon">in Goa</span></h2>
+          <p class="section-sub">Explore Goa's iconic landmarks and hidden gems — all easily accessible with a Royal Goa
+            Ride rental car.</p>
+        </div>
+        <div class="attractions-grid">
+          <div class="attract-card fade-in">
+            <div class="attract-card-img"><img
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80"
+                alt="Basilica of Bom Jesus Old Goa" width="600" height="170" loading="lazy" /></div>
+            <div class="attract-card-body">
+              <h3>Basilica of Bom Jesus, Old Goa</h3>
+              <p>A UNESCO World Heritage Site and one of the finest examples of Portuguese Baroque architecture in Asia.
+                Houses the mortal remains of St. Francis Xavier.</p>
+              <div class="attract-dist"><i class="bi bi-geo-alt" aria-hidden="true"></i> 35 km from Margao · Easy
+                parking nearby</div>
+            </div>
+          </div>
+          <div class="attract-card fade-in">
+            <div class="attract-card-img"><img
+                src="https://images.unsplash.com/photo-1515488764276-beab7607c1e6?auto=format&fit=crop&w=600&q=80"
+                alt="Dudhsagar Waterfall Goa" width="600" height="170" loading="lazy" /></div>
+            <div class="attract-card-body">
+              <h3>Dudhsagar Waterfalls</h3>
+              <p>One of India's tallest and most spectacular waterfalls, located inside the Bhagwan Mahaveer Wildlife
+                Sanctuary. A must-visit on any Goa adventure. Best visited October–March.</p>
+              <div class="attract-dist"><i class="bi bi-geo-alt" aria-hidden="true"></i> 60 km from Margao · 4x4 vehicle
+                recommended</div>
+            </div>
+          </div>
+          <div class="attract-card fade-in">
+            <div class="attract-card-img"><img
+                src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80"
+                alt="Chapora Fort Goa" width="600" height="170" loading="lazy" /></div>
+            <div class="attract-card-body">
+              <h3>Chapora Fort</h3>
+              <p>Made famous by the Bollywood film 'Dil Chahta Hai', Chapora Fort offers stunning panoramic views over
+                Vagator beach and the Arabian Sea. Especially spectacular at sunset.</p>
+              <div class="attract-dist"><i class="bi bi-geo-alt" aria-hidden="true"></i> 48 km from Margao · Free entry
+              </div>
+            </div>
+          </div>
+          <div class="attract-card fade-in">
+            <div class="attract-card-img"><img
+                src="https://images.unsplash.com/photo-1619546813926-a78fa6372cd2?auto=format&fit=crop&w=600&q=80"
+                alt="Palolem Beach South Goa" width="600" height="170" loading="lazy" /></div>
+            <div class="attract-card-body">
+              <h3>Palolem Beach</h3>
+              <p>Often cited as one of India's most beautiful beaches, Palolem's gentle crescent bay with calm waters
+                makes it perfect for swimming, kayaking, and evening beach dinners.</p>
+              <div class="attract-dist"><i class="bi bi-geo-alt" aria-hidden="true"></i> 37 km from Margao · Paid
+                parking available</div>
+            </div>
+          </div>
+          <div class="attract-card fade-in">
+            <div class="attract-card-img"><img
+                src="https://images.unsplash.com/photo-1599753894977-5e9f55f7c6a8?auto=format&fit=crop&w=600&q=80"
+                alt="Fontainhas Latin Quarter Panjim Goa" width="600" height="170" loading="lazy" /></div>
+            <div class="attract-card-body">
+              <h3>Fontainhas, Panjim</h3>
+              <p>Goa's Latin Quarter is a charming labyrinth of narrow lanes, colourful Portuguese houses, Catholic
+                chapels, and bohemian cafes. Perfect for slow walks and photography.</p>
+              <div class="attract-dist"><i class="bi bi-geo-alt" aria-hidden="true"></i> 28 km from Margao · Street
+                parking</div>
+            </div>
+          </div>
+          <div class="attract-card fade-in">
+            <div class="attract-card-img"><img
+                src="https://images.unsplash.com/photo-1564417975723-8e60ddb4e0c7?auto=format&fit=crop&w=600&q=80"
+                alt="Spice Plantation Ponda Goa" width="600" height="170" loading="lazy" /></div>
+            <div class="attract-card-body">
+              <h3>Spice Plantations, Ponda</h3>
+              <p>An authentic Goa experience away from the beaches — explore working spice farms growing cardamom,
+                pepper, turmeric, vanilla, and more. Usually includes a traditional Goan lunch.</p>
+              <div class="attract-dist"><i class="bi bi-geo-alt" aria-hidden="true"></i> 20 km from Margao · Half-day
+                trip</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 21. FAQ ══ -->
+    <section id="faq" class="faq-section section-pad" aria-labelledby="faq-heading">
+      <div class="container">
         <div class="section-header">
           <div class="section-tag">FAQ</div>
-          <h2 class="section-title" id="faq-heading">
-            Common <span class="neon-text">Questions</span>
-          </h2>
+          <h2 class="section-title" id="faq-heading">Frequently Asked <span class="neon">Questions</span></h2>
+          <p class="section-sub">Everything you need to know about renting a car in Goa with Royal Goa Ride.</p>
         </div>
         <div class="faq-list" role="list">
-          <div class="faq-item" role="listitem">
-            <button aria-expanded="false" class="faq-q" onclick="toggleFaq(this)">
-              What documents do I need to book a self-drive car in Goa?
-              <i aria-hidden="true" class="bi bi-plus-lg faq-icon"></i>
-            </button>
-            <div class="faq-a">
-              Valid Driving License plus Aadhar or Passport. Foreign travelers need an international driving license.
-              Simple WhatsApp verification — no physical copies needed upfront.
+          <div class="faq-item" role="listitem"><button class="faq-q" onclick="toggleFaq(this)"
+              aria-expanded="false">What documents do I need to rent a car in Goa? <i class="bi bi-plus-lg faq-icon"
+                aria-hidden="true"></i></button>
+            <div class="faq-a">You need a valid Driving Licence issued by the Indian government, and an Aadhar card or
+              Passport as ID proof. Foreign travellers need an International Driving Permit (IDP) along with their home
+              country licence. Document verification is done via WhatsApp — no physical copies are needed upfront,
+              making the process completely paperless and convenient.</div>
+          </div>
+          <div class="faq-item" role="listitem"><button class="faq-q" onclick="toggleFaq(this)"
+              aria-expanded="false">Does Royal Goa Ride offer automatic cars in Goa? <i class="bi bi-plus-lg faq-icon"
+                aria-hidden="true"></i></button>
+            <div class="faq-a">Yes, absolutely. Automatic variants are available for most of our popular models
+              including Swift, Baleno, Hyundai i20, Maruti Ignis, Brezza, Hyundai Creta, Ertiga, Mahindra Thar, and
+              more. Automatic cars are slightly higher priced than manual variants but offer significantly more comfort,
+              especially on Goa's busy coastal roads.</div>
+          </div>
+          <div class="faq-item" role="listitem"><button class="faq-q" onclick="toggleFaq(this)"
+              aria-expanded="false">What is the security deposit for car rental in Goa? <i
+                class="bi bi-plus-lg faq-icon" aria-hidden="true"></i></button>
+            <div class="faq-a">The refundable security deposit is ₹3,000 for standard hatchbacks and compact cars,
+              ₹5,000 for SUVs and adventure vehicles, and ₹10,000 for luxury cars like Audi, Mercedes, and Mini Cooper.
+              The full deposit is returned within 48 hours of safe vehicle return, provided the car is returned without
+              damage and in the same fuel condition.</div>
+          </div>
+          <div class="faq-item" role="listitem"><button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Do
+              you deliver cars to Goa airport and hotels? <i class="bi bi-plus-lg faq-icon"
+                aria-hidden="true"></i></button>
+            <div class="faq-a">Yes, we deliver cars to Dabolim Airport (Goa International Airport), Mopa International
+              Airport, Madgaon Railway Station, Margao Bus Stand, and all hotels, resorts, and addresses across Goa. Our
+              airport delivery service is available 24 hours a day, 7 days a week — including midnight and early morning
+              flights. There is a nominal delivery charge for airport delivery depending on distance.</div>
+          </div>
+          <div class="faq-item" role="listitem"><button class="faq-q" onclick="toggleFaq(this)"
+              aria-expanded="false">What is the minimum rental period for a self-drive car in Goa? <i
+                class="bi bi-plus-lg faq-icon" aria-hidden="true"></i></button>
+            <div class="faq-a">The minimum rental period is 1 day (24 hours). We offer special discounts for rentals of
+              3 days or more, and even better rates for week-long and monthly rentals. If you're planning an extended
+              stay in Goa, ask us about our monthly rental packages which offer excellent value compared to daily rates.
             </div>
           </div>
-          <div class="faq-item" role="listitem">
-            <button aria-expanded="false" class="faq-q" onclick="toggleFaq(this)">
-              Do you offer automatic cars for rent in Goa?
-              <i aria-hidden="true" class="bi bi-plus-lg faq-icon"></i>
-            </button>
-            <div class="faq-a">
-              Yes! Automatic variants available for Ignis, Swift, Baleno, i20, Thar, Creta, Brezza, Ertiga, and more.
-              Slightly higher price for the ease and comfort.
-            </div>
+          <div class="faq-item" role="listitem"><button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Is
+              fuel included in the rental price? <i class="bi bi-plus-lg faq-icon" aria-hidden="true"></i></button>
+            <div class="faq-a">No, fuel is not included in the daily rental price. The vehicle is provided at a
+              specified fuel level and must be returned at that same level. This keeps our pricing transparent and fair
+              — you only pay for the fuel you actually use. All our cars have clearly displayed current mileage and fuel
+              levels at the time of delivery.</div>
           </div>
-          <div class="faq-item" role="listitem">
-            <button aria-expanded="false" class="faq-q" onclick="toggleFaq(this)">
-              What is the security deposit for car rental?
-              <i aria-hidden="true" class="bi bi-plus-lg faq-icon"></i>
-            </button>
-            <div class="faq-a">
-              ₹3,000 for cars, ₹1,500 for bikes. Fully refundable within 48 hours after safe vehicle return.
-            </div>
+          <div class="faq-item" role="listitem"><button class="faq-q" onclick="toggleFaq(this)"
+              aria-expanded="false">Can I take the rental car outside Goa? <i class="bi bi-plus-lg faq-icon"
+                aria-hidden="true"></i></button>
+            <div class="faq-a">Our standard rental packages are for use within Goa. If you wish to travel to
+              neighbouring states like Karnataka or Maharashtra, please inform us at the time of booking so we can make
+              special arrangements. Additional charges and documentation may apply for out-of-state travel.</div>
           </div>
-          <div class="faq-item" role="listitem">
-            <button aria-expanded="false" class="faq-q" onclick="toggleFaq(this)">
-              Do you deliver cars to Goa airport and hotels?
-              <i aria-hidden="true" class="bi bi-plus-lg faq-icon"></i>
-            </button>
-            <div class="faq-a">
-              Absolutely. We deliver to Dabolim Airport, Mopa Airport, Madgaon Railway Station, all hotels, and
-              any Goa location. Available 24/7, including midnight flights.
-            </div>
+          <div class="faq-item" role="listitem"><button class="faq-q" onclick="toggleFaq(this)"
+              aria-expanded="false">How quickly can I get a self-drive car in Goa? <i class="bi bi-plus-lg faq-icon"
+                aria-hidden="true"></i></button>
+            <div class="faq-a">For customers in the Margao and Madgaon area, we can typically deliver a car within 30–45
+              minutes of booking confirmation. Same-day bookings are possible if requested before 10am, subject to
+              vehicle availability. We always recommend booking at least a day in advance, especially during peak
+              tourist season (November–February) when demand is highest.</div>
           </div>
-          <div class="faq-item" role="listitem">
-            <button aria-expanded="false" class="faq-q" onclick="toggleFaq(this)">
-              How quickly can I get a self-drive car in Goa?
-              <i aria-hidden="true" class="bi bi-plus-lg faq-icon"></i>
-            </button>
-            <div class="faq-a">
-              30–45 minutes for Margao/Madgaon area. Same-day booking possible if requested before 10 AM.
-              WhatsApp us for instant confirmation.
-            </div>
+          <div class="faq-item" role="listitem"><button class="faq-q" onclick="toggleFaq(this)"
+              aria-expanded="false">What happens if the car breaks down during my rental? <i
+                class="bi bi-plus-lg faq-icon" aria-hidden="true"></i></button>
+            <div class="faq-a">Our team is available 24/7 via WhatsApp and phone for any roadside assistance. In the
+              unlikely event of a mechanical breakdown (not caused by misuse or an accident), we will arrange a
+              replacement vehicle as quickly as possible. All our cars are regularly serviced and maintained to minimise
+              the chance of any issues during your rental.</div>
           </div>
-          <div class="faq-item" role="listitem">
-            <button aria-expanded="false" class="faq-q" onclick="toggleFaq(this)">
-              What is the minimum rental period?
-              <i aria-hidden="true" class="bi bi-plus-lg faq-icon"></i>
-            </button>
-            <div class="faq-a">
-              The minimum rental period is 1 day (24 hours). We offer special discounts for rentals of 3 days or more.
-              Long-term weekly and monthly rates also available on request.
-            </div>
-          </div>
-          <div class="faq-item" role="listitem">
-            <button aria-expanded="false" class="faq-q" onclick="toggleFaq(this)">
-              Is fuel included in the rental price?
-              <i aria-hidden="true" class="bi bi-plus-lg faq-icon"></i>
-            </button>
-            <div class="faq-a">
-              No, fuel is not included in the daily rental price. You receive the vehicle with a set fuel level and
-              are expected to return it with the same level. This keeps our prices transparent and fair.
-            </div>
+          <div class="faq-item" role="listitem"><button class="faq-q" onclick="toggleFaq(this)"
+              aria-expanded="false">Are there any mileage limits for car rental in Goa? <i
+                class="bi bi-plus-lg faq-icon" aria-hidden="true"></i></button>
+            <div class="faq-a">We offer flexible mileage policies. Standard rentals include unlimited kilometres within
+              Goa. If you plan to travel outside Goa, please discuss mileage terms at the time of booking. There are no
+              hidden per-kilometre charges for within-Goa travel.</div>
           </div>
         </div>
       </div>
     </section>
-    <!-- ═══ SECTION 7: CONTACT ═══ -->
-    <section aria-labelledby="contact-heading" class="contact-section" id="contact">
-      <div class="section-container">
+
+    <!-- ══ 22. CONTACT ══ -->
+    <section id="contact" class="contact-section section-pad" aria-labelledby="contact-heading">
+      <div class="container">
         <div class="contact-grid">
           <div class="contact-info">
             <div class="section-tag">Contact Us</div>
-            <h2 class="section-title" id="contact-heading">
-              Let's Get You <span class="neon-text">On The Road</span>
-            </h2>
-            <p class="section-sub">
-              Reach out on WhatsApp for fastest response. Available round the clock, every day.
-            </p>
+            <h2 class="section-title" id="contact-heading">Let's Get You <span class="neon">On the Road</span></h2>
+            <p class="section-sub">Reach us on WhatsApp for the fastest response. Our team is available 24/7.</p>
             <address class="contact-details">
-              <div class="contact-item">
-                <i aria-hidden="true" class="bi bi-geo-alt-fill"></i>
-                <span>Near Madgao Railway Station, Margao, Goa 403601</span>
-              </div>
-              <div class="contact-item">
-                <i aria-hidden="true" class="bi bi-telephone-fill"></i>
-                <a href="tel:+919975356697"
-                  onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CALL_EVENT'});">
-                  +91 99753 56697
-                </a>
-              </div>
-              <div class="contact-item">
-                <i aria-hidden="true" class="bi bi-envelope-fill"></i>
-                <a href="mailto:info@royalgoaride.com">info@royalgoaride.com</a>
-              </div>
-              <div class="contact-item">
-                <i aria-hidden="true" class="bi bi-whatsapp"></i>
-                <a href="https://wa.me/919975356697"
-                  onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CONTACT_EVENT'});"
-                  rel="noopener noreferrer" target="_blank">
-                  Chat on WhatsApp
-                </a>
-              </div>
+              <div class="contact-item"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i><span>Near Madgao Railway
+                  Station, Margao, Goa 403601</span></div>
+              <div class="contact-item"><i class="bi bi-telephone-fill" aria-hidden="true"></i><a
+                  href="tel:+919975356697"
+                  onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CALL_EVENT'})">+91 99753 56697</a></div>
+              <div class="contact-item"><i class="bi bi-envelope-fill" aria-hidden="true"></i><a
+                  href="mailto:info@royalgoaride.com">info@royalgoaride.com</a></div>
+              <div class="contact-item"><i class="bi bi-whatsapp" aria-hidden="true"></i><a
+                  href="https://wa.me/919975356697" target="_blank" rel="noopener noreferrer"
+                  onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CONTACT_EVENT'})">Chat on WhatsApp — Fast
+                  Response</a></div>
+              <div class="contact-item"><i class="bi bi-clock-fill" aria-hidden="true"></i><span>Available 24 hours, 7
+                  days a week</span></div>
             </address>
-            <div class="contact-map" style="margin-top:12px;">
-              <iframe src="https://www.google.com/maps?q=Margao%20Railway%20Station&output=embed" width="100%"
-                height="260" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="contact-map">
+              <iframe src="https://www.google.com/maps?q=Margao+Railway+Station,+Goa&output=embed" width="100%"
+                height="240" style="border:0;display:block" allowfullscreen loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" title="Royal Goa Ride location on Google Maps"></iframe>
             </div>
-            <div aria-label="Social media links" class="contact-social">
-              <a aria-label="Royal Goa Ride on Instagram" class="social-btn" href="https://instagram.com/royalgoaride"
-                rel="noopener noreferrer" target="_blank">
-                <i aria-hidden="true" class="bi bi-instagram"></i>
-              </a>
-              <a aria-label="Royal Goa Ride on Facebook" class="social-btn" href="https://facebook.com/royalgoaride"
-                rel="noopener noreferrer" target="_blank">
-                <i aria-hidden="true" class="bi bi-facebook"></i>
-              </a>
-              <a aria-label="Book on WhatsApp" class="social-btn" href="https://wa.me/919975356697"
-                onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CONTACT_EVENT'});"
-                rel="noopener noreferrer" target="_blank">
-                <i aria-hidden="true" class="bi bi-whatsapp"></i>
-              </a>
+            <div class="contact-social" style="margin-top:1.25rem">
+              <a href="https://instagram.com/royalgoaride" class="social-btn" target="_blank" rel="noopener noreferrer"
+                aria-label="Follow on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+              <a href="https://facebook.com/royalgoaride" class="social-btn" target="_blank" rel="noopener noreferrer"
+                aria-label="Follow on Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+              <a href="https://wa.me/919975356697" class="social-btn" target="_blank" rel="noopener noreferrer"
+                aria-label="Chat on WhatsApp"
+                onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CONTACT_EVENT'})"><i class="bi bi-whatsapp"
+                  aria-hidden="true"></i></a>
             </div>
           </div>
-          <div class="contact-cta-block glass-card">
+          <div class="contact-cta-block glass fade-in">
             <h3>Ready to Explore Goa?</h3>
-            <p>Choose your car, set your dates, and we'll bring it to you anywhere in Goa.</p>
-            <a class="btn-primary-hero full-width"
-              href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car"
-              onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CONTACT_EVENT'});" rel="noopener noreferrer"
-              target="_blank">
-              <i aria-hidden="true" class="bi bi-whatsapp"></i> Book on WhatsApp
+            <p>Choose your car, pick your dates, and we'll deliver it anywhere across Goa. Fast booking, honest pricing,
+              no surprises.</p>
+            <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car%20in%20Goa"
+              class="btn-wa btn-full" target="_blank" rel="noopener noreferrer"
+              onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CONTACT_EVENT'})"
+              style="margin-bottom:.75rem">
+              <i class="bi bi-whatsapp" aria-hidden="true"></i> Book on WhatsApp
             </a>
-            <a class="btn-ghost-hero full-width" href="tel:+919975356697"
-              onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CALL_EVENT'});" style="margin-top:12px;">
-              <i aria-hidden="true" class="bi bi-telephone"></i> Call Now
+            <a href="tel:+919975356697" class="btn-ghost btn-full"
+              onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CALL_EVENT'})">
+              <i class="bi bi-telephone-fill" aria-hidden="true"></i> Call Now
             </a>
-            <div aria-label="Trust indicators" class="trust-chips">
-              <span class="trust-chip"><i aria-hidden="true" class="bi bi-shield-check"></i> Verified Cars</span>
-              <span class="trust-chip"><i aria-hidden="true" class="bi bi-clock"></i> 24/7 Support</span>
-              <span class="trust-chip"><i aria-hidden="true" class="bi bi-star-fill"></i> 4.8 Rated</span>
+            <div class="trust-chips">
+              <span class="trust-chip"><i class="bi bi-shield-check" aria-hidden="true"></i> Verified Fleet</span>
+              <span class="trust-chip"><i class="bi bi-clock" aria-hidden="true"></i> 24/7 Support</span>
+              <span class="trust-chip"><i class="bi bi-star-fill" aria-hidden="true"></i> 4.8 Rated</span>
+              <span class="trust-chip"><i class="bi bi-cash" aria-hidden="true"></i> No Hidden Fees</span>
             </div>
-            <div class="google-reviews" style="margin-top:12px;">
-              <h4>What customers say</h4>
-              <div class="reviews-grid">
-                <div class="review-card">"Smooth booking and friendly support" — Rahul ★★★★★</div>
-                <div class="review-card">"Clean cars, on-time delivery" — Priya ★★★★★</div>
+            <div
+              style="margin-top:1.75rem;padding:1.25rem;background:rgba(255,255,255,.04);border-radius:12px;border:1px solid var(--glass-border)">
+              <p style="font-size:.8rem;font-weight:700;margin-bottom:.75rem;color:var(--text-primary)">What customers
+                say:</p>
+              <div style="display:flex;flex-direction:column;gap:.5rem">
+                <div style="font-size:.78rem;color:var(--text-muted)">"Clean cars, on-time delivery" — Rahul ★★★★★</div>
+                <div style="font-size:.78rem;color:var(--text-muted)">"Smooth booking, friendly support" — Priya ★★★★★
+                </div>
+                <div style="font-size:.78rem;color:var(--text-muted)">"Best self-drive rental in Goa!" — Sneha ★★★★★
+                </div>
               </div>
-              <a class="btn-ghost-hero" href="https://www.google.com/search?q=Royal+Goa+Ride+reviews" target="_blank"
-                rel="noopener noreferrer">Read more on Google</a>
+              <a href="https://www.google.com/search?q=Royal+Goa+Ride+reviews" target="_blank" rel="noopener noreferrer"
+                style="font-size:.78rem;color:var(--neon);margin-top:.75rem;display:inline-block">Read all reviews on
+                Google →</a>
             </div>
           </div>
         </div>
       </div>
     </section>
-  </main><!-- /main -->
-  <!-- ═══ FOOTER ═══ -->
+
+  </main>
+
+  <!-- ══ 23. FOOTER ══ -->
   <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a aria-label="Royal Goa Ride — Home" href="/">
-          <img alt="Royal Goa Ride — Self Drive Car Rental in Goa" class="footer-logo" height="40" loading="lazy"
-            src="/assets/og-imag.webp" width="160" />
+        <a href="/" aria-label="Royal Goa Ride — Home">
+          <img src="/assets/og-imag.webp" alt="Royal Goa Ride — Car Rental in Goa" class="footer-logo" width="160"
+            height="40" loading="lazy" />
         </a>
-        <p>Goa's elite self-drive vehicle rental service. Explore the emerald coast in style. Cars, bikes and SUVs
-          available 24/7.</p>
-        <div aria-label="Social media" class="footer-social">
-          <a aria-label="Facebook" href="https://facebook.com/royalgoaride" rel="noopener noreferrer" target="_blank">
-            <i aria-hidden="true" class="bi bi-facebook"></i>
-          </a>
-          <a aria-label="Instagram" href="https://instagram.com/royalgoaride" rel="noopener noreferrer" target="_blank">
-            <i aria-hidden="true" class="bi bi-instagram"></i>
-          </a>
-          <a aria-label="WhatsApp" href="https://wa.me/919975356697"
-            onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CONTACT_EVENT'});" rel="noopener noreferrer"
-            target="_blank">
-            <i aria-hidden="true" class="bi bi-whatsapp"></i>
-          </a>
+        <p>Royal Goa Ride — Goa's trusted car rental service since 2010. Self-drive cars, airport pickups, and hotel
+          deliveries across all of Goa. Available 24/7.</p>
+        <div class="footer-social">
+          <a href="https://facebook.com/royalgoaride" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i
+              class="bi bi-facebook" aria-hidden="true"></i></a>
+          <a href="https://instagram.com/royalgoaride" target="_blank" rel="noopener noreferrer"
+            aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+          <a href="https://wa.me/919975356697" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+            onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CONTACT_EVENT'})"><i class="bi bi-whatsapp"
+              aria-hidden="true"></i></a>
         </div>
       </div>
-      <nav aria-label="Quick links" class="footer-links">
+      <nav class="footer-links" aria-label="Quick links">
         <h4>Quick Links</h4>
-        <a href="/">Home</a>
-        <a href="#fleet">Fleet</a>
-        <a href="#booking">Book Now</a>
-        <a href="#contact">Contact</a>
+        <a href="#hero">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#founder">Meet the Founder</a>
+        <a href="#services">Services</a>
+        <a href="#fleet">Our Fleet</a>
+        <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <nav aria-label="Location pages" class="footer-links">
+      <nav class="footer-links" aria-label="Locations">
         <h4>Locations</h4>
-        <a>Goa Airport</a>
-        <a>Calangute</a>
-        <a>Baga Beach</a>
-        <a>Best Beaches</a>
-        <a>Rental Tips</a>
+        <a href="#locations">Goa Airport</a>
+        <a href="#locations">Calangute</a>
+        <a href="#locations">Baga</a>
+        <a href="#locations">Anjuna</a>
+        <a href="#locations">Panjim</a>
+        <a href="#locations">Madgaon</a>
+        <a href="#locations">Candolim</a>
       </nav>
-      <nav aria-label="Support and contact" class="footer-links">
-        <h4>Support</h4>
-        <a href="/terms.html">Terms of Service</a>
-        <a href="/privacy.html">Privacy Policy</a>
+      <nav class="footer-links" aria-label="Support">
+        <h4>Support &amp; Info</h4>
+        <a href="/terms-of-service.html">Terms of Service</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
         <a href="/refund-policy.html">Refund Policy</a>
+        <a href="tel:+919975356697" onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CALL_EVENT'})">+91
+          99753 56697</a>
+        <a href="mailto:info@royalgoaride.com">info@royalgoaride.com</a>
         <span>Near Madgao Railway Station</span>
         <span>Margao, Goa 403601</span>
-        <a href="tel:+919975356697" onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CALL_EVENT'});">
-          +91 99753 56697
-        </a>
-        <a href="mailto:info@royalgoaride.com">info@royalgoaride.com</a>
       </nav>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 RoyalGoaRide. All rights reserved.</span>
+      <span>© 2026 Royal Goa Ride. All rights reserved.</span>
       <span>Goa's #1 Self Drive Car Rental 🌴</span>
-      <span>Made by
-        <a href="https://sayedshoaibportfolio.netlify.app/" rel="noopener noreferrer"
-          style="color:#C59D5F; text-decoration:none; font-weight:600;" target="_blank">
-          Sayed Shoaib
-        </a>
-      </span>
+      <span>Made by <a href="https://sayedshoaibportfolio.netlify.app/" target="_blank" rel="noopener noreferrer"
+          style="color:#C59D5F;font-weight:600">Sayed Shoaib</a></span>
     </div>
   </footer>
-  <!-- ═══ STATIC MOBILE STICKY CTA (fallback for no-JS) ═══ -->
+
+  <!-- MOBILE STICKY CTA -->
   <div class="mobile-sticky-cta" aria-hidden="false">
-    <a href="tel:+919975356697" class="cta-btn cta-call">📞 Call</a>
+    <a href="tel:+919975356697" class="cta-btn cta-call"
+      onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CALL_EVENT'})">📞 Call Now</a>
     <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car" class="cta-btn cta-wa"
-      rel="noopener noreferrer" target="_blank">💬 WhatsApp</a>
+      target="_blank" rel="noopener noreferrer"
+      onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CONTACT_EVENT'})">💬 WhatsApp</a>
   </div>
 
-  <!-- ═══ FLOATING WHATSAPP BUTTON ═══ -->
-  <a aria-label="Book a self-drive car on WhatsApp" class="float-wa"
-    href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car"
-    onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CONTACT_EVENT'});" rel="noopener noreferrer"
-    target="_blank">
-    <span aria-hidden="true" class="float-wa__ring float-wa__ring--1"></span>
-    <span aria-hidden="true" class="float-wa__ring float-wa__ring--2"></span>
-    <span aria-hidden="true" class="float-wa__btn">
-      <i class="bi bi-whatsapp"></i>
-    </span>
+  <!-- FLOATING WHATSAPP -->
+  <a class="float-wa" href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car" target="_blank"
+    rel="noopener noreferrer" aria-label="Book a car on WhatsApp"
+    onclick="gtag('event','conversion',{'send_to':'AW-7510098927/CONTACT_EVENT'})">
+    <span class="float-wa__ring float-wa__ring--1" aria-hidden="true"></span>
+    <span class="float-wa__ring float-wa__ring--2" aria-hidden="true"></span>
+    <span class="float-wa__btn"><i class="bi bi-whatsapp" aria-hidden="true"></i></span>
     <span class="float-wa__label">Book Now</span>
   </a>
-  <!-- ═══ SCRIPTS — deferred for performance ═══ -->
-  <script defer="" src="main.js"></script>
-  <script defer="" src="tracking.js"></script>
+
+  <script src="main.js"></script>
 </body>
 
 </html>

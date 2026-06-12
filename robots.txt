@@ -1,28 +1,7 @@
-# RoyalGoaRide — robots.txt
-# https://royalgoaride.com
-
 User-agent: *
 Allow: /
 
-# Block admin/internal paths if they exist
-Disallow: /cdn-cgi/
-Disallow: /api/
-Disallow: /.well-known/
-
-# Allow search engine assets
-Allow: /assets/
-Allow: /images/
-
-# Sitemaps
 Sitemap: https://royalgoaride.com/sitemap.xml
-Sitemap: https://royalgoaride.com/sitemap-images.xml
 
-# Crawl-delay for aggressive bots
-User-agent: AhrefsBot
-Crawl-delay: 10
-
-User-agent: SemrushBot
-Crawl-delay: 10
-
-User-agent: MJ12bot
-Disallow: /
+Disallow: /admin/
+Disallow: /private/
