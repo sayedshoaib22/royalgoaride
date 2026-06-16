@@ -2,7 +2,7 @@
 // ══════════════════════
 // VEHICLE DATA
 // ══════════════════════
-const vehicles = [
+const vehiclesRaw = [
   { id: 'swift-m', name: 'Maruti Swift', cat: 'Hatchback', type: 'hatchback', trans: 'Manual', fuel: 'Petrol', seats: 5, price: 1200, deposit: 3000, img: 'https://image2url.com/r2/default/images/1771086979849-965ca50c-72cc-4015-a047-c020fa50af0d.jpeg', auto: false },
   { id: 'swift-a', name: 'Maruti Swift', cat: 'Hatchback', type: 'hatchback', trans: 'Automatic', fuel: 'Petrol', seats: 5, price: 1500, deposit: 3000, img: 'https://image2url.com/r2/default/images/1771086979849-965ca50c-72cc-4015-a047-c020fa50af0d.jpeg', auto: true },
   { id: 'baleno-m', name: 'Maruti Baleno', cat: 'Premium Hatchback', type: 'hatchback', trans: 'Manual', fuel: 'Petrol', seats: 5, price: 1300, deposit: 3000, img: 'https://image2url.com/r2/default/images/1771081605318-cf7ecfe1-543f-4a35-8672-53cdda6ce892.jpeg', auto: false },
@@ -22,6 +22,29 @@ const vehicles = [
   { id: 'audi-a3', name: 'Audi A3', cat: 'Luxury Sedan', type: 'luxury', trans: 'Automatic', fuel: 'Petrol', seats: 5, price: 25000, deposit: 10000, img: 'https://image2url.com/r2/default/images/1771083007149-3d15f250-cca7-40dd-ba7e-8b3b78a2dbd2.jpeg', auto: true },
   { id: 'mercedes', name: 'Mercedes-Benz C300', cat: 'Luxury Convertible', type: 'luxury', trans: 'Automatic', fuel: 'Petrol', seats: 5, price: 20000, deposit: 10000, img: 'https://image2url.com/r2/default/images/1771086392720-50bf550e-b4e3-4657-841c-8440eb5f8994.jpeg', auto: true },
 ];
+
+const vehicleDescriptions = {
+  'swift-m': 'Compact hatchback ideal for Goa airport transfers, city cruising, and fuel-efficient travel.',
+  'swift-a': 'Automatic Swift with easy handling and fast parking for quick Goa sightseeing and easy airport pickup.',
+  'baleno-m': 'Premium hatchback with extra cabin space, perfect for small families and beach day trips in Goa.',
+  'baleno-a': 'Automatic Baleno for comfortable coastal driving and stress-free navigation of Goa’s busy roads.',
+  'i20-m': 'Luxury hatchback with refined comfort and smooth handling for longer drives across North and South Goa.',
+  'i20-a': 'Automatic Hyundai i20 with agile performance, ideal for couples and travellers who prefer easy driving.',
+  'ignis-a': 'Compact automatic hatchback great for tight lanes, beachside parking, and easy Goa town travel.',
+  'brezza-m': 'Compact SUV built for beach roads and family excursions, with strong presence and dependable city performance.',
+  'brezza-a': 'Automatic Brezza offering comfortable SUV space for luggage, beaches, and weekend Goa adventures.',
+  'creta-a': 'Premium SUV with automatic transmission, excellent for highway comfort and resort transfers in Goa.',
+  'ertiga-a': '7-seater family MPV designed for group travel, airport pickup, and longer journeys with luggage space.',
+  'crysta-m': 'Luxury 7-seater for family groups, with smooth ride quality and enough room for luggage and beach gear.',
+  'carens-a': 'Premium 7-seater automatic with flexible seating, ideal for South Goa tours and family-friendly itineraries.',
+  'thar-soft': 'Adventure SUV ready for rugged Goa roads, offbeat trails, waterfall trips, and spice farm exploration.',
+  'thar-hard': 'Hardtop Thar with automatic comfort for adventurous drives, scenic routes, and beachside photo stops.',
+  'fortuner': 'Luxury 4x4 SUV with premium comfort and commanding road presence for VIP transfers and outstation plans.',
+  'audi-a3': 'Luxury sedan built for stylish Goa travel, business arrivals, and premium airport-to-resort journeys.',
+  'mercedes': 'Luxury Mercedes-Benz C300 with elegant comfort, ideal for special occasions and premium Goa airport drop-offs.'
+};
+
+const vehicles = vehiclesRaw.map(v => ({ ...v, desc: vehicleDescriptions[v.id] || '' }));
 
 // ══════════════════════
 // ROUTES DATA
@@ -117,6 +140,7 @@ function renderFleet(list) {
           <span><i class="bi bi-people-fill"></i> ${v.seats} Seats</span>
           <span><i class="bi bi-gear-fill"></i> ${v.trans}</span>
         </div>
+        <p class="vc-desc">${v.desc}</p>
         <div class="price-row">
           <button class="price-btn" onclick="bookWA('${v.name}','${v.trans}',${v.price},${v.deposit})">
             ₹${v.price.toLocaleString('en-IN')}/day — Book Now
