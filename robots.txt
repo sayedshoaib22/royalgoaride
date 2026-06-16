@@ -3,5 +3,6 @@ Allow: /
 
 Sitemap: https://royalgoaride.com/sitemap.xml
 
+# Optional security paths — keep disallowed to prevent accidental indexing
 Disallow: /admin/
 Disallow: /private/

@@ -253,6 +253,32 @@
         </div>
       </div>
     </section>
+      <!-- ══ 7. FLEET ══ -->
+    <section id="fleet" class="fleet-section section-pad" aria-labelledby="fleet-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Our Fleet</div>
+          <h2 class="section-title" id="fleet-heading">Choose Your <span class="neon">Ride</span></h2>
+          <p class="section-sub">All vehicles well-maintained, sanitised, and available for immediate booking via
+            WhatsApp.</p>
+        </div>
+        <div class="fleet-filters" role="group" aria-label="Filter vehicles by type">
+          <button class="filter-btn active" data-filter="all" onclick="filterFleet('all',this)" aria-pressed="true">All
+            Vehicles</button>
+          <button class="filter-btn" data-filter="hatchback" onclick="filterFleet('hatchback',this)"
+            aria-pressed="false">Hatchbacks</button>
+          <button class="filter-btn" data-filter="suv" onclick="filterFleet('suv',this)"
+            aria-pressed="false">SUVs</button>
+          <button class="filter-btn" data-filter="family" onclick="filterFleet('family',this)"
+            aria-pressed="false">Family Cars</button>
+          <button class="filter-btn" data-filter="luxury" onclick="filterFleet('luxury',this)"
+            aria-pressed="false">Luxury</button>
+          <button class="filter-btn" data-filter="auto" onclick="filterFleet('auto',this)"
+            aria-pressed="false">Automatic</button>
+        </div>
+        <div class="fleet-grid" id="fleet-grid" aria-live="polite" aria-label="Vehicle listings"></div>
+      </div>
+    </section>
 
     <!-- ══ 3. ABOUT ROYAL GOA RIDE ══ -->
     <section id="about" class="about-section section-pad" aria-labelledby="about-heading">
@@ -564,32 +590,7 @@
       </div>
     </section>
 
-    <!-- ══ 7. FLEET ══ -->
-    <section id="fleet" class="fleet-section section-pad" aria-labelledby="fleet-heading">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-tag">Our Fleet</div>
-          <h2 class="section-title" id="fleet-heading">Choose Your <span class="neon">Ride</span></h2>
-          <p class="section-sub">All vehicles well-maintained, sanitised, and available for immediate booking via
-            WhatsApp.</p>
-        </div>
-        <div class="fleet-filters" role="group" aria-label="Filter vehicles by type">
-          <button class="filter-btn active" data-filter="all" onclick="filterFleet('all',this)" aria-pressed="true">All
-            Vehicles</button>
-          <button class="filter-btn" data-filter="hatchback" onclick="filterFleet('hatchback',this)"
-            aria-pressed="false">Hatchbacks</button>
-          <button class="filter-btn" data-filter="suv" onclick="filterFleet('suv',this)"
-            aria-pressed="false">SUVs</button>
-          <button class="filter-btn" data-filter="family" onclick="filterFleet('family',this)"
-            aria-pressed="false">Family Cars</button>
-          <button class="filter-btn" data-filter="luxury" onclick="filterFleet('luxury',this)"
-            aria-pressed="false">Luxury</button>
-          <button class="filter-btn" data-filter="auto" onclick="filterFleet('auto',this)"
-            aria-pressed="false">Automatic</button>
-        </div>
-        <div class="fleet-grid" id="fleet-grid" aria-live="polite" aria-label="Vehicle listings"></div>
-      </div>
-    </section>
+  
 
     <!-- ══ 8–13. LOCATIONS ══ -->
     <section id="locations" class="section-pad" style="background:var(--bg-mid)" aria-labelledby="locations-heading">
