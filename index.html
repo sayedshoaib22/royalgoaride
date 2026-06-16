@@ -94,7 +94,7 @@
 
   <!-- SCHEMA: LocalBusiness / CarRental -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":["LocalBusiness","CarRental"],"@id":"https://royalgoaride.com/#localbusiness","name":"Royal Goa Ride","url":"https://royalgoaride.com","telephone":"+919975356697","email":"info@royalgoaride.com","priceRange":"₹₹","currenciesAccepted":"INR","paymentAccepted":"Cash, Credit Card, Debit Card, UPI","description":"Royal Goa Ride offers reliable car rental in Goa since 2010. Self drive hatchbacks, sedans, SUVs, luxury cars. Airport pickup, hotel delivery, 24/7 support.","address":{"@type":"PostalAddress","streetAddress":"Near Madgao Railway Station","addressLocality":"Margao","addressRegion":"Goa","postalCode":"403601","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":15.2736,"longitude":73.9575},"areaServed":[{"@type":"City","name":"Goa"},{"@type":"Place","name":"Calangute, Goa"},{"@type":"Place","name":"Baga, Goa"},{"@type":"Place","name":"Anjuna, Goa"},{"@type":"Place","name":"Panjim, Goa"},{"@type":"Place","name":"Madgaon, Goa"},{"@type":"Place","name":"Dabolim Airport, Goa"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}]}
+  {"@context":"https://schema.org","@type":["LocalBusiness","CarRental"],"@id":"https://royalgoaride.com/#localbusiness","name":"Royal Goa Ride","url":"https://royalgoaride.com","telephone":"+919975356697","email":"info@royalgoaride.com","priceRange":"₹₹","currenciesAccepted":"INR","paymentAccepted":"Cash, Credit Card, Debit Card, UPI","description":"Royal Goa Ride offers reliable car rental in Goa since 2010. Self drive hatchbacks, sedans, SUVs, luxury cars. Airport pickup, hotel delivery, 24/7 support.","address":{"@type":"PostalAddress","streetAddress":"Near Madgao Railway Station","addressLocality":"Margao","addressRegion":"Goa","postalCode":"403601","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":15.2736,"longitude":73.9575},"areaServed":[{"@type":"City","name":"Goa"},{"@type":"Place","name":"Calangute, Goa"},{"@type":"Place","name":"Baga, Goa"},{"@type":"Place","name":"Anjuna, Goa"},{"@type":"Place","name":"Panjim, Goa"},{"@type":"Place","name":"Madgaon, Goa"},{"@type":"Place","name":"Dabolim Airport, Goa"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"247"}}
   </script>
 
   <!-- SCHEMA: FAQPage -->
@@ -105,6 +105,63 @@
   <!-- SCHEMA: BreadcrumbList -->
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://royalgoaride.com/"}]}
+  </script>
+
+  <!-- SCHEMA: Reviews -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Review",
+        "@id": "https://royalgoaride.com/#review-amit-kumar",
+        "author": {"@type": "Person", "name": "Amit Kumar"},
+        "reviewBody": "Outstanding car rental experience! The booking was quick, the Swift was spotless, and the team delivered it right to my hotel in Calangute. Will definitely use again on my next Goa trip.",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "itemReviewed": {"@type": "LocalBusiness", "name": "Royal Goa Ride", "url": "https://royalgoaride.com", "telephone": "+919975356697", "address": {"@type": "PostalAddress", "addressLocality": "Goa", "addressCountry": "IN"}}
+      },
+      {
+        "@type": "Review",
+        "@id": "https://royalgoaride.com/#review-priya-sharma",
+        "author": {"@type": "Person", "name": "Priya Sharma"},
+        "reviewBody": "Smooth process from start to finish. The Automatic Baleno was in perfect condition — great Bluetooth system! Airport delivery at 11pm was seamless. Highly recommend Royal Goa Ride.",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "itemReviewed": {"@type": "LocalBusiness", "name": "Royal Goa Ride", "url": "https://royalgoaride.com", "telephone": "+919975356697", "address": {"@type": "PostalAddress", "addressLocality": "Goa", "addressCountry": "IN"}}
+      },
+      {
+        "@type": "Review",
+        "@id": "https://royalgoaride.com/#review-sneha-mehra",
+        "author": {"@type": "Person", "name": "Sneha Mehra"},
+        "reviewBody": "Rented the Thar for a beach road trip with friends — absolutely thrilling! Honest pricing, car was clean, team was super helpful with local tips. Best self-drive rental in Goa, no question.",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "itemReviewed": {"@type": "LocalBusiness", "name": "Royal Goa Ride", "url": "https://royalgoaride.com", "telephone": "+919975356697", "address": {"@type": "PostalAddress", "addressLocality": "Goa", "addressCountry": "IN"}}
+      },
+      {
+        "@type": "Review",
+        "@id": "https://royalgoaride.com/#review-rajesh-patel",
+        "author": {"@type": "Person", "name": "Rajesh Patel"},
+        "reviewBody": "Travelled with family of 5 — the Innova Crysta was perfect. Delivered to our Panjim hotel on time, clean and fully fuelled. Great experience, zero stress. Will recommend to all my friends visiting Goa.",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "itemReviewed": {"@type": "LocalBusiness", "name": "Royal Goa Ride", "url": "https://royalgoaride.com", "telephone": "+919975356697", "address": {"@type": "PostalAddress", "addressLocality": "Goa", "addressCountry": "IN"}}
+      },
+      {
+        "@type": "Review",
+        "@id": "https://royalgoaride.com/#review-kiran-nair",
+        "author": {"@type": "Person", "name": "Kiran Nair"},
+        "reviewBody": "Excellent service! Rented the Creta for 5 days — perfect for covering both North and South Goa. Sahil and his team were always available on WhatsApp for any questions. Transparent, professional, reliable.",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "itemReviewed": {"@type": "LocalBusiness", "name": "Royal Goa Ride", "url": "https://royalgoaride.com", "telephone": "+919975356697", "address": {"@type": "PostalAddress", "addressLocality": "Goa", "addressCountry": "IN"}}
+      },
+      {
+        "@type": "Review",
+        "@id": "https://royalgoaride.com/#review-michael-torres",
+        "author": {"@type": "Person", "name": "Michael Torres"},
+        "reviewBody": "Monthly rental for 6 weeks — got an incredible deal and a reliable car throughout my stay. Royal Goa Ride handled everything professionally and the car was never a concern. Perfect for long stays in Goa.",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "itemReviewed": {"@type": "LocalBusiness", "name": "Royal Goa Ride", "url": "https://royalgoaride.com", "telephone": "+919975356697", "address": {"@type": "PostalAddress", "addressLocality": "Goa", "addressCountry": "IN"}}
+      }
+    ]
+  }
   </script>
 
 
@@ -260,7 +317,7 @@
         </div>
       </div>
     </section>
-      <!-- ══ 7. FLEET ══ -->
+    <!-- ══ 7. FLEET ══ -->
     <section id="fleet" class="fleet-section section-pad" aria-labelledby="fleet-heading">
       <div class="container">
         <div class="section-header">
@@ -422,7 +479,7 @@
       </div>
     </section>
 
-  
+
 
     <!-- ══ 3. ABOUT ROYAL GOA RIDE ══ -->
     <section id="about" class="about-section section-pad" aria-labelledby="about-heading">
@@ -1171,70 +1228,70 @@
           </div>
         </div>
         <div class="reviews-grid">
-          <article class="review-card fade-in" itemscope itemtype="https://schema.org/Review">
+          <article class="review-card fade-in">
             <div class="review-quote" aria-hidden="true">"</div>
-            <p itemprop="reviewBody">Outstanding car rental experience! The booking was quick, the Swift was spotless,
+            <p>Outstanding car rental experience! The booking was quick, the Swift was spotless,
               and the team delivered it right to my hotel in Calangute. Will definitely use again on my next Goa trip.
             </p>
             <div class="review-stars" aria-label="5 stars">★★★★★</div>
             <div class="review-author">
               <div class="author-avatar" aria-hidden="true">A</div>
-              <div><strong itemprop="author">Amit Kumar</strong><br /><small>Delhi · Verified Booking</small></div>
+              <div><strong>Amit Kumar</strong><br /><small>Delhi · Verified Booking</small></div>
             </div>
           </article>
-          <article class="review-card fade-in" itemscope itemtype="https://schema.org/Review">
+          <article class="review-card fade-in">
             <div class="review-quote" aria-hidden="true">"</div>
-            <p itemprop="reviewBody">Smooth process from start to finish. The Automatic Baleno was in perfect condition
+            <p>Smooth process from start to finish. The Automatic Baleno was in perfect condition
               — great Bluetooth system! Airport delivery at 11pm was seamless. Highly recommend Royal Goa Ride.</p>
             <div class="review-stars" aria-label="5 stars">★★★★★</div>
             <div class="review-author">
               <div class="author-avatar" aria-hidden="true">P</div>
-              <div><strong itemprop="author">Priya Sharma</strong><br /><small>Mumbai · Verified Booking</small></div>
+              <div><strong>Priya Sharma</strong><br /><small>Mumbai · Verified Booking</small></div>
             </div>
           </article>
-          <article class="review-card fade-in" itemscope itemtype="https://schema.org/Review">
+          <article class="review-card fade-in">
             <div class="review-quote" aria-hidden="true">"</div>
-            <p itemprop="reviewBody">Rented the Thar for a beach road trip with friends — absolutely thrilling! Honest
+            <p>Rented the Thar for a beach road trip with friends — absolutely thrilling! Honest
               pricing, car was clean, team was super helpful with local tips. Best self-drive rental in Goa, no
               question.</p>
             <div class="review-stars" aria-label="5 stars">★★★★★</div>
             <div class="review-author">
               <div class="author-avatar" aria-hidden="true">S</div>
-              <div><strong itemprop="author">Sneha Mehra</strong><br /><small>Pune · Verified Booking</small></div>
+              <div><strong>Sneha Mehra</strong><br /><small>Pune · Verified Booking</small></div>
             </div>
           </article>
-          <article class="review-card fade-in" itemscope itemtype="https://schema.org/Review">
+          <article class="review-card fade-in">
             <div class="review-quote" aria-hidden="true">"</div>
-            <p itemprop="reviewBody">Travelled with family of 5 — the Innova Crysta was perfect. Delivered to our Panjim
+            <p>Travelled with family of 5 — the Innova Crysta was perfect. Delivered to our Panjim
               hotel on time, clean and fully fuelled. Great experience, zero stress. Will recommend to all my friends
               visiting Goa.</p>
             <div class="review-stars" aria-label="5 stars">★★★★★</div>
             <div class="review-author">
               <div class="author-avatar" aria-hidden="true">R</div>
-              <div><strong itemprop="author">Rajesh Patel</strong><br /><small>Ahmedabad · Verified Booking</small>
+              <div><strong>Rajesh Patel</strong><br /><small>Ahmedabad · Verified Booking</small>
               </div>
             </div>
           </article>
-          <article class="review-card fade-in" itemscope itemtype="https://schema.org/Review">
+          <article class="review-card fade-in">
             <div class="review-quote" aria-hidden="true">"</div>
-            <p itemprop="reviewBody">Excellent service! Rented the Creta for 5 days — perfect for covering both North
+            <p>Excellent service! Rented the Creta for 5 days — perfect for covering both North
               and South Goa. Sahil and his team were always available on WhatsApp for any questions. Transparent,
               professional, reliable.</p>
             <div class="review-stars" aria-label="5 stars">★★★★★</div>
             <div class="review-author">
               <div class="author-avatar" aria-hidden="true">K</div>
-              <div><strong itemprop="author">Kiran Nair</strong><br /><small>Bangalore · Verified Booking</small></div>
+              <div><strong>Kiran Nair</strong><br /><small>Bangalore · Verified Booking</small></div>
             </div>
           </article>
-          <article class="review-card fade-in" itemscope itemtype="https://schema.org/Review">
+          <article class="review-card fade-in">
             <div class="review-quote" aria-hidden="true">"</div>
-            <p itemprop="reviewBody">Monthly rental for 6 weeks — got an incredible deal and a reliable car throughout
+            <p>Monthly rental for 6 weeks — got an incredible deal and a reliable car throughout
               my stay. Royal Goa Ride handled everything professionally and the car was never a concern. Perfect for
               long stays in Goa.</p>
             <div class="review-stars" aria-label="5 stars">★★★★★</div>
             <div class="review-author">
               <div class="author-avatar" aria-hidden="true">M</div>
-              <div><strong itemprop="author">Michael Torres</strong><br /><small>UK · Verified Booking</small></div>
+              <div><strong>Michael Torres</strong><br /><small>UK · Verified Booking</small></div>
             </div>
           </article>
         </div>
