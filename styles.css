@@ -492,7 +492,7 @@ button:focus-visible,
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s cubic-bezier(0.23, 1, 0.32, 1),
-                padding 0.3s ease;
+        padding 0.3s ease;
 }
 
 .mobile-menu.open {
@@ -533,7 +533,8 @@ button:focus-visible,
     }
 
     .mobile-menu {
-        display: none !important; /* fully remove from layout on desktop */
+        display: none !important;
+        /* fully remove from layout on desktop */
     }
 }
 
@@ -571,19 +572,24 @@ button:focus-visible,
 }
 
 @keyframes videoBreathe {
-    0%, 100% { transform: scale(1.04); }
-    50%       { transform: scale(1.08); }
+
+    0%,
+    100% {
+        transform: scale(1.04);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        170deg,
-        rgba(2, 12, 8, 0.75) 0%,
-        rgba(2, 12, 8, 0.45) 45%,
-        rgba(2, 12, 8, 0.85) 100%
-    );
+    background: linear-gradient(170deg,
+            rgba(2, 12, 8, 0.75) 0%,
+            rgba(2, 12, 8, 0.45) 45%,
+            rgba(2, 12, 8, 0.85) 100%);
 }
 
 .hero-vignette {
@@ -602,8 +608,15 @@ button:focus-visible,
 }
 
 @keyframes leakPulse {
-    0%, 100% { opacity: 0.8; }
-    50%       { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 .hero-particles {
@@ -622,10 +635,23 @@ button:focus-visible,
 }
 
 @keyframes particleDrift {
-    0%   { transform: translateY(100vh); opacity: 0; }
-    8%   { opacity: 0.7; }
-    90%  { opacity: 0.3; }
-    100% { transform: translateY(-60px) translateX(20px); opacity: 0; }
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 0.7;
+    }
+
+    90% {
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translateY(-60px) translateX(20px);
+        opacity: 0;
+    }
 }
 
 /* FIX #3: safe padding for hero content — accounts for navbar + notch */
@@ -663,8 +689,15 @@ button:focus-visible,
 }
 
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-h1 {
@@ -713,7 +746,7 @@ button:focus-visible,
     /* FIX #12: remove extra padding — container handles it */
 }
 
-.hero-copy p + p {
+.hero-copy p+p {
     margin-top: 1rem;
 }
 
@@ -766,7 +799,8 @@ button:focus-visible,
     align-items: center;
     padding: 1rem clamp(0.75rem, 2vw, 2.5rem);
     flex: 1;
-    min-width: 0; /* FIX: allow flex children to shrink */
+    min-width: 0;
+    /* FIX: allow flex children to shrink */
     max-width: 180px;
 }
 
@@ -839,13 +873,29 @@ button:focus-visible,
 }
 
 @keyframes scrollWheelAnim {
-    0%, 100% { transform: translateY(0); opacity: 1; }
-    50%       { transform: translateY(6px); opacity: 0.3; }
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(6px);
+        opacity: 0.3;
+    }
 }
 
 @keyframes scrollBounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50%       { transform: translateX(-50%) translateY(6px); }
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(6px);
+    }
 }
 
 /* Hero mobile overrides */
@@ -855,7 +905,7 @@ button:focus-visible,
     }
 
     .hero {
-        background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80');
+        background-image: url('https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1920&q=80');
         background-size: cover;
         background-position: center;
     }
@@ -1915,12 +1965,13 @@ button:focus-visible,
     border-radius: var(--radius);
     /* subtle indicator */
     scrollbar-width: thin;
-    scrollbar-color: rgba(0,245,160,0.3) transparent;
+    scrollbar-color: rgba(0, 245, 160, 0.3) transparent;
 }
 
 .pricing-table {
     width: 100%;
-    min-width: 540px; /* FIX: forces scroll on narrow viewports */
+    min-width: 540px;
+    /* FIX: forces scroll on narrow viewports */
     border-collapse: collapse;
     border-radius: var(--radius);
     overflow: hidden;
@@ -1997,6 +2048,101 @@ button:focus-visible,
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
 }
+
+/* ══════════════════════════════════
+   FOUNDER PAGE ENHANCEMENTS
+   Targeted improvements for founder.html hero, media and FAQ readability
+   ══════════════════════════════════ */
+.hero.hero-small {
+    padding: clamp(2rem, 5vw, 4rem) 0;
+    background: linear-gradient(180deg, rgba(3, 10, 16, 0.6), rgba(3, 10, 16, 0.85));
+}
+
+.hero.hero-small .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    align-items: center;
+}
+
+.hero.hero-small .hero-copy {
+    text-align: left;
+}
+
+.hero-media img {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.6), 0 6px 18px rgba(0, 245, 160, 0.06);
+    object-fit: cover;
+}
+
+.hero-text {
+    font-size: clamp(1rem, 1.8vw, 1.06rem);
+    color: var(--text-muted);
+    line-height: 1.75;
+    max-width: 760px;
+}
+
+.breadcrumb {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    color: var(--text-muted);
+}
+
+.breadcrumb-inner {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.6rem 0;
+}
+
+.breadcrumb-inner a {
+    color: var(--neon);
+    font-weight: 700;
+}
+
+.section-pad h2 {
+    margin-top: 0.25rem;
+}
+
+.faq-section h2 {
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+}
+
+.faq-list .faq-q {
+    width: 100%;
+    text-align: left;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    margin-bottom: 0.55rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.faq-list .faq-a {
+    padding: 10px 16px 16px;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+    .hero.hero-small .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-media img {
+        max-width: 360px;
+        margin: 1rem auto 0;
+    }
+}
+
 
 .step-card {
     background: var(--bg-card);
@@ -2566,7 +2712,7 @@ button:focus-visible,
     margin-bottom: 0.75rem;
 }
 
-.contact-cta-block > p {
+.contact-cta-block>p {
     font-size: 0.875rem;
     color: var(--text-muted);
     margin-bottom: 1.5rem;
@@ -2647,7 +2793,7 @@ button:focus-visible,
     margin-bottom: 1rem;
 }
 
-.footer-brand > p {
+.footer-brand>p {
     font-size: 0.85rem;
     color: var(--text-muted);
     line-height: 1.7;
@@ -2772,7 +2918,8 @@ button:focus-visible,
     border-radius: 10px;
     padding: 11px 8px;
     text-decoration: none;
-    min-height: 44px; /* accessibility tap target */
+    min-height: 44px;
+    /* accessibility tap target */
 }
 
 .mobile-sticky-cta .cta-call {
@@ -2830,9 +2977,20 @@ button:focus-visible,
 }
 
 @keyframes waRing {
-    0%   { transform: scale(1);   opacity: 0.7; }
-    70%  { transform: scale(1.9); opacity: 0; }
-    100% { transform: scale(1.9); opacity: 0; }
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    70% {
+        transform: scale(1.9);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.9);
+        opacity: 0;
+    }
 }
 
 .float-wa__btn {
@@ -2980,6 +3138,7 @@ button:focus-visible,
    REDUCED MOTION
    ══════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -3003,6 +3162,7 @@ button:focus-visible,
    PRINT
    ══════════════════════════════════ */
 @media print {
+
     .float-wa,
     .mobile-sticky-cta,
     .nav-hamburger,
