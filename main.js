@@ -224,6 +224,9 @@ window.submitQuote = function () {
   const loc = f.querySelector('[name=location]').value || '';
   const msg = `Hi! I want an instant quote for car rental in Goa:\n\nName: ${name}\nPhone: ${phone}\nPickup Date: ${pickup}\nReturn Date: ${ret}\nVehicle: ${veh}\nPickup Location: ${loc}\n\nPlease share availability and pricing. Thank you!`;
   if (window.dataLayer) dataLayer.push({ event: 'instant_quote', method: 'form' });
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', { 'send_to': 'AW-17966331278/4Ts5CO-HjP0bEI7rgfdC' });
+  }
   window.open('https://wa.me/919975356697?text=' + encodeURIComponent(msg), '_blank');
 };
 
