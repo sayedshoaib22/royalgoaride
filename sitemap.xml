@@ -5,6 +5,11 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://royalgoaride.com/founder.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   
   <!-- LOCATION PAGES (8 pages) -->
   <url>
