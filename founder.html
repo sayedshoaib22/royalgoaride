@@ -49,15 +49,20 @@
     </noscript>
     <link rel="stylesheet" href="legacy.css" />
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-7510098927"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'AW-7510098927');
-        gtag('config', 'G-MZLZTPZ5C8');
-        gtag('config', 'AW-17966331278');
-    </script>
+    <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17966331278"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17966331278');
+</script>
+
+
+
 
     <script type="application/ld+json">
   {
@@ -120,6 +125,23 @@
         "telephone": "+919975356697"
     }
     </script>
+
+<!-- Event snippet for Contact conversion page -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17966331278/uSBECNvYyPwbEI7rgfdC',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
 </head>
 
 <body>
