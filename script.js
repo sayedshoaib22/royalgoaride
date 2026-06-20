@@ -437,6 +437,102 @@ function initScrollReveal() {
 }
 
 /* ── SET MIN DATES ── */
+const REVIEW_CONTACTED_KEY = 'royalgoa_contacted';
+const REVIEW_POPUP_SHOWN_KEY = 'royalgoa_review_popup_shown';
+const REVIEW_POPUP_INTERVAL = 30 * 24 * 60 * 60 * 1000;
+const REVIEW_LINK = 'https://g.page/r/Ccw4TRAGtkCyEBM/review';
+
+function setContacted() {
+  try {
+    localStorage.setItem(REVIEW_CONTACTED_KEY, 'true');
+  } catch (error) {
+    // ignore if storage is unavailable
+  }
+}
+
+function hasContacted() {
+  try {
+    return localStorage.getItem(REVIEW_CONTACTED_KEY) === 'true';
+  } catch (error) {
+    return false;
+  }
+}
+
+function getPopupShownAt() {
+  try {
+    const value = localStorage.getItem(REVIEW_POPUP_SHOWN_KEY);
+    const timestamp = Number(value);
+    return Number.isFinite(timestamp) && timestamp > 0 ? timestamp : 0;
+  } catch (error) {
+    return 0;
+  }
+}
+
+function setPopupShownAt(timestamp = Date.now()) {
+  try {
+    localStorage.setItem(REVIEW_POPUP_SHOWN_KEY, String(timestamp));
+  } catch (error) {
+    // ignore if storage is unavailable
+  }
+}
+
+function shouldShowReviewPopup() {
+  if (!hasContacted()) return false;
+  const shownAt = getPopupShownAt();
+  return shownAt === 0 || (Date.now() - shownAt) > REVIEW_POPUP_INTERVAL;
+}
+
+function showReviewPopup() {
+  const backdrop = document.getElementById('review-popup-backdrop');
+  if (!backdrop) return;
+  backdrop.classList.add('open');
+  backdrop.setAttribute('aria-hidden', 'false');
+  setPopupShownAt();
+}
+
+function hideReviewPopup() {
+  const backdrop = document.getElementById('review-popup-backdrop');
+  if (!backdrop) return;
+  backdrop.classList.remove('open');
+  backdrop.setAttribute('aria-hidden', 'true');
+}
+
+function addContactTracking() {
+  const selectors = [
+    'a[href*="wa.me/919975356697"]',
+    'a[href^="tel:+919975356697"]'
+  ];
+  document.querySelectorAll(selectors.join(',')).forEach((element) => {
+    element.addEventListener('click', () => setContacted(), { passive: true });
+  });
+}
+
+function addPopupControls() {
+  const closeButton = document.getElementById('review-popup-close');
+  const laterButton = document.getElementById('review-popup-later');
+  const reviewButton = document.getElementById('review-popup-leave-review');
+  const backdrop = document.getElementById('review-popup-backdrop');
+
+  if (closeButton) closeButton.addEventListener('click', hideReviewPopup);
+  if (laterButton) laterButton.addEventListener('click', hideReviewPopup);
+  if (reviewButton) {
+    reviewButton.addEventListener('click', () => {
+      setPopupShownAt();
+      hideReviewPopup();
+    });
+  }
+  if (backdrop) {
+    backdrop.addEventListener('click', (event) => {
+      if (event.target === backdrop) hideReviewPopup();
+    });
+  }
+}
+
+function scheduleReviewPopup() {
+  if (!shouldShowReviewPopup()) return;
+  setTimeout(showReviewPopup, 5000);
+}
+
 function initDateFields() {
   const pickup = document.getElementById('pickup-date');
   const ret = document.getElementById('return-date');
@@ -464,4 +560,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initReviewsNav();
   initScrollReveal();
   initDateFields();
+  addContactTracking();
+  addPopupControls();
+  scheduleReviewPopup();
 });

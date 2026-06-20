@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
@@ -665,6 +665,19 @@
       </div>
     </div>
   </footer>
+
+  <div class="review-popup-backdrop" id="review-popup-backdrop" aria-hidden="true">
+    <div class="review-popup-card" role="dialog" aria-modal="true" aria-labelledby="review-popup-title" aria-describedby="review-popup-copy">
+      <button class="review-popup-close" id="review-popup-close" aria-label="Close review request popup">×</button>
+      <span class="review-popup-badge">⭐ Recommended</span>
+      <h2 id="review-popup-title">⭐ Enjoyed Our Service?</h2>
+      <p id="review-popup-copy">Thank you for choosing Royal Goa Ride. If our service helped you, please take 30 seconds to leave a Google Review. Your feedback helps us grow and serve more travelers in Goa.</p>
+      <div class="review-popup-actions">
+        <a id="review-popup-leave-review" class="btn-primary" href="https://g.page/r/Ccw4TRAGtkCyEBM/review" target="_blank" rel="noopener noreferrer">⭐⭐⭐⭐⭐ Leave Review</a>
+        <button id="review-popup-later" class="btn-secondary">Maybe Later</button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js" defer></script>
 </body>

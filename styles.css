@@ -1,4 +1,4 @@
-/* =============================================================
+﻿/* =============================================================
    ROYAL GOA RIDE — Premium Redesign 2025
    Theme: Black · White · Gold · Luxury Travel
    Fonts: Cormorant Garamond (display) + Inter (body)
@@ -118,6 +118,120 @@ input, select { font-family: inherit; }
   border: 2px solid var(--black); transition: var(--transition);
 }
 .btn-outline:hover { background: var(--black); color: var(--white); }
+
+.review-popup-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 10, 0.65);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2000;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+.review-popup-backdrop.open {
+  visibility: visible;
+  opacity: 1;
+}
+.review-popup-card {
+  position: relative;
+  width: min(560px, calc(100% - 2rem));
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(201, 168, 76, 0.18);
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+  padding: 2rem;
+  transform: translateY(32px) scale(0.96);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.review-popup-backdrop.open .review-popup-card {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+.review-popup-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  color: var(--gold-dark);
+  background: rgba(201, 168, 76, 0.12);
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.review-popup-card h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 2.5vw, 2.2rem);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  color: var(--black);
+}
+.review-popup-card p {
+  color: var(--gray-700);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.75rem;
+}
+.review-popup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+.review-popup-actions .btn-primary,
+.review-popup-actions .btn-secondary {
+  flex: 1 1 220px;
+  justify-content: center;
+  min-width: 150px;
+}
+.review-popup-actions .btn-secondary {
+  color: var(--black);
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+.review-popup-actions .btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.review-popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(10, 10, 10, 0.08);
+  color: var(--black);
+  font-size: 1.45rem;
+  line-height: 1;
+  transition: var(--transition-fast);
+}
+.review-popup-close:hover {
+  transform: scale(1.05);
+  background: rgba(10, 10, 10, 0.12);
+}
+@media (max-width: 640px) {
+  .review-popup-card {
+    padding: 1.5rem;
+  }
+  .review-popup-actions {
+    flex-direction: column;
+  }
+  .review-popup-actions .btn-primary,
+  .review-popup-actions .btn-secondary {
+    width: 100%;
+  }
+}
 
 /* ── SECTION COMMON ── */
 .section-eyebrow {
