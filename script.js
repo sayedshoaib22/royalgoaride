@@ -186,11 +186,111 @@ function renderFleet(filter = 'all') {
         </div>
         <div class="vehicle-card-actions">
           <a href="${waLink('Hi, I want details about ' + v.name)}" class="btn-view-details" target="_blank" rel="noopener noreferrer">View Details</a>
-          <a href="${waLink('Hi, I want to book the ' + v.name + ' in Goa')}" class="btn-book-car" target="_blank" rel="noopener noreferrer">Book Now</a>
+          <a href="/book-now?car=${encodeURIComponent(v.name)}" class="btn-book-car">Book Now</a>
         </div>
       </div>
     </div>`;
   }).join('');
+}
+
+/* ── BOOKING PAGE HELPERS ── */
+function getQueryParam(name) {
+  return new URLSearchParams(window.location.search).get(name) || '';
+}
+
+function formatCurrency(amount) {
+  return amount ? `₹${amount.toLocaleString('en-IN')}` : '₹0';
+}
+
+function findBookingVehicle(query) {
+  if (!query) return vehicles[0] || null;
+  const norm = query.trim().toLowerCase();
+  return vehicles.find(v => v.name.toLowerCase() === norm)
+      || vehicles.find(v => v.name.toLowerCase().includes(norm))
+      || vehicles[0] || null;
+}
+
+function refreshBookingSummary(vehicle) {
+  if (!vehicle) return;
+  const rate = vehicle.autoPrice || vehicle.manualPrice || 0;
+  const deposit = vehicle.deposit || 0;
+  const days = 3;
+  const total = rate * days + deposit;
+  document.getElementById('summary-vehicle').textContent = vehicle.name;
+  document.getElementById('summary-rate').textContent = formatCurrency(rate);
+  document.getElementById('summary-deposit').textContent = formatCurrency(deposit);
+  document.getElementById('summary-total').textContent = formatCurrency(total);
+}
+
+function updateBookingChatLink(vehicle) {
+  const chatLink = document.getElementById('booking-chat');
+  if (!chatLink || !vehicle) return;
+  chatLink.href = waLink(`Hi, I want to book the ${vehicle.name} in Goa`);
+}
+
+function initFAQAccordion(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-q');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      container.querySelectorAll('.faq-item').forEach(other => {
+        other.classList.remove('open');
+        other.querySelector('.faq-q')?.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+}
+
+function initBookingPage() {
+  const vehicleSelect = document.getElementById('vehicle-select');
+  if (!vehicleSelect) return;
+  vehicleSelect.innerHTML = vehicles.map(v => `
+      <option value="${v.name}">${v.name} — ${v.cat}${v.autoPrice && !v.manualPrice ? ' (Auto)' : v.manualPrice && !v.autoPrice ? ' (Manual)' : ''}</option>`).join('');
+
+  const carParam = getQueryParam('car');
+  const selectedVehicle = findBookingVehicle(carParam);
+  if (selectedVehicle) {
+    vehicleSelect.value = selectedVehicle.name;
+  }
+
+  refreshBookingSummary(selectedVehicle);
+  updateBookingChatLink(selectedVehicle);
+
+  vehicleSelect.addEventListener('change', () => {
+    const chosen = findBookingVehicle(vehicleSelect.value);
+    refreshBookingSummary(chosen);
+    updateBookingChatLink(chosen);
+  });
+
+  const submitButton = document.getElementById('booking-submit');
+  if (submitButton) {
+    submitButton.addEventListener('click', () => {
+      const vehicle = findBookingVehicle(vehicleSelect.value);
+      const pickupLocation = document.getElementById('pickup-location')?.value.trim();
+      const pickupDate = document.getElementById('pickup-date')?.value;
+      const returnDate = document.getElementById('return-date')?.value;
+      const customerName = document.getElementById('customer-name')?.value.trim();
+      const customerPhone = document.getElementById('customer-phone')?.value.trim();
+      const notes = document.getElementById('customer-notes')?.value.trim();
+      let message = `Hi, I want to book the ${vehicle?.name || 'car'} in Goa`;
+      if (customerName) message += ` for ${customerName}`;
+      if (customerPhone) message += `, phone ${customerPhone}`;
+      if (pickupLocation) message += ` at ${pickupLocation}`;
+      if (pickupDate) message += ` pickup ${pickupDate}`;
+      if (returnDate) message += ` return ${returnDate}`;
+      if (notes) message += ` (${notes})`;
+      window.open(waLink(message), '_blank', 'noopener,noreferrer');
+    });
+  }
+
+  initFAQAccordion('booking-faq');
 }
 
 /* ── RENDER LOCATIONS ── */

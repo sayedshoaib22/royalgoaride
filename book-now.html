@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Now | Premium Goa Car Rental Booking</title>
+    <meta name="description" content="Book your Goa rental car with Royal Goa Ride. Choose a vehicle, select dates, and confirm fast hotel or airport delivery from a premium fleet." />
+    <meta name="keywords" content="book now goa car rental, goa car booking, premium car rental booking, hotel delivery goa" />
+    <link rel="canonical" href="https://royalgoaride.com/book-now" />
+    <link rel="icon" href="/assets/logo.webp" type="image/webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="legacy.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-7510098927"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'AW-7510098927');</script>
+    <style>
+        .booking-hero {
+            min-height: 620px;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.85), rgba(201, 168, 76, 0.18)), url('/assets/book-now-hero.webp') center/cover no-repeat;
+            color: #fff;
+        }
+        .booking-hero .hero-content {
+            max-width: 840px;
+            margin: 0 auto;
+        }
+        .booking-hero h1 {
+            font-size: clamp(2.8rem, 4vw, 4.2rem);
+            line-height: 1.05;
+            margin-bottom: 1rem;
+        }
+        .booking-hero p {
+            max-width: 760px;
+            margin: 0 auto 1.8rem;
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.92);
+        }
+        .booking-panel {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 32px;
+            align-items: start;
+            margin: 0 auto;
+            padding: 70px 0 100px;
+            max-width: 1240px;
+        }
+        .booking-form,
+        .booking-summary,
+        .trust-panel {
+            background: rgba(255,255,255,0.95);
+            border: 1px solid rgba(10,10,10,0.08);
+            border-radius: 28px;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.08);
+            padding: 32px;
+        }
+        .booking-form h2,
+        .booking-summary h2,
+        .trust-panel h2 {
+            font-size: 1.7rem;
+            margin-bottom: 20px;
+            color: #0a0a0a;
+        }
+        .booking-field {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .booking-field label {
+            font-weight: 600;
+            color: #121212;
+            font-size: 0.96rem;
+        }
+        .booking-field input,
+        .booking-field select,
+        .booking-field textarea {
+            width: 100%;
+            border: 1px solid rgba(10,10,10,0.12);
+            border-radius: 14px;
+            padding: 16px 18px;
+            font: inherit;
+            font-size: 1rem;
+            color: #0a0a0a;
+            background: #fff;
+        }
+        .booking-field textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .booking-actions {
+            display: grid;
+            gap: 16px;
+            margin-top: 12px;
+        }
+        .booking-summary .summary-card {
+            background: #faf8f0;
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 22px;
+        }
+        .booking-summary .summary-card h3 {
+            margin-bottom: 18px;
+            font-size: 1.1rem;
+            color: #0a0a0a;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 0.98rem;
+        }
+        .summary-row strong {
+            color: #0a0a0a;
+        }
+        .summary-total {
+            border-top: 1px solid rgba(10,10,10,0.1);
+            padding-top: 16px;
+            margin-top: 16px;
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+        .trust-grid {
+            display: grid;
+            gap: 18px;
+            margin-top: 30px;
+        }
+        .trust-card {
+            background: #fff;
+            border: 1px solid rgba(10,10,10,0.08);
+            border-radius: 20px;
+            padding: 18px 20px;
+            display: grid;
+            gap: 10px;
+        }
+        .trust-card h3 {
+            margin: 0;
+            font-size: 1rem;
+        }
+        .trust-card p {
+            margin: 0;
+            color: #4a4a4a;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        .faq-section {
+            padding: 60px 0 80px;
+        }
+        .faq-grid {
+            display: grid;
+            gap: 16px;
+            max-width: 940px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border: 1px solid rgba(10,10,10,0.1);
+            border-radius: 18px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .faq-q {
+            width: 100%;
+            text-align: left;
+            padding: 20px 24px;
+            background: #f7f4ec;
+            border: none;
+            font: inherit;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px;
+            cursor: pointer;
+        }
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+            padding: 0 24px;
+            color: #4d4d4d;
+            line-height: 1.8;
+        }
+        .faq-item.open .faq-a {
+            max-height: 400px;
+            padding: 18px 24px 24px;
+        }
+        .faq-item.open .faq-q i {
+            transform: rotate(45deg);
+        }
+        .booking-summary .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 14px;
+        }
+        .booking-summary .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            color: #363636;
+            line-height: 1.7;
+        }
+        .booking-summary .feature-list li i {
+            color: #C9A84C;
+            margin-top: 3px;
+        }
+        .booking-summary .vehicle-tag {
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: rgba(201,168,76,0.12);
+            color: #0a0a0a;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        @media (max-width: 980px) {
+            .booking-panel {
+                grid-template-columns: 1fr;
+                padding: 40px 0 60px;
+            }
+        }
+        @media (max-width: 720px) {
+            .booking-hero {
+                min-height: auto;
+                padding: 70px 20px;
+                background-position: center top;
+            }
+            .booking-form,
+            .booking-summary,
+            .trust-panel {
+                padding: 24px;
+            }
+            .booking-actions {
+                grid-template-columns: 1fr;
+            }
+            .booking-field input,
+            .booking-field select,
+            .booking-field textarea {
+                padding: 14px 16px;
+            }
+            .booking-hero h1 {
+                font-size: 2.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar" role="navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><img src="/assets/og-imag.webp" alt="Royal Goa Ride" width="160" height="42" /></a>
+            <div class="nav-actions">
+                <a href="tel:+919975356697" class="nav-phone">+91 99753 56697</a>
+                <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car%20in%20Goa" class="nav-cta-wa" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="booking-hero">
+            <div class="hero-content">
+                <span class="section-eyebrow light">Book Now</span>
+                <h1>Fast Goa Car Booking With Premium Fleet &amp; Airport Delivery</h1>
+                <p>Choose your vehicle, select pickup and return details, then confirm your rental instantly. Royal Goa Ride handles delivery, support, and local assistance across Goa.</p>
+                <div class="hero-ctas" style="justify-content:center; gap:18px; margin-top:24px;">
+                    <a href="tel:+919975356697" class="btn-primary"><i class="bi bi-telephone-fill"></i> Call +91 99753 56697</a>
+                    <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car%20in%20Goa" class="btn-wa" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> WhatsApp Booking</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container booking-panel" aria-label="Booking form and summary">
+            <div class="booking-form">
+                <h2>Secure Your Goa Rental</h2>
+                <div class="booking-field">
+                    <label for="vehicle-select">Select Vehicle</label>
+                    <select id="vehicle-select" name="vehicle">
+                        <option value="">Loading vehicles...</option>
+                    </select>
+                </div>
+                <div class="booking-field">
+                    <label for="pickup-location">Pickup Location</label>
+                    <input id="pickup-location" name="pickup-location" type="text" placeholder="Hotel, airport, or resort address" />
+                </div>
+                <div class="booking-field">
+                    <label for="pickup-date">Pickup Date</label>
+                    <input id="pickup-date" name="pickup-date" type="date" />
+                </div>
+                <div class="booking-field">
+                    <label for="return-date">Return Date</label>
+                    <input id="return-date" name="return-date" type="date" />
+                </div>
+                <div class="booking-field">
+                    <label for="customer-name">Name</label>
+                    <input id="customer-name" name="customer-name" type="text" placeholder="Your name" />
+                </div>
+                <div class="booking-field">
+                    <label for="customer-phone">Phone</label>
+                    <input id="customer-phone" name="customer-phone" type="tel" placeholder="+91 98765 43210" />
+                </div>
+                <div class="booking-field">
+                    <label for="customer-email">Email (optional)</label>
+                    <input id="customer-email" name="customer-email" type="email" placeholder="you@example.com" />
+                </div>
+                <div class="booking-field">
+                    <label for="customer-notes">Special Requests</label>
+                    <textarea id="customer-notes" name="customer-notes" placeholder="Extra bags, baby seat, early pickup, etc."></textarea>
+                </div>
+                <div class="booking-actions">
+                    <button type="button" id="booking-submit" class="btn-primary btn-full"><i class="bi bi-check2-circle"></i> Request Booking</button>
+                    <a id="booking-chat" href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car%20in%20Goa" class="btn-wa btn-full" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> Chat on WhatsApp</a>
+                </div>
+                <p style="color:#4b4b4b; font-size:0.95rem; margin-top:18px;">Booking requests are confirmed quickly by our team. Airport and hotel delivery across Goa with clear pricing and support.</p>
+            </div>
+
+            <aside class="booking-summary">
+                <div class="summary-card">
+                    <div class="vehicle-tag"><i class="bi bi-car-front-fill"></i> <span id="summary-vehicle">Maruti Baleno</span></div>
+                    <h3>Live Price Summary</h3>
+                    <div class="summary-row"><span>Daily Rate</span><strong id="summary-rate">₹1,300</strong></div>
+                    <div class="summary-row"><span>Security Deposit</span><strong id="summary-deposit">₹3,000</strong></div>
+                    <div class="summary-row"><span>Estimated 3-Day Total</span><strong id="summary-total">₹5,900</strong></div>
+                    <div class="summary-total">Instant booking support, delivery, and local assistance included.</div>
+                </div>
+                <h2>Why Book Here</h2>
+                <ul class="feature-list">
+                    <li><i class="bi bi-check-circle"></i> Fast hotel/airport delivery across North and South Goa.</li>
+                    <li><i class="bi bi-check-circle"></i> Transparent pricing with fixed day rates and refundable deposit.</li>
+                    <li><i class="bi bi-check-circle"></i> 24/7 WhatsApp support throughout your rental.</li>
+                    <li><i class="bi bi-check-circle"></i> Clean, insured cars with flexible pickup and return.</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section class="container trust-panel" aria-label="Booking advantages and trust signals">
+            <h2>Trusted Goa Car Rental Since 2010</h2>
+            <div class="trust-grid">
+                <div class="trust-card">
+                    <h3><i class="bi bi-clock-history"></i> Same-Day Delivery</h3>
+                    <p>We deliver cars across Goa often within 30–45 minutes. Book ahead or request same-day pickup for airport and resort arrivals.</p>
+                </div>
+                <div class="trust-card">
+                    <h3><i class="bi bi-shield-check"></i> Fully Insured & Verified</h3>
+                    <p>All vehicles are insured and inspected before delivery. Enjoy peace of mind with verified local service and roadside support.</p>
+                </div>
+                <div class="trust-card">
+                    <h3><i class="bi bi-star-fill"></i> 5-Star Customer Care</h3>
+                    <p>Customers praise our fast communication, flexible delivery, and reliable cars. We focus on clear pricing and smooth Goa travel.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container faq-section" aria-label="Frequently asked questions">
+            <div class="section-header">
+                <span class="section-eyebrow">FAQ</span>
+                <h2 class="section-title">Booking Questions Answered</h2>
+                <p class="section-sub">Everything you need to book confidently in Goa.</p>
+            </div>
+            <div class="faq-grid" id="booking-faq">
+                <div class="faq-item" data-index="0">
+                    <button class="faq-q" aria-expanded="false"><span>How soon can I get my car in Goa?</span><i class="bi bi-plus-lg"></i></button>
+                    <div class="faq-a">Most bookings are delivered within 30–45 minutes across Goa. Confirm your exact pickup address and we will schedule fast delivery.</div>
+                </div>
+                <div class="faq-item" data-index="1">
+                    <button class="faq-q" aria-expanded="false"><span>Can I choose the pickup location?</span><i class="bi bi-plus-lg"></i></button>
+                    <div class="faq-a">Yes. Enter your hotel, resort, airport, or villa address and we will bring the car to you. Delivery is available across North and South Goa.</div>
+                </div>
+                <div class="faq-item" data-index="2">
+                    <button class="faq-q" aria-expanded="false"><span>Do you deliver to Goa airports?</span><i class="bi bi-plus-lg"></i></button>
+                    <div class="faq-a">Yes. We offer delivery to Dabolim Airport (GOI) and Mopa Airport (GOX) with prior confirmation of flight details.</div>
+                </div>
+                <div class="faq-item" data-index="3">
+                    <button class="faq-q" aria-expanded="false"><span>What documents do I need?</span><i class="bi bi-plus-lg"></i></button>
+                    <div class="faq-a">Bring your driving licence and government-issued ID. Foreign travellers should also carry an International Driving Permit.</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="/assets/logo.webp" alt="Royal Goa Ride" class="footer-logo" width="48" height="48" loading="lazy" />
+                    <p class="footer-tagline">Goa's trusted self drive car rental since 2010. Premium fleet, honest delivery, 24/7 support.</p>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Contact</h3>
+                    <a href="tel:+919975356697" class="footer-phone"><i class="bi bi-telephone-fill"></i> +91 99753 56697</a>
+                    <a href="mailto:info@royalgoaride.com" class="footer-email"><i class="bi bi-envelope-fill"></i> info@royalgoaride.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Royal Goa Ride. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
