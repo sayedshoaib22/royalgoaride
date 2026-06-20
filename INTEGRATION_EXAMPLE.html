@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Reviews Integration Example - Royal Goa Ride</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    h1, h2 { color: #C9A84C; margin: 1.5rem 0 1rem; }
+    code { background: #f4f4f4; padding: 0.2rem 0.4rem; border-radius: 4px; }
+    pre { background: #1a1a1a; color: #fff; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0; }
+    .section { margin: 2rem 0; padding: 1.5rem; border-left: 4px solid #C9A84C; background: #f9f7f3; }
+    .highlight { color: #EA4335; font-weight: 600; }
+    .success { color: #34A853; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Royal Goa Ride - Google Reviews Integration</h1>
+    
+    <div class="section">
+      <h2>Step-by-Step Integration Guide</h2>
+      <p>Follow these steps to add the Real Google Reviews section to your website.</p>
+    </div>
+
+    <div class="section">
+      <h2>1️⃣ Add CSS Link to Your HTML Head</h2>
+      <p>Add this line in your <code>&lt;head&gt;</code> section:</p>
+      <pre>&lt;!-- Google Reviews Styles --&gt;
+&lt;link rel="stylesheet" href="styles-google-reviews.css" /&gt;</pre>
+    </div>
+
+    <div class="section">
+      <h2>2️⃣ Load Configuration & Scripts</h2>
+      <p>Add these script tags before your closing <code>&lt;/body&gt;</code> tag:</p>
+      <pre>&lt;!-- Google Reviews Configuration --&gt;
+&lt;script src="js/google-reviews-config.js"&gt;&lt;/script&gt;
+
+&lt;!-- Google Reviews Widget --&gt;
+&lt;script src="js/google-reviews-widget.js" defer&gt;&lt;/script&gt;</pre>
+    </div>
+
+    <div class="section">
+      <h2>3️⃣ Add the Reviews Section HTML</h2>
+      <p>Copy the entire content from <code>google-reviews-section.html</code> and paste it into your page where you want the reviews to appear.</p>
+      <p>Typically after your testimonials section or before the footer.</p>
+    </div>
+
+    <div class="section">
+      <h2>4️⃣ (Optional) Configure Google Places API</h2>
+      <p>To fetch <span class="highlight">real, live reviews</span> directly from Google:</p>
+      <pre>// In js/google-reviews-widget.js, line ~15
+this.googleMapsApiKey = 'YOUR_GOOGLE_PLACES_API_KEY';</pre>
+      <p>Replace with your actual Google Places API key.</p>
+      <p><a href="https://console.cloud.google.com/" target="_blank">Get API Key →</a></p>
+    </div>
+
+    <div class="section">
+      <h2>✅ Complete Example: Adding to index.html</h2>
+      <p>Here's how to integrate into your existing index.html:</p>
+      <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  
+  &lt;!-- Your existing styles --&gt;
+  &lt;link rel="stylesheet" href="styles.css" /&gt;
+  
+  &lt;!-- NEW: Google Reviews Styles --&gt;
+  &lt;link rel="stylesheet" href="styles-google-reviews.css" /&gt;
+  
+  &lt;title&gt;Royal Goa Ride - Car Rental&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;!-- Your existing content --&gt;
+  &lt;nav&gt;...&lt;/nav&gt;
+  &lt;section&gt;...&lt;/section&gt;
+  
+  &lt;!-- NEW: Google Reviews Section --&gt;
+  &lt;!-- Copy entire content from google-reviews-section.html here --&gt;
+  &lt;section id="google-reviews-section" class="section-google-reviews"&gt;
+    &lt;div class="container"&gt;
+      &lt;!-- Paste all the review section HTML --&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  
+  &lt;footer&gt;...&lt;/footer&gt;
+  
+  &lt;!-- Your existing scripts --&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+  
+  &lt;!-- NEW: Google Reviews Scripts --&gt;
+  &lt;script src="js/google-reviews-config.js"&gt;&lt;/script&gt;
+  &lt;script src="js/google-reviews-widget.js" defer&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <div class="section">
+      <h2>🎨 Customization Examples</h2>
+      
+      <h3>Change Refresh Rate</h3>
+      <p>In <code>js/google-reviews-widget.js</code>:</p>
+      <pre>// Refresh every 30 minutes instead of 1 hour
+this.refreshInterval = 1800000; // 30 minutes</pre>
+
+      <h3>Show More/Fewer Reviews</h3>
+      <p>In <code>js/google-reviews-widget.js</code>, find line with <code>.slice(0, 8)</code>:</p>
+      <pre>// Show 12 reviews instead of 8
+this.displayReviews(reviews.slice(0, 12));</pre>
+
+      <h3>Change Color Scheme</h3>
+      <p>In <code>styles-google-reviews.css</code>:</p>
+      <pre>/* Change gold color to your brand color */
+:root {
+  --gold: #YOUR_COLOR_HERE;
+}</pre>
+    </div>
+
+    <div class="section">
+      <h2>🔗 Important URLs for Your Business</h2>
+      <ul>
+        <li><strong>Google Business Profile:</strong> <a href="https://business.google.com" target="_blank">business.google.com</a></li>
+        <li><strong>Google Maps Location:</strong> <a href="https://maps.google.com" target="_blank">maps.google.com</a></li>
+        <li><strong>Google Cloud Console:</strong> <a href="https://console.cloud.google.com" target="_blank">console.cloud.google.com</a></li>
+        <li><strong>Rich Results Test:</strong> <a href="https://search.google.com/test/rich-results" target="_blank">search.google.com/test/rich-results</a></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>📋 Checklist Before Publishing</h2>
+      <ul>
+        <li>☐ CSS file linked in head</li>
+        <li>☐ HTML section added to page</li>
+        <li>☐ Scripts loaded before closing body tag</li>
+        <li>☐ Tested on desktop (browser)</li>
+        <li>☐ Tested on mobile (responsive)</li>
+        <li>☐ Tested on tablet</li>
+        <li>☐ "Read All Reviews" button works</li>
+        <li>☐ "Write a Review" button works</li>
+        <li>☐ Schema markup validates (Rich Results Test)</li>
+        <li>☐ Reviews display properly</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🐛 Troubleshooting</h2>
+      
+      <h3>Issue: Reviews not showing</h3>
+      <p><strong>Solution:</strong></p>
+      <ul>
+        <li>Check browser console for errors (F12)</li>
+        <li>Verify js/google-reviews-widget.js path is correct</li>
+        <li>Check that styles-google-reviews.css is loaded</li>
+      </ul>
+
+      <h3>Issue: Styling looks wrong</h3>
+      <p><strong>Solution:</strong></p>
+      <ul>
+        <li>Clear browser cache (Ctrl+Shift+Delete)</li>
+        <li>Verify styles-google-reviews.css path is correct</li>
+        <li>Check that no other CSS conflicts with review styles</li>
+      </ul>
+
+      <h3>Issue: Reviews not updating</h3>
+      <p><strong>Solution:</strong></p>
+      <ul>
+        <li>Verify Google Places API key is set (if using live API)</li>
+        <li>Widget uses cached reviews as fallback</li>
+        <li>Refresh interval set to 1 hour by default</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>📊 What Your Customers Will See</h2>
+      <ul>
+        <li>✅ Your actual 4.8★ Google rating</li>
+        <li>✅ Real review count (247+ reviews)</li>
+        <li>✅ Genuine customer reviews and feedback</li>
+        <li>✅ "Read All Reviews on Google" button</li>
+        <li>✅ "Write a Review" button</li>
+        <li>✅ Google logo and branding</li>
+        <li>✅ Responsive design on all devices</li>
+        <li>✅ Auto-updates every hour</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🚀 Advanced Features</h2>
+      
+      <h3>Manual Refresh Button</h3>
+      <p>Add this button to allow manual refreshes:</p>
+      <pre>&lt;button onclick="new GoogleReviewsWidget().loadReviews()"&gt;
+  Refresh Reviews
+&lt;/button&gt;</pre>
+
+      <h3>Get Reviews via Function Call</h3>
+      <pre>// In browser console
+window.googleReviewsWidget.loadReviews();</pre>
+
+      <h3>Custom CSS Classes</h3>
+      <p>Target specific elements:</p>
+      <pre>/* Rating display */
+#google-rating { font-size: 3rem; }
+
+/* Review items */
+.review-item { border: 2px solid gold; }
+
+/* Buttons */
+.btn-read-reviews { border-radius: 50px; }</pre>
+    </div>
+
+    <div class="section success">
+      <h2>✨ You're Ready!</h2>
+      <p>Follow the steps above and your Real Google Reviews section will be live on your Royal Goa Ride website.</p>
+      <p>For questions, refer to <code>GOOGLE_REVIEWS_SETUP_GUIDE.md</code> for detailed documentation.</p>
+    </div>
+  </div>
+</body>
+</html>

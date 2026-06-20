@@ -1,0 +1,199 @@
+<!-- ═══════════════════════════════════════════════════════════
+     ALTERNATIVE: GOOGLE BUSINESS PROFILE EMBEDDED REVIEWS
+     Using Official Google API with Embed Code
+     ═══════════════════════════════════════════════════════════ -->
+
+<!-- OPTION A: Google Review Widget Embed (Official) -->
+<!-- Insert this in your <head> for the widget API -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+
+<!-- OPTION B: Google Maps Embed with Reviews -->
+<div id="google-reviews-embed" class="google-reviews-embed-container">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.5247393628556!2d73.9575!3d15.2736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fce5a92d2f2eb91%3A0x0!2sRoyal%20Goa%20Ride!5e0!3m2!1sen!2sin!4v1234567890" 
+    width="100%" 
+    height="450" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     OPTION C: Google Reviews Carousel (Advanced)
+     Using Google Places API with Custom Rendering
+     ═══════════════════════════════════════════════════════════ -->
+
+<script>
+/**
+ * Advanced Google Reviews Carousel
+ * Requires: Google Places API Key
+ */
+
+const GOOGLE_PLACES_CONFIG = {
+  // Get your API key from Google Cloud Console
+  // https://console.cloud.google.com/
+  API_KEY: 'YOUR_GOOGLE_PLACES_API_KEY',
+  
+  // Royal Goa Ride Place ID (get from Google Maps)
+  PLACE_ID: 'ChIJsb-tJQMsqDkRvzKdQ_Jd2bk',
+  
+  // Business details
+  BUSINESS_NAME: 'Royal Goa Ride',
+  PHONE: '+919975356697',
+  WEBSITE: 'https://royalgoaride.com'
+};
+
+class GooglePlacesReviewCarousel {
+  constructor(config) {
+    this.config = config;
+    this.placeService = null;
+    this.init();
+  }
+
+  init() {
+    // Initialize Google Places Service
+    if (window.google) {
+      this.placeService = new google.maps.places.PlacesService(
+        document.createElement('div')
+      );
+      this.fetchPlaceDetails();
+    } else {
+      console.warn('Google Maps API not loaded');
+    }
+  }
+
+  fetchPlaceDetails() {
+    const request = {
+      placeId: this.config.PLACE_ID,
+      fields: [
+        'name',
+        'rating',
+        'user_ratings_total',
+        'reviews',
+        'formatted_phone_number',
+        'website',
+        'opening_hours',
+        'formatted_address'
+      ]
+    };
+
+    this.placeService.getDetails(request, (place, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        this.renderReviews(place);
+      } else {
+        console.error('Place details error:', status);
+      }
+    });
+  }
+
+  renderReviews(place) {
+    const container = document.getElementById('reviews-widget-container');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    if (place.reviews && place.reviews.length > 0) {
+      place.reviews.forEach((review, index) => {
+        const reviewEl = this.createReviewElement(review);
+        container.appendChild(reviewEl);
+      });
+    }
+
+    // Update rating display
+    document.getElementById('google-rating').textContent = 
+      place.rating ? place.rating.toFixed(1) : 'N/A';
+    
+    document.getElementById('google-review-count').textContent =
+      `Based on ${place.user_ratings_total || 0} reviews`;
+  }
+
+  createReviewElement(review) {
+    const div = document.createElement('div');
+    div.className = 'review-item';
+    
+    const starsHtml = Array(5)
+      .fill(0)
+      .map((_, i) => `<i class="bi bi-star${i < review.rating ? '-fill' : ''}"></i>`)
+      .join('');
+
+    const date = new Date(review.time * 1000).toLocaleDateString();
+
+    div.innerHTML = `
+      <div class="review-header">
+        <span class="review-author">${review.author_name}</span>
+        <span class="review-date">${date}</span>
+      </div>
+      <div class="review-stars">${starsHtml}</div>
+      <p class="review-text">${review.text}</p>
+      <div class="review-verified">
+        <i class="bi bi-check-circle-fill"></i> 
+        Verified Review on Google
+      </div>
+    `;
+
+    return div;
+  }
+}
+
+// Initialize when ready
+document.addEventListener('DOMContentLoaded', () => {
+  if (GOOGLE_PLACES_CONFIG.API_KEY !== 'YOUR_GOOGLE_PLACES_API_KEY') {
+    new GooglePlacesReviewCarousel(GOOGLE_PLACES_CONFIG);
+  }
+});
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════
+     OPTION D: Trustpilot Integration (Alternative)
+     ═══════════════════════════════════════════════════════════ -->
+
+<!-- Add your Trustpilot Business Unit ID -->
+<div id="trustpilot-reviews" data-businessunit-id="YOUR_TRUSTPILOT_ID"></div>
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.js"></script>
+
+<!-- ═══════════════════════════════════════════════════════════
+     LIVE UPDATE HANDLER
+     Refresh reviews every hour or on manual trigger
+     ═══════════════════════════════════════════════════════════ -->
+
+<script>
+/**
+ * Manual Review Refresh Button
+ * Add this to your UI for manual refreshes
+ */
+
+function refreshGoogleReviews() {
+  const button = document.querySelector('.btn-refresh-reviews');
+  if (button) {
+    button.disabled = true;
+    button.innerHTML = '<i class="bi bi-arrow-clockwise spin"></i> Refreshing...';
+  }
+
+  // Reload the widget
+  setTimeout(() => {
+    // Reinitialize carousel
+    if (window.carousel) {
+      window.carousel.fetchPlaceDetails();
+    }
+    
+    if (button) {
+      button.disabled = false;
+      button.innerHTML = '<i class="bi bi-arrow-clockwise"></i> Refresh Reviews';
+    }
+  }, 1500);
+}
+
+// Add CSS for spinning animation
+const style = document.createElement('style');
+style.textContent = `
+  .spin {
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+`;
+document.head.appendChild(style);
+</script>
