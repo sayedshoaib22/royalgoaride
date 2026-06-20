@@ -112,14 +112,46 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- BOOKING & GUIDE PAGES -->
+  <url>
+    <loc>https://royalgoaride.com/book-now.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://royalgoaride.com/car-rental-goa-airport.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://royalgoaride.com/baga.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://royalgoaride.com/cheap-car-rental-tips.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://royalgoaride.com/best-beaches-goa.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://royalgoaride.com/blog/best-places-goa-by-car.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- POLICY PAGES -->
   <url>
-    <loc>https://royalgoaride.com/privacy-policy.html</loc>
+    <loc>https://royalgoaride.com/privacy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://royalgoaride.com/terms-of-service.html</loc>
+    <loc>https://royalgoaride.com/terms.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
