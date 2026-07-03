@@ -146,6 +146,322 @@ function waLink(text) {
   return `https://wa.me/919975356697?text=${encodeURIComponent(text)}`;
 }
 
+function injectSharedLayout() {
+  const existingNav = document.querySelector('nav#navbar');
+  const existingFooter = document.querySelector('body > footer, footer.footer, footer.site-footer');
+  if (existingNav) existingNav.remove();
+  if (existingFooter) existingFooter.remove();
+
+  const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+  const activePage = pathname === '/' || pathname === '/index.html' ? 'home'
+    : pathname === '/complete-fleet.html' ? 'fleet'
+    : pathname === '/routes.html' ? 'routes'
+    : pathname === '/tourist-places.html' ? 'places'
+    : pathname === '/travel-guides.html' ? 'guides'
+    : pathname === '/about-us.html' ? 'about'
+    : pathname === '/faq.html' ? 'faq'
+    : pathname === '/rental-policies.html' ? 'policies'
+    : pathname === '/contact.html' ? 'contact'
+    : 'home';
+
+  const headerMarkup = `
+  <style>
+    .shared-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      background: rgba(8, 8, 8, 0.96);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+    }
+    .shared-nav .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .shared-nav .nav-logo img {
+      width: 52px;
+      height: 52px;
+      display: block;
+      border-radius: 50%;
+    }
+    .shared-nav .nav-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .shared-nav .nav-link {
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .shared-nav .nav-link:hover,
+    .shared-nav .nav-link.active {
+      background: rgba(201, 168, 76, 0.16);
+      color: #f2d892;
+    }
+    .shared-nav .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .shared-nav .nav-phone,
+    .shared-nav .nav-cta-wa {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .shared-nav .nav-phone {
+      background: rgba(255,255,255,0.08);
+    }
+    .shared-nav .nav-cta-wa {
+      background: linear-gradient(135deg, #c9a84c, #f1d06b);
+      color: #0b0b0b;
+    }
+    .shared-nav .nav-hamburger {
+      display: none;
+      background: transparent;
+      border: 0;
+      padding: 6px;
+      cursor: pointer;
+    }
+    .shared-nav .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #fff;
+      margin: 4px 0;
+      border-radius: 999px;
+    }
+    .shared-footer {
+      background: #0d0d0d;
+      color: rgba(255,255,255,0.84);
+      padding: 48px 24px 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .shared-footer .footer-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr 0.8fr 1fr;
+      gap: 24px;
+    }
+    .shared-footer .footer-brand p,
+    .shared-footer .footer-links li,
+    .shared-footer .footer-contact a,
+    .shared-footer .footer-bottom p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .shared-footer .footer-heading {
+      color: #f2d892;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .shared-footer .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+    .shared-footer .footer-links a,
+    .shared-footer .footer-contact a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .shared-footer .footer-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .shared-footer .footer-social a {
+      color: #111;
+      background: #f2d892;
+      border-radius: 999px;
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    .shared-footer .footer-bottom {
+      max-width: 1280px;
+      margin: 24px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+      color: rgba(255,255,255,0.72);
+    }
+    .shared-footer .footer-bottom a {
+      color: #f2d892;
+      text-decoration: none;
+    }
+    @media (max-width: 1080px) {
+      .shared-footer .footer-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+    @media (max-width: 760px) {
+      .shared-nav .nav-links {
+        display: none;
+      }
+      .shared-nav .nav-phone {
+        display: none;
+      }
+      .shared-nav .nav-hamburger {
+        display: inline-block;
+      }
+      .shared-nav .nav-links.open {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 20px;
+        right: 20px;
+        background: rgba(8,8,8,0.98);
+        padding: 16px;
+        border-radius: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: 0 18px 40px rgba(0,0,0,0.24);
+      }
+      .shared-footer .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <nav id="navbar" class="shared-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Royal Goa Ride — Homepage">
+        <img src="/assets/logo.webp" alt="Royal Goa Ride" width="52" height="52" loading="eager" />
+      </a>
+      <div class="nav-links" id="nav-links" role="menubar">
+        <a href="/" class="nav-link ${activePage === 'home' ? 'active' : ''}" role="menuitem">Home</a>
+        <a href="/complete-fleet.html" class="nav-link ${activePage === 'fleet' ? 'active' : ''}" role="menuitem">Fleet</a>
+        <a href="/routes.html" class="nav-link ${activePage === 'routes' ? 'active' : ''}" role="menuitem">Routes</a>
+        <a href="/tourist-places.html" class="nav-link ${activePage === 'places' ? 'active' : ''}" role="menuitem">Places</a>
+        <a href="/travel-guides.html" class="nav-link ${activePage === 'guides' ? 'active' : ''}" role="menuitem">Guides</a>
+        <a href="/about-us.html" class="nav-link ${activePage === 'about' ? 'active' : ''}" role="menuitem">About</a>
+        <a href="/faq.html" class="nav-link ${activePage === 'faq' ? 'active' : ''}" role="menuitem">FAQ</a>
+        <a href="/rental-policies.html" class="nav-link ${activePage === 'policies' ? 'active' : ''}" role="menuitem">Policies</a>
+        <a href="/contact.html" class="nav-link ${activePage === 'contact' ? 'active' : ''}" role="menuitem">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="tel:+919975356697" class="nav-phone"><i class="bi bi-telephone" aria-hidden="true"></i> +91 99753 56697</a>
+        <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car%20in%20Goa" class="nav-cta-wa" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i> Book Now</a>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>`;
+
+  const footerMarkup = `
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/assets/logo.webp" alt="Royal Goa Ride" class="footer-logo" width="48" height="48" loading="lazy" />
+          <div class="footer-badges">
+            <span><i class="bi bi-shield-check" aria-hidden="true"></i> Verified service</span>
+            <span><i class="bi bi-telephone" aria-hidden="true"></i> 24/7 support</span>
+          </div>
+          <p class="footer-tagline">Goa's trusted self drive car rental since 2010. Premium fleet, honest pricing, island-wide delivery.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/royalgoaride" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/royalgoaride" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://wa.me/919975356697" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/complete-fleet.html">Our Fleet</a></li>
+            <li><a href="/routes.html">Road Trip Routes</a></li>
+            <li><a href="/founder.html">Founder Story</a></li>
+            <li><a href="/faq.html">FAQ</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading">Locations</h3>
+          <ul class="footer-links">
+            <li><a href="/car-rental-calangute.html">Calangute</a></li>
+            <li><a href="/car-rental-candolim.html">Candolim</a></li>
+            <li><a href="/car-rental-baga.html">Baga</a></li>
+            <li><a href="/car-rental-anjuna.html">Anjuna</a></li>
+            <li><a href="/car-rental-panjim.html">Panjim</a></li>
+            <li><a href="/car-rental-margao.html">Margao</a></li>
+            <li><a href="/car-rental-mopa-airport.html">Mopa Airport</a></li>
+            <li><a href="/car-rental-dabolim-airport.html">Dabolim Airport</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading">Vehicles</h3>
+          <ul class="footer-links">
+            <li><a href="/thar-rental-goa.html">Mahindra Thar</a></li>
+            <li><a href="/innova-rental-goa.html">Toyota Innova</a></li>
+            <li><a href="/fortuner-rental-goa.html">Toyota Fortuner</a></li>
+            <li><a href="/creta-rental-goa.html">Hyundai Creta</a></li>
+            <li><a href="/baleno-rental-goa.html">Maruti Baleno</a></li>
+            <li><a href="/i20-rental-goa.html">Hyundai i20</a></li>
+            <li><a href="/luxury-car-rental-goa.html">Luxury Cars</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading">Guides</h3>
+          <ul class="footer-links">
+            <li><a href="/self-drive-car-rental-goa.html">Self Drive Guide</a></li>
+            <li><a href="/goa-airport-car-rental.html">Airport Car Rental</a></li>
+            <li><a href="/monthly-car-rental-goa.html">Monthly Rental</a></li>
+            <li><a href="/luxury-car-rental-goa.html">Luxury Car Rental</a></li>
+          </ul>
+          <div class="footer-contact">
+            <a href="tel:+919975356697" class="footer-phone"><i class="bi bi-telephone-fill"></i> +91 99753 56697</a>
+            <a href="mailto:info@royalgoaride.com" class="footer-email"><i class="bi bi-envelope-fill"></i> info@royalgoaride.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Royal Goa Ride. All rights reserved. | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/terms-of-service.html">Terms of Service</a> | <a href="/refund-policy.html">Refund Policy</a></p>
+      </div>
+    </div>
+  </footer>`;
+
+  const main = document.querySelector('main');
+  if (main) {
+    main.insertAdjacentHTML('beforebegin', headerMarkup);
+    main.insertAdjacentHTML('afterend', footerMarkup);
+  } else {
+    document.body.insertAdjacentHTML('afterbegin', headerMarkup);
+    document.body.insertAdjacentHTML('beforeend', footerMarkup);
+  }
+}
+
 /* ── RENDER FLEET ── */
 function renderFleet(filter = 'all') {
   const grid = document.getElementById('fleet-grid');
@@ -183,6 +499,53 @@ function renderFleet(filter = 'all') {
         <div class="vehicle-price-row">
           <div class="vehicle-price">\u20b9${price.toLocaleString('en-IN')}<span>/day</span></div>
           <div class="vehicle-price-auto">Deposit \u20b9${v.deposit.toLocaleString('en-IN')}</div>
+        </div>
+        <div class="vehicle-card-actions">
+          <a href="${waLink('Hi, I want details about ' + v.name)}" class="btn-view-details" target="_blank" rel="noopener noreferrer">View Details</a>
+          <a href="/book-now?car=${encodeURIComponent(v.name)}" class="btn-book-car">Book Now</a>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderFeaturedFleet() {
+  const grid = document.getElementById('fleet-grid');
+  if (!grid) return;
+  const featuredNames = ['Maruti Swift', 'Maruti Baleno', 'Hyundai Creta', 'Mahindra Thar', 'Toyota Fortuner', 'Maruti Ertiga'];
+  const list = vehicles.filter(v => featuredNames.includes(v.name)).slice(0, 6);
+  grid.innerHTML = list.map(v => {
+    const price = v.manualPrice || v.autoPrice;
+    const transLabel = v.manualPrice && v.autoPrice ? 'Manual & Auto' : (v.autoPrice ? 'Automatic' : 'Manual');
+    return `
+    <div class="vehicle-card">
+      <div class="vehicle-card-img">
+        <img src="${v.img}" alt="${v.name} self drive rental in Goa" loading="lazy" width="400" height="200" />
+        <span class="vehicle-type-badge">${v.cat}</span>
+      </div>
+      <div class="vehicle-card-body">
+        <h3 class="vehicle-name">${v.name}</h3>
+        <p class="vehicle-category">${v.desc}</p>
+        <div class="vehicle-specs">
+          <div class="vehicle-spec">
+            <div class="spec-icon"><i class="bi bi-gear"></i></div>
+            <span class="spec-val">${transLabel}</span>
+            <span class="spec-key">Trans</span>
+          </div>
+          <div class="vehicle-spec">
+            <div class="spec-icon"><i class="bi bi-person"></i></div>
+            <span class="spec-val">${v.seats} Seats</span>
+            <span class="spec-key">Capacity</span>
+          </div>
+          <div class="vehicle-spec">
+            <div class="spec-icon"><i class="bi bi-fuel-pump"></i></div>
+            <span class="spec-val">${v.fuel}</span>
+            <span class="spec-key">Fuel</span>
+          </div>
+        </div>
+        <div class="vehicle-price-row">
+          <div class="vehicle-price">₹${price.toLocaleString('en-IN')}<span>/day</span></div>
+          <div class="vehicle-price-auto">Deposit ₹${v.deposit.toLocaleString('en-IN')}</div>
         </div>
         <div class="vehicle-card-actions">
           <a href="${waLink('Hi, I want details about ' + v.name)}" class="btn-view-details" target="_blank" rel="noopener noreferrer">View Details</a>
@@ -400,10 +763,11 @@ function renderReviews() {
 }
 
 /* ── RENDER FAQ ── */
-function renderFAQ() {
+function renderFAQ(limit = 0) {
   const grid = document.getElementById('faq-accordion');
   if (!grid) return;
-  grid.innerHTML = faqData.map((f, i) => `
+  const items = limit > 0 ? faqData.slice(0, limit) : faqData;
+  grid.innerHTML = items.map((f, i) => `
     <div class="faq-item" data-index="${i}">
       <button class="faq-q" aria-expanded="false">
         <span>${f.q}</span>
@@ -505,16 +869,28 @@ function initLocationTabs() {
 function initReviewsNav() {
   const prev = document.getElementById('rev-prev');
   const next = document.getElementById('rev-next');
-  const perPage = window.innerWidth < 640 ? 1 : (window.innerWidth < 1024 ? 2 : 3);
-  const totalPages = Math.ceil(reviewsData.length / perPage);
+  const updateNav = () => {
+    const perPage = window.innerWidth < 640 ? 1 : (window.innerWidth < 1024 ? 2 : 3);
+    const totalPages = Math.ceil(reviewsData.length / perPage);
+    reviewPage = Math.min(reviewPage, Math.max(totalPages - 1, 0));
+    if (prev) prev.disabled = totalPages <= 1;
+    if (next) next.disabled = totalPages <= 1;
+    renderReviews();
+  };
   if (prev) prev.addEventListener('click', () => {
+    const perPage = window.innerWidth < 640 ? 1 : (window.innerWidth < 1024 ? 2 : 3);
+    const totalPages = Math.ceil(reviewsData.length / perPage);
     reviewPage = (reviewPage - 1 + totalPages) % totalPages;
     renderReviews();
   });
   if (next) next.addEventListener('click', () => {
+    const perPage = window.innerWidth < 640 ? 1 : (window.innerWidth < 1024 ? 2 : 3);
+    const totalPages = Math.ceil(reviewsData.length / perPage);
     reviewPage = (reviewPage + 1) % totalPages;
     renderReviews();
   });
+  window.addEventListener('resize', updateNav, { passive: true });
+  updateNav();
 }
 
 /* ── CHECK AVAILABILITY ── */
@@ -532,16 +908,25 @@ window.checkAvailability = checkAvailability;
 
 /* ── SCROLL REVEAL ── */
 function initScrollReveal() {
-  const targets = document.querySelectorAll('.fleet-section, .why-section, .locations-section, .routes-section, .attractions-section, .reviews-section, .process-section, .founder-section, .faq-section');
-  if (!('IntersectionObserver' in window)) return;
+  const targets = document.querySelectorAll('main section, .footer');
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(target => target.classList.add('fade-up', 'in-view'));
+    return;
+  }
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
         const counters = entry.target.querySelectorAll('.counter-num');
         if (counters.length) animateCounters();
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.12 });
+
+  targets.forEach(target => {
+    target.classList.add('fade-up');
+    observer.observe(target);
+  });
 
   const countersSection = document.querySelector('.counters-section');
   if (countersSection) observer.observe(countersSection);
@@ -711,6 +1096,22 @@ function initQuickBookingForm() {
   form.addEventListener('submit', handleBookingSubmit);
 }
 
+function initFloatingCtas() {
+  const groups = document.querySelectorAll('.sticky-ctas');
+  if (!groups.length) return;
+
+  const toggleVisibility = () => {
+    const shouldShow = window.scrollY > 300;
+    groups.forEach((group) => {
+      group.classList.toggle('is-visible', shouldShow);
+    });
+  };
+
+  toggleVisibility();
+  window.addEventListener('scroll', toggleVisibility, { passive: true });
+  window.addEventListener('resize', toggleVisibility, { passive: true });
+}
+
 function initStickyMobileBar() {
   const bar = document.createElement('div');
   bar.className = 'mobile-cta-bar';
@@ -777,6 +1178,8 @@ function initLeadPopups() {
   }
 
   if (dismissButton) dismissButton.addEventListener('click', dismissLeadPopup);
+  const closeButton = document.getElementById('lead-popup-close');
+  if (closeButton) closeButton.addEventListener('click', dismissLeadPopup);
   if (overlay) {
     overlay.addEventListener('click', (event) => {
       if (event.target === overlay) dismissLeadPopup();
@@ -784,18 +1187,32 @@ function initLeadPopups() {
   }
   if (exitOverlay) {
     exitDismissButton?.addEventListener('click', () => exitOverlay.classList.remove('open'));
+    const exitCloseButton = document.getElementById('exit-popup-close');
+    if (exitCloseButton) exitCloseButton.addEventListener('click', () => exitOverlay.classList.remove('open'));
     document.addEventListener('mouseout', showExitPopup);
   }
 }
 
 /* ── INIT ── */
 document.addEventListener('DOMContentLoaded', () => {
-  renderFleet('all');
+  const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+  document.body.classList.toggle('home-page', isHomePage);
+  document.body.classList.toggle('inner-page', !isHomePage);
+  injectSharedLayout();
+  document.querySelectorAll('main section, .shared-footer').forEach((element) => {
+    element.classList.add('fade-up');
+  });
+  if (document.body.classList.contains('home-page')) {
+    renderFeaturedFleet();
+    renderFAQ(4);
+  } else {
+    renderFleet('all');
+    renderFAQ();
+  }
   renderLocations('airports');
   renderRoutes();
   renderAttractions();
   renderReviews();
-  renderFAQ();
   initNavbarScroll();
   initMobileMenu();
   initFleetFilters();
@@ -808,6 +1225,7 @@ document.addEventListener('DOMContentLoaded', () => {
   scheduleReviewPopup();
   attachConversionTracking();
   initQuickBookingForm();
+  initFloatingCtas();
   initStickyMobileBar();
   initLeadPopups();
 });

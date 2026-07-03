@@ -127,7 +127,7 @@ function gtag_report_conversion(url) {
 
 </head>
 
-<body>
+<body class="home-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <div class="sticky-ctas" aria-label="Quick conversion buttons">
@@ -153,13 +153,13 @@ function gtag_report_conversion(url) {
       </a>
       <div class="nav-links" id="nav-links" role="menubar">
         <a href="/" class="nav-link active" role="menuitem">Home</a>
-        <a href="#fleet" class="nav-link" role="menuitem">Fleet</a>
-        <a href="#locations" class="nav-link" role="menuitem">Locations</a>
-        <a href="#routes" class="nav-link" role="menuitem">Routes</a>
-        <a href="#attractions" class="nav-link" role="menuitem">Attractions</a>
-        <a href="/founder.html" class="nav-link" role="menuitem">Founder</a>
-        <a href="#about" class="nav-link" role="menuitem">About</a>
-        <a href="#faq" class="nav-link" role="menuitem">FAQ</a>
+        <a href="/complete-fleet.html" class="nav-link" role="menuitem">Fleet</a>
+        <a href="/routes.html" class="nav-link" role="menuitem">Routes</a>
+        <a href="/tourist-places.html" class="nav-link" role="menuitem">Places</a>
+        <a href="/travel-guides.html" class="nav-link" role="menuitem">Guides</a>
+        <a href="/about-us.html" class="nav-link" role="menuitem">About</a>
+        <a href="/faq.html" class="nav-link" role="menuitem">FAQ</a>
+        <a href="/rental-policies.html" class="nav-link" role="menuitem">Policies</a>
         <a href="/contact.html" class="nav-link" role="menuitem">Contact</a>
       </div>
       <div class="nav-actions">
@@ -224,7 +224,7 @@ function gtag_report_conversion(url) {
           <a href="tel:+919975356697" class="btn-secondary">
             <i class="bi bi-telephone-fill" aria-hidden="true"></i> Call Now
           </a>
-          <a href="#fleet" class="btn-ghost">
+          <a href="/complete-fleet.html" class="btn-ghost">
             View Fleet <i class="bi bi-arrow-down" aria-hidden="true"></i>
           </a>
         </div>
@@ -244,7 +244,7 @@ function gtag_report_conversion(url) {
         <div class="booking-widget">
           <div class="booking-field">
             <label for="pickup-loc"><i class="bi bi-geo-alt" aria-hidden="true"></i> Pickup Location</label>
-            <select id="pickup-loc" aria-label="Pickup Location">
+            <select id="pickup-loc" aria-label="Pickup Location" autocomplete="off">
               <option value="">Select location</option>
               <option>Mopa Airport (GOX)</option>
               <option>Dabolim Airport (GOI)</option>
@@ -261,15 +261,15 @@ function gtag_report_conversion(url) {
           </div>
           <div class="booking-field">
             <label for="pickup-date"><i class="bi bi-calendar3" aria-hidden="true"></i> Pickup Date</label>
-            <input type="date" id="pickup-date" aria-label="Pickup Date" />
+            <input type="date" id="pickup-date" aria-label="Pickup Date" autocomplete="off" />
           </div>
           <div class="booking-field">
             <label for="return-date"><i class="bi bi-calendar3-range" aria-hidden="true"></i> Return Date</label>
-            <input type="date" id="return-date" aria-label="Return Date" />
+            <input type="date" id="return-date" aria-label="Return Date" autocomplete="off" />
           </div>
           <div class="booking-field">
             <label for="vehicle-type"><i class="bi bi-car-front" aria-hidden="true"></i> Vehicle Type</label>
-            <select id="vehicle-type" aria-label="Vehicle Type">
+            <select id="vehicle-type" aria-label="Vehicle Type" autocomplete="off">
               <option value="">Any vehicle</option>
               <option>Hatchback (₹1,200+)</option>
               <option>Compact SUV (₹2,000+)</option>
@@ -282,6 +282,11 @@ function gtag_report_conversion(url) {
           <button class="btn-check-avail" onclick="checkAvailability()" type="button">
             Check Availability
           </button>
+        </div>
+        <div class="booking-widget-footer" aria-label="Booking widget benefits">
+          <span class="booking-chip"><i class="bi bi-truck" aria-hidden="true"></i> Free delivery across Goa</span>
+          <span class="booking-chip"><i class="bi bi-shield-check" aria-hidden="true"></i> Verified cars, no hidden charges</span>
+          <span class="booking-chip"><i class="bi bi-whatsapp" aria-hidden="true"></i> Instant WhatsApp confirmation</span>
         </div>
       </div>
     </section>
@@ -305,6 +310,11 @@ function gtag_report_conversion(url) {
             <span class="section-eyebrow">Fast Booking</span>
             <h2>Get a Self Drive Car in Goa in Minutes</h2>
             <p>Share your trip details and we’ll confirm availability, price, and the best vehicle for your Goa trip on WhatsApp.</p>
+            <ul class="booking-benefits">
+              <li><i class="bi bi-check2-circle" aria-hidden="true"></i> Same-day WhatsApp confirmation</li>
+              <li><i class="bi bi-check2-circle" aria-hidden="true"></i> Delivery to hotels, airports, and beach stays</li>
+              <li><i class="bi bi-check2-circle" aria-hidden="true"></i> Flexible pickup and return support</li>
+            </ul>
           </div>
           <form id="quick-booking-form" class="quick-booking-form" novalidate>
             <div class="quick-field">
@@ -375,17 +385,9 @@ function gtag_report_conversion(url) {
     <section id="fleet" class="fleet-section" aria-label="Our Fleet">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">Premium Fleet</span>
-          <h2 class="section-title">Choose Your Ride</h2>
-          <p class="section-sub">All vehicles are sanitised, insured, and serviced before every rental. No hidden charges.</p>
-        </div>
-
-        <div class="fleet-filters" role="group" aria-label="Filter by vehicle type">
-          <button class="filter-btn active" data-filter="all">All Vehicles</button>
-          <button class="filter-btn" data-filter="hatchback">Hatchbacks</button>
-          <button class="filter-btn" data-filter="suv">SUVs</button>
-          <button class="filter-btn" data-filter="family">7-Seaters</button>
-          <button class="filter-btn" data-filter="luxury">Luxury</button>
+          <span class="section-eyebrow">Featured Vehicles</span>
+          <h2 class="section-title">Hand-Picked for Beach Trips & Airport Transfers</h2>
+          <p class="section-sub">Popular self-drive cars for couples, families, and groups — with instant booking on WhatsApp.</p>
         </div>
 
         <div class="fleet-grid" id="fleet-grid" aria-live="polite">
@@ -396,6 +398,7 @@ function gtag_report_conversion(url) {
           <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20check%20vehicle%20availability%20in%20Goa" class="btn-primary" target="_blank" rel="noopener noreferrer">
             <i class="bi bi-whatsapp" aria-hidden="true"></i> Check Availability on WhatsApp
           </a>
+          <a href="/complete-fleet.html" class="btn-outline">View Complete Fleet</a>
         </div>
       </div>
     </section>
@@ -467,55 +470,6 @@ function gtag_report_conversion(url) {
           <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car%20in%20Goa" class="btn-primary" target="_blank" rel="noopener noreferrer">
             <i class="bi bi-whatsapp" aria-hidden="true"></i> Book With Confidence
           </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ LOCATIONS ══ -->
-    <section id="locations" class="locations-section" aria-label="Delivery Locations">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">Delivery Coverage</span>
-          <h2 class="section-title">We Deliver Across All of Goa</h2>
-          <p class="section-sub">Car delivered to your hotel, resort, or airport — anywhere in Goa.</p>
-        </div>
-
-        <div class="locations-tabs" role="tablist" aria-label="Location regions">
-          <button class="loc-tab active" role="tab" aria-selected="true" data-region="airports">Airports</button>
-          <button class="loc-tab" role="tab" aria-selected="false" data-region="north">North Goa</button>
-          <button class="loc-tab" role="tab" aria-selected="false" data-region="south">South Goa</button>
-        </div>
-
-        <div class="locations-grid" id="locations-grid">
-          <!-- Rendered by JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ ROUTES ══ -->
-    <section id="routes" class="routes-section" aria-label="Self Drive Routes">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">Self Drive Routes</span>
-          <h2 class="section-title">Goa's Best Road Trips</h2>
-          <p class="section-sub">Curated routes with distance, drive time, and vehicle recommendations.</p>
-        </div>
-        <div class="routes-grid" id="routes-grid">
-          <!-- Rendered by JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ ATTRACTIONS ══ -->
-    <section id="attractions" class="attractions-section" aria-label="Tourist Attractions">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">Tourist Attractions</span>
-          <h2 class="section-title">Explore Goa Your Way</h2>
-          <p class="section-sub">From pristine beaches to ancient forts — explore it all at your own pace.</p>
-        </div>
-        <div class="attractions-grid" id="attractions-grid">
-          <!-- Rendered by JS -->
         </div>
       </div>
     </section>
@@ -604,44 +558,6 @@ function gtag_report_conversion(url) {
       </div>
     </section>
 
-    <!-- ══ FOUNDER ══ -->
-    <section id="about" class="founder-section" aria-label="About Founder">
-      <div class="container">
-        <div class="founder-inner">
-          <div class="founder-img-wrap">
-            <img src="/assets/founder.png" alt="Sahil Shaikh — Founder of Royal Goa Ride" class="founder-img" width="400" height="500" loading="lazy" />
-            <div class="founder-badge-card">
-              <span class="fbc-num">14+</span>
-              <span class="fbc-label">Years in Goa</span>
-            </div>
-          </div>
-          <div class="founder-content">
-            <span class="section-eyebrow">The Founder</span>
-            <h2 class="section-title">Built on Trust,<br/><em>Driven by Passion</em></h2>
-            <p class="founder-bio">I'm <strong>Sahil Shaikh</strong>, founder of Royal Goa Ride. In 2010, I started with a simple belief — that every traveller deserves a reliable, honest car rental experience in Goa. No hidden charges. No stress. Just the freedom to explore.</p>
-            <p class="founder-bio">Over 14 years, we've grown into one of Goa's most trusted names, serving 500+ happy customers across beaches, airports, and every corner of this beautiful state. When you rent from Royal Goa Ride, you're not dealing with a faceless corporation — you're working directly with someone who loves Goa as much as you do.</p>
-            <div class="founder-achievements">
-              <div class="achievement">
-                <i class="bi bi-award" aria-hidden="true"></i>
-                <span>14+ Years Experience</span>
-              </div>
-              <div class="achievement">
-                <i class="bi bi-people" aria-hidden="true"></i>
-                <span>500+ Customers Served</span>
-              </div>
-              <div class="achievement">
-                <i class="bi bi-star" aria-hidden="true"></i>
-                <span>4.8 Google Rating</span>
-              </div>
-            </div>
-            <a href="/founder.html" class="btn-outline">
-              Read My Full Story <i class="bi bi-arrow-right" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ══ FAQ ══ -->
     <section id="faq" class="faq-section" aria-label="Frequently Asked Questions">
       <div class="container">
@@ -652,6 +568,9 @@ function gtag_report_conversion(url) {
         </div>
         <div class="faq-grid" id="faq-accordion">
           <!-- Rendered by JS -->
+        </div>
+        <div class="reviews-cta-row">
+          <a href="/faq.html" class="btn-outline">Read All FAQs</a>
         </div>
       </div>
     </section>
@@ -671,6 +590,11 @@ function gtag_report_conversion(url) {
               <i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp Us Now
             </a>
           </div>
+          <div class="cta-links-row">
+            <a href="/complete-fleet.html">View full fleet</a>
+            <a href="/rental-policies.html">Read rental policies</a>
+            <a href="/tourist-places.html">Explore Goa places</a>
+          </div>
           <div class="cta-contact-details">
             <span><i class="bi bi-envelope" aria-hidden="true"></i> info@royalgoaride.com</span>
             <span><i class="bi bi-geo-alt" aria-hidden="true"></i> Near Madgao Railway Station, Margao, Goa 403601</span>
@@ -687,6 +611,10 @@ function gtag_report_conversion(url) {
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="/assets/logo.webp" alt="Royal Goa Ride" class="footer-logo" width="48" height="48" loading="lazy" />
+          <div class="footer-badges">
+            <span><i class="bi bi-shield-check" aria-hidden="true"></i> Verified service</span>
+            <span><i class="bi bi-telephone" aria-hidden="true"></i> 24/7 support</span>
+          </div>
           <p class="footer-tagline">Goa's trusted self drive car rental since 2010. Premium fleet, honest pricing, island-wide delivery.</p>
           <div class="footer-social">
             <a href="https://www.instagram.com/royalgoaride" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
@@ -766,6 +694,7 @@ function gtag_report_conversion(url) {
 
   <div class="lead-popup-overlay" id="lead-popup-overlay" aria-hidden="true">
     <div class="lead-popup-card" role="dialog" aria-modal="true" aria-labelledby="lead-popup-title" aria-describedby="lead-popup-copy">
+      <button class="popup-close" type="button" aria-label="Close popup" id="lead-popup-close">×</button>
       <span class="lead-popup-badge">⚡ Instant Booking</span>
       <h2 id="lead-popup-title">Need a Self Drive Car in Goa?</h2>
       <p id="lead-popup-copy">Get instant price, availability &amp; best offers on WhatsApp.</p>
@@ -779,6 +708,7 @@ function gtag_report_conversion(url) {
 
   <div class="exit-popup-overlay" id="exit-popup-overlay" aria-hidden="true">
     <div class="exit-popup-card" role="dialog" aria-modal="true" aria-labelledby="exit-popup-title">
+      <button class="popup-close" type="button" aria-label="Close popup" id="exit-popup-close">×</button>
       <span class="lead-popup-badge">⏳ Limited Offer</span>
       <h2 id="exit-popup-title">Wait! Get the Best Price Today.</h2>
       <div class="lead-popup-actions">
