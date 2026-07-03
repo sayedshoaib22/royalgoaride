@@ -117,12 +117,8 @@ const attractionsData = [
 
 /* ── REVIEWS DATA ── */
 const reviewsData = [
-  { name: 'Amit Kumar', location: 'Mumbai', rating: 5, text: 'Outstanding car rental experience! The booking was quick, the car was spotless, and the team delivered it right to my hotel.' },
-  { name: 'Priya Sharma', location: 'Delhi', rating: 5, text: 'Smooth process from start to finish. The rental was in perfect condition. Delivery at 11pm was seamless.' },
-  { name: 'Sneha Mehra', location: 'Pune', rating: 5, text: 'Best self-drive rental in Goa, no question. Honest pricing, clean car, team was super helpful with local tips.' },
-  { name: 'Rajesh Patel', location: 'Ahmedabad', rating: 5, text: 'Travelled with family of 5 — the car was perfect. Delivered to our hotel on time, clean and fully fuelled.' },
-  { name: 'Kiran Nair', location: 'Bangalore', rating: 5, text: 'Excellent service! Rented an SUV for 5 days — perfect for exploring Goa. Always available on WhatsApp.' },
-  { name: 'Michael Torres', location: 'London', rating: 5, text: 'Monthly rental for 6 weeks — got an incredible deal and a reliable car throughout my stay. Perfect for long stays.' }
+  { name: 'Pankaj Kumar', location: 'Google', rating: 5, text: 'Booked a Baleno through Mr. Sahil in Goa for 6 days, it was an amazing experience without any hassle. The car was in excellent condition, pickup and return were smooth, and the overall service was professional. Highly recommended for self-drive car rentals in Goa.' },
+  { name: 'Hasina Khan', location: 'Google', rating: 5, text: 'After explaining everything properly, they gave us the car. The process was simple, transparent, and the staff was very helpful.' }
 ];
 
 /* ── FAQ DATA ── */
@@ -144,6 +140,70 @@ const faqData = [
 /* ── HELPERS ── */
 function waLink(text) {
   return `https://wa.me/919975356697?text=${encodeURIComponent(text)}`;
+}
+
+function getPageContext() {
+  const pathname = window.location.pathname.toLowerCase();
+  let vehicle = null;
+  let location = null;
+
+  // Detect vehicle from URL or page content
+  if (pathname.includes('thar')) vehicle = 'Thar';
+  else if (pathname.includes('creta')) vehicle = 'Hyundai Creta';
+  else if (pathname.includes('baleno')) vehicle = 'Maruti Baleno';
+  else if (pathname.includes('innova') || pathname.includes('crysta')) vehicle = 'Toyota Innova Crysta';
+  else if (pathname.includes('fortuner')) vehicle = 'Toyota Fortuner';
+  else if (pathname.includes('ertiga')) vehicle = 'Maruti Ertiga';
+  else if (pathname.includes('i20')) vehicle = 'Hyundai i20';
+  else if (pathname.includes('swift')) vehicle = 'Maruti Swift';
+
+  // Detect location from URL
+  if (pathname.includes('mopa-airport')) location = 'Mopa Airport';
+  else if (pathname.includes('dabolim-airport')) location = 'Dabolim Airport';
+  else if (pathname.includes('calangute')) location = 'Calangute';
+  else if (pathname.includes('baga')) location = 'Baga';
+  else if (pathname.includes('candolim')) location = 'Candolim';
+  else if (pathname.includes('anjuna')) location = 'Anjuna';
+  else if (pathname.includes('panjim')) location = 'Panjim';
+  else if (pathname.includes('margao')) location = 'Margao';
+
+  return { vehicle, location };
+}
+
+function buildDynamicWhatsAppMessage() {
+  const context = getPageContext();
+  let message = 'Hi, I want to book a car in Goa';
+  
+  if (context.vehicle && context.location) {
+    message = `Hi, I want to book the ${context.vehicle} for pickup at ${context.location}`;
+  } else if (context.vehicle) {
+    message = `Hi, I want to book the ${context.vehicle} in Goa`;
+  } else if (context.location) {
+    message = `Hi, I want a car for pickup at ${context.location}`;
+  }
+  
+  return message;
+}
+
+function updateDynamicWhatsAppLinks() {
+  const dynamicMessage = buildDynamicWhatsAppMessage();
+  const dynamicLink = waLink(dynamicMessage);
+  
+  // Update all WhatsApp links with generic/static text to use dynamic message
+  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+    const href = link.getAttribute('href');
+    
+    // Skip links that already have specific context (like in vehicle cards)
+    if (href.includes('details about') || href.includes('for the route') || href.includes('visit')) {
+      return;
+    }
+    
+    // Update generic WhatsApp links with dynamic context
+    if (href.includes('Hi%2C%20I%20want%20to%20book%20a%20car%20in%20Goa') || 
+        href === 'https://wa.me/919975356697') {
+      link.setAttribute('href', dynamicLink);
+    }
+  });
 }
 
 function injectSharedLayout() {
@@ -497,12 +557,12 @@ function renderFleet(filter = 'all') {
           </div>
         </div>
         <div class="vehicle-price-row">
-          <div class="vehicle-price">\u20b9${price.toLocaleString('en-IN')}<span>/day</span></div>
-          <div class="vehicle-price-auto">Deposit \u20b9${v.deposit.toLocaleString('en-IN')}</div>
+          <div class="vehicle-price">₹${price.toLocaleString('en-IN')}<span>/day</span></div>
+          <div class="vehicle-price-auto">Deposit ₹${v.deposit.toLocaleString('en-IN')} • Free cancellation up to 24h</div>
         </div>
         <div class="vehicle-card-actions">
           <a href="${waLink('Hi, I want details about ' + v.name)}" class="btn-view-details" target="_blank" rel="noopener noreferrer">View Details</a>
-          <a href="/book-now?car=${encodeURIComponent(v.name)}" class="btn-book-car">Book Now</a>
+          <a href="/book-now.html?car=${encodeURIComponent(v.name)}" class="btn-book-car">Book Now</a>
         </div>
       </div>
     </div>`;
@@ -545,11 +605,11 @@ function renderFeaturedFleet() {
         </div>
         <div class="vehicle-price-row">
           <div class="vehicle-price">₹${price.toLocaleString('en-IN')}<span>/day</span></div>
-          <div class="vehicle-price-auto">Deposit ₹${v.deposit.toLocaleString('en-IN')}</div>
+          <div class="vehicle-price-auto">Deposit ₹${v.deposit.toLocaleString('en-IN')} • Free cancellation up to 24h</div>
         </div>
         <div class="vehicle-card-actions">
           <a href="${waLink('Hi, I want details about ' + v.name)}" class="btn-view-details" target="_blank" rel="noopener noreferrer">View Details</a>
-          <a href="/book-now?car=${encodeURIComponent(v.name)}" class="btn-book-car">Book Now</a>
+          <a href="/book-now.html?car=${encodeURIComponent(v.name)}" class="btn-book-car">Book Now</a>
         </div>
       </div>
     </div>`;
@@ -932,6 +992,65 @@ function initScrollReveal() {
   if (countersSection) observer.observe(countersSection);
 }
 
+/* ── GLOBAL POPUP MANAGEMENT ── */
+const POPUP_MANAGEMENT = {
+  SESSION_POPUP_FLAG: 'royalgoa_popup_shown_this_session',
+  SESSION_START_TIME: 'royalgoa_session_start_time',
+  SESSION_RETURNING_VISITOR: 'royalgoa_returning_visitor',
+  POPUP_MIN_DELAY_MS: 25000, // 25 seconds for new visitors
+  popupShownThisSession: false,
+
+  isNewVisitor() {
+    try {
+      const returning = sessionStorage.getItem(this.SESSION_RETURNING_VISITOR);
+      return !returning;
+    } catch (e) {
+      return true;
+    }
+  },
+
+  markAsReturningVisitor() {
+    try {
+      sessionStorage.setItem(this.SESSION_RETURNING_VISITOR, 'true');
+    } catch (e) {}
+  },
+
+  getSessionStartTime() {
+    try {
+      let startTime = sessionStorage.getItem(this.SESSION_START_TIME);
+      if (!startTime) {
+        startTime = String(Date.now());
+        sessionStorage.setItem(this.SESSION_START_TIME, startTime);
+      }
+      return parseInt(startTime, 10);
+    } catch (e) {
+      return Date.now();
+    }
+  },
+
+  hasPopupShownThisSession() {
+    return this.popupShownThisSession;
+  },
+
+  canShowPopup() {
+    // Only one popup per session
+    if (this.hasPopupShownThisSession()) return false;
+    
+    // For new visitors: enforce 25 second delay
+    if (this.isNewVisitor()) {
+      const elapsed = Date.now() - this.getSessionStartTime();
+      return elapsed >= this.POPUP_MIN_DELAY_MS;
+    }
+    
+    return true;
+  },
+
+  markPopupShown() {
+    this.popupShownThisSession = true;
+    this.markAsReturningVisitor();
+  }
+};
+
 /* ── SET MIN DATES ── */
 const REVIEW_CONTACTED_KEY = 'royalgoa_contacted';
 const REVIEW_POPUP_SHOWN_KEY = 'royalgoa_review_popup_shown';
@@ -973,17 +1092,32 @@ function setPopupShownAt(timestamp = Date.now()) {
 }
 
 function shouldShowReviewPopup() {
+  // NEVER show review popup to first-time visitors
+  if (POPUP_MANAGEMENT.isNewVisitor()) return false;
+  
+  // Only show if user has contacted/completed booking
   if (!hasContacted()) return false;
+  
+  // Check global popup flag - only one popup per session
+  if (POPUP_MANAGEMENT.hasPopupShownThisSession()) return false;
+  
+  // Check if we can show popup (respects 25 second delay)
+  if (!POPUP_MANAGEMENT.canShowPopup()) return false;
+  
   const shownAt = getPopupShownAt();
   return shownAt === 0 || (Date.now() - shownAt) > REVIEW_POPUP_INTERVAL;
 }
 
 function showReviewPopup() {
+  // Double-check we can show this popup
+  if (!POPUP_MANAGEMENT.canShowPopup()) return;
+  
   const backdrop = document.getElementById('review-popup-backdrop');
   if (!backdrop) return;
   backdrop.classList.add('open');
   backdrop.setAttribute('aria-hidden', 'false');
   setPopupShownAt();
+  POPUP_MANAGEMENT.markPopupShown();
 }
 
 function hideReviewPopup() {
@@ -1026,7 +1160,14 @@ function addPopupControls() {
 
 function scheduleReviewPopup() {
   if (!shouldShowReviewPopup()) return;
-  setTimeout(showReviewPopup, 5000);
+  
+  // Wait until we can show popup (respects 25 second delay for new visitors)
+  const startTime = POPUP_MANAGEMENT.getSessionStartTime();
+  const minWaitTime = POPUP_MANAGEMENT.POPUP_MIN_DELAY_MS;
+  const elapsed = Date.now() - startTime;
+  const delay = Math.max(0, minWaitTime - elapsed + 2000); // Additional 2 sec buffer
+  
+  setTimeout(showReviewPopup, delay);
 }
 
 function initDateFields() {
@@ -1084,10 +1225,101 @@ function handleBookingSubmit(event) {
     firstInvalid?.focus();
     return;
   }
+  
   const formData = new FormData(form);
-  const message = `Hi, I need a self-drive car in Goa. Name: ${formData.get('name') || ''}. Phone: ${formData.get('phone') || ''}. Pickup Date: ${formData.get('pickupDate') || ''}. Pickup Location: ${formData.get('pickupLocation') || ''}. Vehicle: ${formData.get('vehicle') || ''}.`;
+  const name = formData.get('name') || '';
+  const phone = formData.get('phone') || '';
+  const pickupDate = formData.get('pickupDate') || '';
+  const pickupLocation = formData.get('pickupLocation') || '';
+  const vehicle = formData.get('vehicle') || '';
+  
+  const message = `Hi, I need a self-drive car in Goa. Name: ${name}. Phone: ${phone}. Pickup Date: ${pickupDate}. Pickup Location: ${pickupLocation}. Vehicle: ${vehicle}.`;
+  
+  // Show on-screen confirmation
+  showFormConfirmation();
+  
+  // Track conversion
   trackConversion('booking_submit', 'quick_form');
-  window.open(waLink(message), '_blank', 'noopener,noreferrer');
+  
+  // Mark user as contacted for review popup
+  setContacted();
+  
+  // Open WhatsApp after brief delay so user sees the confirmation
+  setTimeout(() => {
+    window.open(waLink(message), '_blank', 'noopener,noreferrer');
+  }, 800);
+}
+
+function showFormConfirmation() {
+  // Create confirmation overlay
+  let confirmOverlay = document.getElementById('form-confirmation-overlay');
+  if (!confirmOverlay) {
+    confirmOverlay = document.createElement('div');
+    confirmOverlay.id = 'form-confirmation-overlay';
+    confirmOverlay.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      animation: fadeIn 0.3s ease;
+    `;
+    
+    const confirmBox = document.createElement('div');
+    confirmBox.style.cssText = `
+      background: white;
+      border-radius: 12px;
+      padding: 40px 30px;
+      text-align: center;
+      max-width: 400px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: slideUp 0.4s ease;
+    `;
+    
+    confirmBox.innerHTML = `
+      <div style="font-size: 48px; margin-bottom: 16px;">✓</div>
+      <h3 style="font-size: 1.4rem; color: #0a0a0a; margin-bottom: 12px; font-weight: 700;">Booking Request Received!</h3>
+      <p style="font-size: 0.95rem; color: #555; margin-bottom: 20px; line-height: 1.6;">Redirecting you to WhatsApp to confirm your booking details...</p>
+      <p style="font-size: 0.85rem; color: #888;">Your details will be ready to send. Just hit send in WhatsApp!</p>
+    `;
+    
+    confirmOverlay.appendChild(confirmBox);
+    
+    // Add CSS for animations
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    document.body.appendChild(confirmOverlay);
+  } else {
+    confirmOverlay.style.display = 'flex';
+  }
+  
+  // Auto-close confirmation after 4 seconds
+  setTimeout(() => {
+    if (confirmOverlay) {
+      confirmOverlay.style.display = 'none';
+    }
+  }, 4000);
 }
 
 function initQuickBookingForm() {
@@ -1135,11 +1367,18 @@ function initStickyMobileBar() {
 }
 
 function showLeadPopup() {
+  // Respect global popup flag - only one popup per session
+  if (POPUP_MANAGEMENT.hasPopupShownThisSession()) return;
+  
+  // Respect 25 second delay for new visitors
+  if (!POPUP_MANAGEMENT.canShowPopup()) return;
+  
   const overlay = document.getElementById('lead-popup-overlay');
   if (!overlay) return;
   overlay.classList.add('open');
   overlay.setAttribute('aria-hidden', 'false');
   localStorage.setItem('royalgoa_popup_seen', 'true');
+  POPUP_MANAGEMENT.markPopupShown();
 }
 
 function dismissLeadPopup() {
@@ -1150,12 +1389,19 @@ function dismissLeadPopup() {
 }
 
 function showExitPopup(event) {
+  // Respect global popup flag - only one popup per session
+  if (POPUP_MANAGEMENT.hasPopupShownThisSession()) return;
+  
+  // Respect 25 second delay for new visitors
+  if (!POPUP_MANAGEMENT.canShowPopup()) return;
+  
   const overlay = document.getElementById('exit-popup-overlay');
   if (!overlay || window.innerWidth < 1024) return;
   const isLeaving = event.clientY <= 0 || event.clientX <= 0 || event.clientX >= window.innerWidth || event.clientY >= window.innerHeight;
   if (!isLeaving) return;
   overlay.classList.add('open');
   overlay.setAttribute('aria-hidden', 'false');
+  POPUP_MANAGEMENT.markPopupShown();
 }
 
 function initLeadPopups() {
@@ -1166,9 +1412,15 @@ function initLeadPopups() {
   if (!overlay) return;
   const hasSeen = localStorage.getItem('royalgoa_popup_seen') === 'true';
   if (!hasSeen) {
+    // Calculate delay respecting 25-second minimum for new visitors
+    const startTime = POPUP_MANAGEMENT.getSessionStartTime();
+    const minWaitTime = POPUP_MANAGEMENT.POPUP_MIN_DELAY_MS;
+    const elapsed = Date.now() - startTime;
+    const timerDelay = Math.max(10000, minWaitTime - elapsed + 1000); // At least 10 sec, but at least 25 sec total
+    
     const timer = window.setTimeout(() => {
       if (!document.hidden) showLeadPopup();
-    }, 10000);
+    }, timerDelay);
     window.addEventListener('scroll', () => {
       if (window.scrollY > window.innerHeight * 0.4) {
         window.clearTimeout(timer);
@@ -1228,4 +1480,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initFloatingCtas();
   initStickyMobileBar();
   initLeadPopups();
+  updateDynamicWhatsAppLinks();
 });
