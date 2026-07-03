@@ -130,15 +130,18 @@ function gtag_report_conversion(url) {
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- STICKY FLOATING CTA -->
-  <div class="float-ctas" aria-label="Quick contact buttons">
-    <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car%20in%20Goa" class="float-wa" target="_blank" rel="noopener noreferrer" aria-label="Book on WhatsApp">
+  <div class="sticky-ctas" aria-label="Quick conversion buttons">
+    <a href="#quick-booking" class="sticky-cta sticky-book" data-event="book_now_click" data-source="sticky_cta">
+      <i class="bi bi-calendar2-check" aria-hidden="true"></i>
+      <span>Book Now</span>
+    </a>
+    <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car%20in%20Goa" class="sticky-cta sticky-wa" target="_blank" rel="noopener noreferrer" aria-label="Book on WhatsApp" data-event="whatsapp_click" data-source="sticky_cta">
       <i class="bi bi-whatsapp" aria-hidden="true"></i>
       <span>WhatsApp</span>
     </a>
-    <a href="tel:+919975356697" class="float-call" aria-label="Call us">
+    <a href="tel:+919975356697" class="sticky-cta sticky-call" aria-label="Call us" data-event="call_click" data-source="sticky_cta">
       <i class="bi bi-telephone-fill" aria-hidden="true"></i>
-      <span>Call</span>
+      <span>Call Now</span>
     </a>
   </div>
 
@@ -279,6 +282,63 @@ function gtag_report_conversion(url) {
           <button class="btn-check-avail" onclick="checkAvailability()" type="button">
             Check Availability
           </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-section" aria-label="Trust highlights">
+      <div class="container">
+        <div class="trust-strip">
+          <div class="trust-pill"><span class="trust-stars">★★★★★</span> 500+ Happy Customers</div>
+          <div class="trust-pill"><i class="bi bi-award-fill" aria-hidden="true"></i> 14+ Years Experience</div>
+          <div class="trust-pill"><i class="bi bi-headset" aria-hidden="true"></i> 24×7 Support</div>
+          <div class="trust-pill"><i class="bi bi-truck" aria-hidden="true"></i> Free Delivery in Goa</div>
+          <div class="trust-pill"><i class="bi bi-shield-check" aria-hidden="true"></i> Verified Self Drive Cars</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quick-booking" class="booking-form-section" aria-label="Quick booking form">
+      <div class="container">
+        <div class="booking-form-card">
+          <div class="booking-form-copy">
+            <span class="section-eyebrow">Fast Booking</span>
+            <h2>Get a Self Drive Car in Goa in Minutes</h2>
+            <p>Share your trip details and we’ll confirm availability, price, and the best vehicle for your Goa trip on WhatsApp.</p>
+          </div>
+          <form id="quick-booking-form" class="quick-booking-form" novalidate>
+            <div class="quick-field">
+              <label for="quick-name">Name</label>
+              <input type="text" id="quick-name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="quick-field">
+              <label for="quick-phone">Phone Number</label>
+              <input type="tel" id="quick-phone" name="phone" placeholder="Your phone number" required />
+            </div>
+            <div class="quick-field">
+              <label for="quick-date">Pickup Date</label>
+              <input type="date" id="quick-date" name="pickupDate" required />
+            </div>
+            <div class="quick-field">
+              <label for="quick-location">Pickup Location</label>
+              <input type="text" id="quick-location" name="pickupLocation" placeholder="Hotel / airport / beach" required />
+            </div>
+            <div class="quick-field">
+              <label for="quick-vehicle">Vehicle</label>
+              <select id="quick-vehicle" name="vehicle" required>
+                <option value="">Select vehicle</option>
+                <option>Maruti Swift</option>
+                <option>Maruti Baleno</option>
+                <option>Hyundai i20</option>
+                <option>Maruti Brezza</option>
+                <option>Hyundai Creta</option>
+                <option>Maruti Ertiga</option>
+                <option>Mahindra Thar</option>
+                <option>Toyota Fortuner</option>
+              </select>
+            </div>
+            <button class="btn-primary quick-submit" type="submit">Submit</button>
+          </form>
         </div>
       </div>
     </section>
@@ -481,6 +541,9 @@ function gtag_report_conversion(url) {
           <button class="rev-btn" id="rev-prev" aria-label="Previous review"><i class="bi bi-arrow-left"></i></button>
           <div class="rev-dots" id="rev-dots"></div>
           <button class="rev-btn" id="rev-next" aria-label="Next review"><i class="bi bi-arrow-right"></i></button>
+        </div>
+        <div class="reviews-cta-row">
+          <a href="https://g.page/r/Ccw4TRAGtkCyEBM/review" class="btn-outline" target="_blank" rel="noopener noreferrer">View All Reviews</a>
         </div>
       </div>
     </section>
@@ -697,6 +760,30 @@ function gtag_report_conversion(url) {
       <div class="review-popup-actions">
         <a id="review-popup-leave-review" class="btn-primary" href="https://g.page/r/Ccw4TRAGtkCyEBM/review" target="_blank" rel="noopener noreferrer">⭐⭐⭐⭐⭐ Leave Review</a>
         <button id="review-popup-later" class="btn-secondary">Maybe Later</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="lead-popup-overlay" id="lead-popup-overlay" aria-hidden="true">
+    <div class="lead-popup-card" role="dialog" aria-modal="true" aria-labelledby="lead-popup-title" aria-describedby="lead-popup-copy">
+      <span class="lead-popup-badge">⚡ Instant Booking</span>
+      <h2 id="lead-popup-title">Need a Self Drive Car in Goa?</h2>
+      <p id="lead-popup-copy">Get instant price, availability &amp; best offers on WhatsApp.</p>
+      <div class="lead-popup-actions">
+        <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20a%20self-drive%20car%20in%20Goa" class="btn-primary" target="_blank" rel="noopener noreferrer" data-event="whatsapp_click" data-source="instant_popup">WhatsApp Now</a>
+        <a href="tel:+919975356697" class="btn-secondary" data-event="call_click" data-source="instant_popup">Call Now</a>
+        <button class="btn-ghost lead-popup-dismiss" id="lead-popup-dismiss" type="button">Continue Browsing</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="exit-popup-overlay" id="exit-popup-overlay" aria-hidden="true">
+    <div class="exit-popup-card" role="dialog" aria-modal="true" aria-labelledby="exit-popup-title">
+      <span class="lead-popup-badge">⏳ Limited Offer</span>
+      <h2 id="exit-popup-title">Wait! Get the Best Price Today.</h2>
+      <div class="lead-popup-actions">
+        <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20the%20best%20price%20for%20a%20car%20in%20Goa" class="btn-primary" target="_blank" rel="noopener noreferrer" data-event="whatsapp_click" data-source="exit_popup">WhatsApp Now</a>
+        <button class="btn-secondary exit-popup-dismiss" type="button">Continue Browsing</button>
       </div>
     </div>
   </div>

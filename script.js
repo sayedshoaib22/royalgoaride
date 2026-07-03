@@ -350,6 +350,17 @@ function renderAttractions() {
 
 /* ── RENDER REVIEWS ── */
 let reviewPage = 0;
+function getAvatarDataUrl(name) {
+  const initial = (name || 'R').charAt(0).toUpperCase();
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+    <rect width="96" height="96" rx="24" fill="#0a0a0a"/>
+    <circle cx="48" cy="38" r="22" fill="#C9A84C"/>
+    <path d="M24 84c8-14 16-20 24-20s16 6 24 20" fill="#E8C96D"/>
+    <text x="48" y="54" text-anchor="middle" font-size="28" fill="#0a0a0a" font-family="Arial, sans-serif" font-weight="700">${initial}</text>
+  </svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
+
 function renderReviews() {
   const carousel = document.getElementById('reviews-carousel');
   const dots = document.getElementById('rev-dots');
@@ -363,7 +374,7 @@ function renderReviews() {
   carousel.innerHTML = slice.map(r => `
     <div class="review-card">
       <div class="review-header">
-        <div class="reviewer-avatar">${r.name.charAt(0)}</div>
+        <img class="reviewer-avatar" src="${getAvatarDataUrl(r.name)}" alt="${r.name}" width="56" height="56" loading="lazy" />
         <div>
           <div class="reviewer-name">${r.name}</div>
           <div class="reviewer-location">${r.location}</div>
@@ -636,13 +647,145 @@ function scheduleReviewPopup() {
 function initDateFields() {
   const pickup = document.getElementById('pickup-date');
   const ret = document.getElementById('return-date');
+  const quickDate = document.getElementById('quick-date');
   if (!pickup) return;
   const today = new Date().toISOString().split('T')[0];
   pickup.min = today;
   if (ret) ret.min = today;
+  if (quickDate) quickDate.min = today;
   pickup.addEventListener('change', () => {
     if (ret) ret.min = pickup.value;
   });
+}
+
+function trackConversion(eventName, source = 'unknown') {
+  if (window.gtag) {
+    window.gtag('event', eventName, {
+      event_category: 'conversion',
+      event_label: source,
+      value: 1
+    });
+  }
+}
+
+function handleConversionLink(event) {
+  const link = event.currentTarget;
+  const eventName = link.dataset.event || 'click';
+  const source = link.dataset.source || 'link';
+  trackConversion(eventName, source);
+}
+
+function attachConversionTracking() {
+  document.querySelectorAll('[data-event]').forEach((element) => {
+    element.addEventListener('click', handleConversionLink, { passive: true });
+  });
+}
+
+function handleBookingSubmit(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const requiredFields = form.querySelectorAll('[required]');
+  let isValid = true;
+  requiredFields.forEach((field) => {
+    if (!field.value.trim()) {
+      isValid = false;
+      field.classList.add('is-invalid');
+    } else {
+      field.classList.remove('is-invalid');
+    }
+  });
+  if (!isValid) {
+    const firstInvalid = form.querySelector('.is-invalid');
+    firstInvalid?.focus();
+    return;
+  }
+  const formData = new FormData(form);
+  const message = `Hi, I need a self-drive car in Goa. Name: ${formData.get('name') || ''}. Phone: ${formData.get('phone') || ''}. Pickup Date: ${formData.get('pickupDate') || ''}. Pickup Location: ${formData.get('pickupLocation') || ''}. Vehicle: ${formData.get('vehicle') || ''}.`;
+  trackConversion('booking_submit', 'quick_form');
+  window.open(waLink(message), '_blank', 'noopener,noreferrer');
+}
+
+function initQuickBookingForm() {
+  const form = document.getElementById('quick-booking-form');
+  if (!form) return;
+  form.addEventListener('submit', handleBookingSubmit);
+}
+
+function initStickyMobileBar() {
+  const bar = document.createElement('div');
+  bar.className = 'mobile-cta-bar';
+  bar.innerHTML = `
+    <a href="tel:+919975356697" data-event="call_click" data-source="mobile_bar"><i class="bi bi-telephone-fill"></i><span>Call Now</span></a>
+    <a href="https://wa.me/919975356697?text=Hi%2C%20I%20want%20to%20book%20a%20car%20in%20Goa" target="_blank" rel="noopener noreferrer" data-event="whatsapp_click" data-source="mobile_bar"><i class="bi bi-whatsapp"></i><span>WhatsApp</span></a>
+    <a href="#quick-booking" data-event="book_now_click" data-source="mobile_bar"><i class="bi bi-car-front"></i><span>Book Now</span></a>
+  `;
+  document.body.appendChild(bar);
+  const toggleMobileBar = () => {
+    bar.style.display = window.innerWidth <= 767 ? 'grid' : 'none';
+  };
+  toggleMobileBar();
+  window.addEventListener('scroll', () => {
+    if (window.innerWidth <= 767) bar.style.display = 'grid';
+  }, { passive: true });
+  window.addEventListener('resize', toggleMobileBar, { passive: true });
+  bar.querySelectorAll('[data-event]').forEach((element) => {
+    element.addEventListener('click', handleConversionLink, { passive: true });
+  });
+}
+
+function showLeadPopup() {
+  const overlay = document.getElementById('lead-popup-overlay');
+  if (!overlay) return;
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden', 'false');
+  localStorage.setItem('royalgoa_popup_seen', 'true');
+}
+
+function dismissLeadPopup() {
+  const overlay = document.getElementById('lead-popup-overlay');
+  if (!overlay) return;
+  overlay.classList.remove('open');
+  overlay.setAttribute('aria-hidden', 'true');
+}
+
+function showExitPopup(event) {
+  const overlay = document.getElementById('exit-popup-overlay');
+  if (!overlay || window.innerWidth < 1024) return;
+  const isLeaving = event.clientY <= 0 || event.clientX <= 0 || event.clientX >= window.innerWidth || event.clientY >= window.innerHeight;
+  if (!isLeaving) return;
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden', 'false');
+}
+
+function initLeadPopups() {
+  const overlay = document.getElementById('lead-popup-overlay');
+  const exitOverlay = document.getElementById('exit-popup-overlay');
+  const dismissButton = document.getElementById('lead-popup-dismiss');
+  const exitDismissButton = document.querySelector('.exit-popup-dismiss');
+  if (!overlay) return;
+  const hasSeen = localStorage.getItem('royalgoa_popup_seen') === 'true';
+  if (!hasSeen) {
+    const timer = window.setTimeout(() => {
+      if (!document.hidden) showLeadPopup();
+    }, 10000);
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > window.innerHeight * 0.4) {
+        window.clearTimeout(timer);
+        showLeadPopup();
+      }
+    }, { passive: true, once: true });
+  }
+
+  if (dismissButton) dismissButton.addEventListener('click', dismissLeadPopup);
+  if (overlay) {
+    overlay.addEventListener('click', (event) => {
+      if (event.target === overlay) dismissLeadPopup();
+    });
+  }
+  if (exitOverlay) {
+    exitDismissButton?.addEventListener('click', () => exitOverlay.classList.remove('open'));
+    document.addEventListener('mouseout', showExitPopup);
+  }
 }
 
 /* ── INIT ── */
@@ -663,4 +806,8 @@ document.addEventListener('DOMContentLoaded', () => {
   addContactTracking();
   addPopupControls();
   scheduleReviewPopup();
+  attachConversionTracking();
+  initQuickBookingForm();
+  initStickyMobileBar();
+  initLeadPopups();
 });
