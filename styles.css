@@ -90,6 +90,13 @@ input, select { font-family: inherit; }
 }
 .btn-primary:hover { background: var(--gold-light); box-shadow: var(--shadow-gold); transform: translateY(-2px); }
 
+.btn-wa {
+  background: var(--green); color: var(--white);
+  border-color: var(--green);
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.2);
+}
+.btn-wa:hover { background: #1fb85b; box-shadow: 0 14px 28px rgba(37, 211, 102, 0.28); }
+
 .btn-secondary {
   display: inline-flex; align-items: center; gap: 0.5rem;
   background: transparent; color: var(--white);
@@ -457,11 +464,12 @@ body.inner-page .nav-cta-wa {
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background: url('https://images.unsplash.com/photo-1590080875181-97a39b5c92c1?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  background: url('/assets/images/hero/landing-hero.svg') center/cover no-repeat;
+  background-color: #060606;
 }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(10,10,10,0.93) 0%, rgba(10,10,10,0.78) 60%, rgba(10,10,10,0.6) 100%);
+  background: linear-gradient(135deg, rgba(4,4,4,0.96) 0%, rgba(10,10,10,0.84) 55%, rgba(10,10,10,0.72) 100%);
 }
 .hero-pattern {
   position: absolute; inset: 0; opacity: 0.04;
@@ -814,6 +822,15 @@ body.inner-page .nav-cta-wa {
 }
 .btn-book-car:hover { background: var(--gold-light); }
 .fleet-cta-row { text-align: center; margin-top: 3rem; }
+.trust-bar-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem;
+}
+.trust-bar-card {
+  display: flex; align-items: center; gap: 0.75rem; justify-content: center;
+  padding: 1rem 1.2rem; border-radius: 16px; background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.18);
+  color: var(--gray-700); font-weight: 600;
+}
+.trust-bar-card i { color: var(--gold-dark); font-size: 1.1rem; }
 
 /* ── WHY CHOOSE ── */
 .why-section { padding: 5rem 0; background: var(--white); }
@@ -1176,7 +1193,7 @@ body.inner-page .nav-cta-wa {
 .cta-contact-details i { color: var(--gold); }
 
 /* ── FOOTER ── */
-.footer { background: var(--black-mid); padding: 4rem 0 2rem; }
+.footer { background: var(--black-mid); padding: 4.5rem 0 2.25rem; }
 .footer-badges {
   display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1rem;
 }
@@ -1256,6 +1273,77 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   color: var(--gray-600);
   line-height: 1.8;
   max-width: 760px;
+}
+.policy-page {
+  background: var(--white-soft);
+}
+.policy-page .section-header {
+  margin-bottom: 2rem;
+}
+.policy-page .section-title {
+  margin-bottom: 0.65rem;
+}
+.policy-page .section-sub {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.policy-toc {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+}
+.policy-note {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-dark);
+  margin-bottom: 0.75rem;
+}
+.policy-toc ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.6rem 1rem;
+  padding-left: 1rem;
+}
+.policy-toc a {
+  color: var(--gray-700);
+  font-weight: 600;
+}
+.policy-toc a:hover {
+  color: var(--gold-dark);
+}
+.policy-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1rem;
+}
+.policy-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  color: var(--black);
+}
+.policy-card p,
+.policy-card li {
+  color: var(--gray-700);
+  line-height: 1.75;
+}
+.policy-card ul {
+  padding-left: 1.15rem;
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+.policy-card a {
+  color: var(--gold-dark);
+  font-weight: 700;
 }
 .breadcrumbs {
   display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem;
@@ -1346,6 +1434,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 @media (max-width: 640px) {
   :root { --nav-h: 64px; }
+  .trust-bar-grid { grid-template-columns: 1fr; }
   .hero-title { font-size: 2.6rem; }
   .trust-divider { display: none; }
   .hero-trust { flex-direction: column; gap: 0.5rem; }
