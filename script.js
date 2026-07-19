@@ -1354,7 +1354,9 @@ function initStickyMobileBar() {
   `;
   document.body.appendChild(bar);
   const toggleMobileBar = () => {
-    bar.style.display = window.innerWidth <= 767 ? 'grid' : 'none';
+    const shouldShow = window.innerWidth <= 767;
+    bar.style.display = shouldShow ? 'grid' : 'none';
+    document.body.classList.toggle('has-mobile-cta-bar', shouldShow);
   };
   toggleMobileBar();
   window.addEventListener('scroll', () => {
@@ -1366,6 +1368,20 @@ function initStickyMobileBar() {
   });
 }
 
+function openPopupOverlay(overlay) {
+  if (!overlay) return;
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('popup-open');
+}
+
+function closePopupOverlay(overlay) {
+  if (!overlay) return;
+  overlay.classList.remove('open');
+  overlay.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('popup-open');
+}
+
 function showLeadPopup() {
   // Respect global popup flag - only one popup per session
   if (POPUP_MANAGEMENT.hasPopupShownThisSession()) return;
@@ -1375,8 +1391,7 @@ function showLeadPopup() {
   
   const overlay = document.getElementById('lead-popup-overlay');
   if (!overlay) return;
-  overlay.classList.add('open');
-  overlay.setAttribute('aria-hidden', 'false');
+  openPopupOverlay(overlay);
   localStorage.setItem('royalgoa_popup_seen', 'true');
   POPUP_MANAGEMENT.markPopupShown();
 }
@@ -1384,8 +1399,7 @@ function showLeadPopup() {
 function dismissLeadPopup() {
   const overlay = document.getElementById('lead-popup-overlay');
   if (!overlay) return;
-  overlay.classList.remove('open');
-  overlay.setAttribute('aria-hidden', 'true');
+  closePopupOverlay(overlay);
 }
 
 function showExitPopup(event) {
@@ -1396,11 +1410,10 @@ function showExitPopup(event) {
   if (!POPUP_MANAGEMENT.canShowPopup()) return;
   
   const overlay = document.getElementById('exit-popup-overlay');
-  if (!overlay || window.innerWidth < 1024) return;
+  if (!overlay) return;
   const isLeaving = event.clientY <= 0 || event.clientX <= 0 || event.clientX >= window.innerWidth || event.clientY >= window.innerHeight;
   if (!isLeaving) return;
-  overlay.classList.add('open');
-  overlay.setAttribute('aria-hidden', 'false');
+  openPopupOverlay(overlay);
   POPUP_MANAGEMENT.markPopupShown();
 }
 
@@ -1438,10 +1451,16 @@ function initLeadPopups() {
     });
   }
   if (exitOverlay) {
-    exitDismissButton?.addEventListener('click', () => exitOverlay.classList.remove('open'));
+    exitDismissButton?.addEventListener('click', () => closePopupOverlay(exitOverlay));
     const exitCloseButton = document.getElementById('exit-popup-close');
-    if (exitCloseButton) exitCloseButton.addEventListener('click', () => exitOverlay.classList.remove('open'));
+    if (exitCloseButton) exitCloseButton.addEventListener('click', () => closePopupOverlay(exitOverlay));
     document.addEventListener('mouseout', showExitPopup);
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closePopupOverlay(overlay);
+        closePopupOverlay(exitOverlay);
+      }
+    });
   }
 }
 
